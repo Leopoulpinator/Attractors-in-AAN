@@ -45,7 +45,7 @@ nb_level(A,N) :- automaton(A), N = #count { L : automaton_level(A,L) }.
 
 enum(1..N) :- nb_automaton(N).
 
-1 { moment(A,N) : enum(N) } 1:- automaton(A).
+1 { moment(A,N) : enum(N) } 1 :- automaton(A).
 1 { moment(A,N) : automaton(A) } 1 :- enum(N).
 
 :- 
@@ -69,10 +69,10 @@ gs(L) :- build_list(N,L), nb_automaton(N).
 global_state(@work(gs(L)),L) :- gs(L). 
 global_state(Gs) :- global_state(Gs,_).
 
-%* From global state we find the active levels of each automaton
+% From global state we find the active levels of each automaton
 active_in_g(@determine_active_level(Automaton,L),Gs) :-
 	automaton(Automaton),
-	global_state(Gs,L).*%
+	global_state(Gs,L).
 
 %%% ===== %%%
 
@@ -144,7 +144,7 @@ evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
 %#show active_in_g/2.
 %#show different_except/3.
 #show active/2.
-#show main_cycle_length/1.
-#show active_g/2.
+%#show main_cycle_length/1.
+%#show active_g/2.
 %#show gs/1.
 %#show global_state/1.
