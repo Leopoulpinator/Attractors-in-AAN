@@ -1,0 +1,4 @@
+size(100).
+a_tester(1..S) :- size(S).
+ok(X) :- a_tester(X), X\3=0.
+#show ok/1.

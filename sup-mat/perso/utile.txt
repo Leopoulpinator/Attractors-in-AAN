@@ -1,0 +1,9 @@
+clingo 0 --quiet=2 --const n=10 --const filtering=post --const print_solutions=1 synch.lp attractors.lp filtering-attractors.lp ../perso/models/le_relou.lp 
+
+dans models :
+	
+	clingo 0 --const filtering=post --const print_solutions=1 --const n=10 listes_pour_etat_global.lp asynch.lp le_relou.lp ../../attractors-scripts/filtering-attractors.lp 
+
+	clingo 0 --const filtering=post --const print_solutions=1 --const n=10 ../../attractors-scripts/attractors.lp ../../attractors-scripts/asynch.lp mini_relou.lp ../../attractors-scripts/filtering-attractors.lp 
+
+

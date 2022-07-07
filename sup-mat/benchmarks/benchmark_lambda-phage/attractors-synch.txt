@@ -1,0 +1,28 @@
+Command line (in folder attractors-scripts):
+
+clingo 0 --const n=48 --const filtering=pre --quiet=2 --time-limit=100 --const print_solutions=1 --const print_solution_sizes=1 synch.lp attractors.lp filtering-attractors.lp ../models/asp/lambda-phage.lp
+
+Result in terminal:
+
+clingo version 5.4.0
+Reading from synch.lp ...
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+Solving...
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Automata names in order:
+['CI', 'CII', 'Cro', 'N']
+Unique attractors:
+{frozenset({(2, 0, 1, 0), (1, 0, 0, 0)}), frozenset({(0, 0, 2, 0), (0, 0, 3, 0)})}
+Frequencies of attractor sizes:
+{2: 2}
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 3.938s (Solving: 2.20s 1st Model: 0.07s Unsat: 1.11s)
+CPU Time     : 3.937s
+

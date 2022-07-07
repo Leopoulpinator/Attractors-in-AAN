@@ -1,0 +1,30 @@
+(* This model has been manually translated from the
+* discrete network model of the tryptophan biosynthesis in E. Coli from
+* "Qualitative modelling of regulated metabolic pathways:
+* application to the tryptophan biosynthesis in E.Coli",
+* E. Simão, E. Remy, D. Thieffry and C. Chaouiya,
+* Bioinformatics, 2005, vol. 21, no. suppl. 2, pp. ii190-ii196.
+* https://doi.org/10.1093/bioinformatics/bti1130
+*)
+
+"Trp" [0, 1, 2]
+"TrpE" [0, 1]
+"TrpR" [0, 1]
+"Trpext" [0, 1, 2]
+
+"Trp" 0 -> 1 when "TrpE"=1
+"Trp" 0 -> 1 when "Trpext"=1
+"Trp" 0 -> 1 when "Trpext"=2
+"Trp" 1 -> 0 when "TrpE"=0 and "Trpext"=0
+"Trp" 1 -> 2 when "Trpext"=2
+"Trp" 2 -> 1 when "Trpext"=0
+"Trp" 2 -> 1 when "Trpext"=1
+"TrpE" 0 -> 1 when "Trp"=0 and "TrpR"=0
+"TrpE" 1 -> 0 when "Trp"=1
+"TrpE" 1 -> 0 when "Trp"=2
+"TrpE" 1 -> 0 when "TrpR"=1
+"TrpR" 0 -> 1 when "Trp"=2
+"TrpR" 1 -> 0 when "Trp"=0
+"TrpR" 1 -> 0 when "Trp"=1
+
+initial_context "Trp"=0, "TrpE"=0, "TrpR"=0, "Trpext"=0

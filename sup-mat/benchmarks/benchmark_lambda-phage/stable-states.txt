@@ -1,0 +1,18 @@
+Command line (in folder stable-states-script):
+
+clingo 0 stabe-states.lp ../models/asp/lambda-phage.lp
+
+Result on terminal:
+
+clingo version 5.4.0
+Reading from stabe-states.lp ...
+Solving...
+Answer: 1
+local_state("CI",2) local_state("Cro",0) local_state("CII",0) local_state("N",0)
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.009s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.008s
+
