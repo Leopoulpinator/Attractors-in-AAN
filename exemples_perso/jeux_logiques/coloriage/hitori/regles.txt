@@ -1,0 +1,6 @@
+Le plan est muni d'une grille de taille TxT (ici T = 5).
+Chaque case de la grille possède un numéro allant de 1 à T.
+Chaque case de cette grille doit être coloriée soit en blanc(0), soit en noir(1).
+On ne peut pas avoir deux cases noires juxtaposées.
+Sur chaque ligne et colonne, les valeurs des cases blanches sont uniques.
+L'ensemble des cases blanches est connexe.

@@ -1,0 +1,4 @@
+Le plan est muni d'une grille 16x16.
+Chaque case du plan doit être muni d'une lettre parmi celles allant de 'A' à 'P'.
+Quelques lettres sont initialement placées sur la grille et ne peuvent être modifiées.
+La permutation des lettres formée par chaque ligne doit toujours être la même à rotation près.

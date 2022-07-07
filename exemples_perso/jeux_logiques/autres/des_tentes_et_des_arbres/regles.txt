@@ -1,0 +1,6 @@
+Le plan est muni d'une grille de taille TxT (ici T = 6).
+Sur la grille sont posés des arbres.
+A côté de chaque arbre il doit y avoir une tente (à côté et pas en diagonale).
+Deux tentes ne peuvent pas se toucher, même en diagonale.
+Chaque ligne est accompagnée d'un numéro symbolisant le nombre de tentes à y placer.
+Chaque colonne est accompagnée d'un numéro symbolisant le nombre de tentes à y placer.
