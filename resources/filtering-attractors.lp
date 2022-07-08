@@ -79,7 +79,7 @@ SETTING_write_nbr_solutions = None
 
 
 from collections import OrderedDict
-import clingo
+from clingo import Number, Function, String, parse_term
 
 # Debug function
 def dp(x):
@@ -87,7 +87,7 @@ def dp(x):
 
 # Easy build of an active(level("a", 1), 3) clause
 def activelevel(a, l, s):
-  return clingo.Function("active", [clingo.Function("level", [a, l]), s])
+  return Function("active", [Function("level", [String(a), Number(l)]), Number(s)])
 
 # Main function: solving and control calls
 def main(prg):
