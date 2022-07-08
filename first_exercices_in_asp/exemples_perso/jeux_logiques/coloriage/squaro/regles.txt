@@ -1,0 +1,3 @@
+Le plan est muni d'une grille de taille AxB (ici A = 5 et B = 5).
+Chaque case contient un numéro allant de 1 à 4 et symbolisant le nombre de coins à noircir.
+Les coins doivent tous être coloriés soit en blanc (0) soit en noir (1).

@@ -1,0 +1,6 @@
+Le plan est muni d'une grille de taille TxT (ici T = 9).
+Certaines cases de cette grille possède des numéros.
+Il faut relier l'intégralité des cases numérotées ( = sommets) via un chemin continu qui ne se coupe pas lui-même.
+Des sommets peuvent être reliés s'ils sont sur la même ligne (ou colonne), et qu'aucun autre sommet ne se situe entre eux.
+Des sommets peuvent être reliés 0, 1 ou 2 fois.
+Un sommet comportant la valeur K doit admettre K liaisons.

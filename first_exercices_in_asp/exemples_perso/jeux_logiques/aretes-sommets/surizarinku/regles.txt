@@ -1,0 +1,4 @@
+On dispose d'une grille avec des points et des chiffres entre 0 et 3
+On doit tracer un chemin continu qui passe par les points, horizontalement et verticalement (pas en diagonale)
+Il ne doit pas y avoir de croisement (ce qui explique pourquoi il ne peut y avoir 4 dans la cellule)
+Chaque chiffre indique le nombre de côtés pleins qui l'entourent

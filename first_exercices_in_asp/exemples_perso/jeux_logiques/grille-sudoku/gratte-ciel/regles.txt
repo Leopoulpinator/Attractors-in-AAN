@@ -1,0 +1,7 @@
+Le plan est muni d'une grille de taille TxT (ici T = 4).
+Chaque case de cette grille doit être numéroté de 1 à T.
+Chaque ligne comporte une et une seule fois chaque nombre de 1 à T.
+Chaque colonne comporte une et une seule fois chaque nombre de 1 à T.
+Une case ayant une valeur K signifie qu'elle contient un building de hauteur K.
+Sur chaque ligne, et sur chacune des deux directions (gauche/droite), on connait le nombre de buildings qu'on est sensé voir.
+Sur chaque colonne, et sur chacune des deux directions (gauche/droite), on connait le nombre de buildings qu'on est sensé voir.
