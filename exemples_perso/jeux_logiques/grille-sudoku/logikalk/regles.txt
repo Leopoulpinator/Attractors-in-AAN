@@ -1,8 +1,0 @@
-Le plan est muni d'une grille de taille 8x8.
-On connait D, la différence.
-Chaque case est soit blanche, soit grise, soit blanche avec un bord gauche gris, soit grise avec un bord gauche blanc.
-Les cases doivent être numérotées de 1 à 9 (un seul nombre n'apparait pas de toute la grille).
-Chaque ligne possède une et une seule fois chacun des 8 chiffres.
-Chaque colonne possède une et une seule fois chacun des 8 chiffres.
-La différence entre la somme des valeurs des cases grises et des valeurs des cases blanches sur chaque ligne doit valoir D.
-La différence entre la somme des valeurs des cases grises et des valeurs des cases blanches sur chaque colonne (si une case est bicolore on consière ici la couleur du bord gauche) doit valoir D.

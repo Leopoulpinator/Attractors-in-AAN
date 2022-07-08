@@ -1,5 +1,0 @@
-Le plan est muni d'une grille de taille TxT (ici T = 4).
-Chaque case doit être soit rouge, soit bleue.
-Certaines cases contiennent initialement une couleur et ne peuvent pas être changées.
-Certaines cases bleues possèdent un numéro symbolisant le nombre de cases bleues qui doivent être visibles depuis celle-ci.
-Une case bleue est visible depuis une autre si elle est sur la même ligne (ou colonne), et qu'aucune case n'est rouge entre les deux.

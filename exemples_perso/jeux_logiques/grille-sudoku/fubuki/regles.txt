@@ -1,5 +1,0 @@
-Le plan est muni d'une grille 3x3.
-Les cases doivent être numérotées par des valeurs allant de 1 à 9.
-Certaines cases ont un numéro initialement, celui-si ne peut être changé.
-Le nombre que vaut la somme des éléments de chaque ligne est donné.
-Le nombre que vaut la somme des éléments de chaque colonne est donné.

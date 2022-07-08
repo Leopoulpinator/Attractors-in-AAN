@@ -1,4 +1,0 @@
-Ce jeu de logique vous met au défi de trouver la bonne combinaison de 0 et de 1.
-Il doit y avoir autant de 0 que de 1 sur chaque ligne et sur chaque colonne.
-Il ne doit pas y avoir plus de 2 mêmes chiffres côte à côte.
-Plusieurs lignes complètes ne doivent pas être identiques.

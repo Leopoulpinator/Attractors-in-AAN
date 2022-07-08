@@ -1,9 +1,0 @@
-Le plan est composé d'une grille TxT (ici T = 7).
-Des galaxies (représentés par des ronds) sont positionnées sur cette grille de 3 façons différentes :
-	- soit au milieu d'une case de la grille
-	- soit au milieu du segment délimitant deux cases juxtaposées de la grille
-	- soit au croisement entre 4 cases formant un petit carré dans la grille
-On cherche à faire une partition des cases de la grille.
-Chaque élément de cette partition ne doit contenir que des cases juxtaposées (qui forment donc un unique bloc).
-Chaque élément de cette partition doit contenir une et une seule galaxie.
-Chaque élément de cette partition admet un centre de symétrie situe au centre de la galaxie.

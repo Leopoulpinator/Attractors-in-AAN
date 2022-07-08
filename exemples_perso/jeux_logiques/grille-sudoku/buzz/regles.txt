@@ -1,5 +1,0 @@
-Le plan est muni d'une grille de taille TxT (ici T = 5).
-Chaque case de la grille possède un unique numéro parmi [1;T].
-Chaque numéro apparaît une et une seule fois par ligne.
-Chaque numéro apparaît une et une seule fois par colonne.
-Certaines positions situées entre deux cases A et B possèdent un signe '>' signifiant que la valeur dans A doit être supérieure à celle dans B.

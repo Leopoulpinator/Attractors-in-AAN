@@ -1,5 +1,0 @@
-Le plan est muni d'une grille de taille AxB (ici A = B = 5).
-Cette grille possède des numéros qui peuvent aller de 1 à A*B.
-La grille initiale comporte déjà plusieurs cases numérotées.
-Le but est de remplir toutes les cases avec des numéros de sorte à ce que si deux numéros identiques sont côte à côte (pas en diagonale), alors il définisse un même bloc.
-La taille d'un bloc doit être égal au numéro des élémetns de ce bloc.

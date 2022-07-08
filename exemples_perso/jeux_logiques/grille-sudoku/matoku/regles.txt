@@ -1,7 +1,0 @@
-Le plan est muni d'une grille de taille TxT (ici T = 5).
-Chaque case doit contenir un unique numéro allant de 1 à T.
-Chaque numéro apparaît une et une seule fois sur chaque colonne et sur chaque ligne.
-Certains blocs sont initialement présents, ainsi qu'une opération et un résultat.
-Les  valeurs dans les cases du bloc doivent être tels qu'en leur appliquant l'opération onn obtienne le résultat.
-La division se fait toujours sur un bloc à 2 éléments.
-La soustraction effectue la différence entre le plus grand élément du bloc et la somme du reste.

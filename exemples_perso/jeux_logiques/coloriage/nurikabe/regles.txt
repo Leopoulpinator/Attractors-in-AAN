@@ -1,6 +1,0 @@
-Le plan est muni d'une grille de taille AxB (ici A = B = 5).
-Certaines cases possèdent un numéro.
-Le but est de colorier toutes les cases soit en noir (1), soit en blanc (0).
-Chaque bloc connexe de cases blanches doit contenir une et une seule case numérotée.
-La taille d'un bloc connexe est égale à la valeur de la case numérotée qu'il contient.
-L'ensemblke des cases nopires est connexe et délimites les blocs connexes de cases blanches.
