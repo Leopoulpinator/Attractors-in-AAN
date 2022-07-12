@@ -11,7 +11,7 @@ def work(g):
 		if level.name == 'nb':
 			s+= str(level.arguments[1].number) + '_'
 		else:
-			return -1
+			return Number(-1)
 	s += ')'
 	#print(s)
 	return parse_term(s)
@@ -65,11 +65,6 @@ gs(L) :- build_list(N,L), nb_automaton(N).
 global_state(@work(gs(L)),L) :- gs(L). 
 global_state(Gs) :- global_state(Gs,_).
 
-% From global state we find the active levels of each automaton
-active_in_g(@determine_active_level(Automaton,L),Gs) :-
-	automaton(Automaton),
-	global_state(Gs,L).
-
 %%% ===== %%%
 
 step(0..n).
@@ -87,13 +82,13 @@ active(@determine_active_level(Automaton,L),Step) :-
 	active_g(Gs,Step),
 	global_state(Gs,L).
 
-1 { played(Gs1,Gs2,Step) : playable(Gs1,Gs2,Step) } 1 :- step(Step).
+1 { played(Gs2,Step) : playable(Gs2,Step) } 1 :- step(Step).
 
 % Change the global state after a step
 active_g(Gs2,Step) :-
 	step(Step),
 	step(Step-1),
-	played(Gs1,Gs2,Step-1).
+	played(Gs2,Step-1).
 
 % Make sure to do a cycle of length N
 same_state(Step1, Step2) :-
@@ -115,13 +110,13 @@ valid_state_after_main_cycle(Step2) :-
 
 % Make sure that we cannot escape from the main cycle in a local transition
 also_playable(Gs1,Gs2,Step) :-
-	playable(Gs1,Gs2,Step),
-	not played(Gs1,Gs2,Step),
+	playable(Gs2,Step),
+	not played(Gs2,Step),
 	active_g(Gs1,Step),
 	step(Step).
 
 evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
-	playable(Gs1,Gs2,Step),
+	playable(Gs2,Step1),
 	active_g(Gs1,Step1),
 	active_g(Gs2,Step2).
 
@@ -133,9 +128,13 @@ evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
 %#show played/3.
 %#show active_in_g/2.
 %#show different_except/3.
-#show active/2.
+%#show active/2.
 %#show main_cycle_length/1.
 %#show active_g/2.
+%#show locally_playable/2.
+%#show nb_playable/2.
+%#show locally_played/3.
+%#show gs2_calcul/2.
 %#show gs/1.
 %#show global_state/1.
 %#show is_stuck/1.

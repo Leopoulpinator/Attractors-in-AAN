@@ -1,4 +1,4 @@
-dans versions :
+dans versions/v1_naif :
 	
 	clingo 0 --const n=10 listes_pour_etat_global.lp asynch.lp ../../models/exemple.lp --const filtering=post --const print_solutions=1 ../../resources/filtering-attractors.lp --quiet=2
 	

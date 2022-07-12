@@ -17,5 +17,5 @@ condition(t9, "c", 1). target(t9, "c", 2). condition(t9, "a", 1).
 condition(t10, "c", 0). target(t10, "c", 2). condition(t10, "a", 2).
 condition(t11, "c", 2). target(t11, "c", 0). condition(t11, "b", 1).
 
-condition(t12, "a", 0). target(t12, "a", 1). condition(t12, "b", 1). condition(t13, "c", 1).
+condition(t12, "a", 0). target(t12, "a", 1). condition(t12, "b", 1). condition(t12, "c", 1).
 
