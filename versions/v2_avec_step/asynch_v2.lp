@@ -44,4 +44,3 @@ playable(@next(L, Level, A), Step) :-
 	target(T, A, Level),
 	active_g(Gs,Step),
 	global_state(Gs,L).
-

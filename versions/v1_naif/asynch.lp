@@ -35,6 +35,5 @@ playable(Gs1,Gs2) :- % doivent être identiques sur tous les automates autres qu
 	automaton(Automaton),
 	global_state(Gs1),
 	global_state(Gs2),
-	Gs1 != Gs2,
 	LevelI != LevelJ.
 
