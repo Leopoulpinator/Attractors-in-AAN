@@ -2,7 +2,11 @@
 
 from clingo import Number, Function, String, parse_term
 
-# La fonction suivante détermine l'état global lorsque l'on est en l, et que l'automate a passe au niveau level
+	# This function determines the global state when we are in l and the level of automaton a change to level
+	# l has to be an "ASP-list" which represents a global state
+	# level has to be a number Symbol in ASP representing the level of the automaton a after it changes
+	# a has to be a string Symbol in ASP representing the studied automaton
+	# it returns an "ASP-list" as a Symbol in ASP representign the next global state
 
 def next(l,level,a): 
 	s = a.string
@@ -40,14 +44,4 @@ playable(@next(L, Level, A), Step) :-
 	target(T, A, Level),
 	active_g(Gs,Step),
 	global_state(Gs,L).
-
-
-
-
-
-
-
-
-
-
 

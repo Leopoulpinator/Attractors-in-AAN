@@ -2,6 +2,10 @@
 
 from clingo import Number, Function, String, parse_term
 
+	# This function create a cleaner name for global states
+	# g has to be an "ASP-list" (see the functionbuild_list in ASP)
+	# it returns a flattening of g
+
 def work(g):
 	g = g.arguments[0]
 	s = "(g"
@@ -15,6 +19,11 @@ def work(g):
 	s += ')'
 	#print(s)
 	return parse_term(s)
+
+	# This function determine the active level of the automaton a in the global state g
+	# a has to be an automaton symbolised by an ASP-symbol String 
+	# g has to be an "ASP-list" flattened
+	# it returns the active level of a in g as level(a,number_level)
 
 def determine_active_level(a,g):
 	s = a.string
@@ -32,47 +41,51 @@ def determine_active_level(a,g):
 
 #end.
 
+% Some useful simplifications
 automaton(A) :- automaton_level(A,_).
 local_transition(Transition, Automaton) :- target(Transition, Automaton, _).
 local_transition(Transition) :- target(Transition, _, _).
 
+% Determines the number of automaton in the AAN studied, and the number of level in each of those automatons
 nb_automaton(N) :- N = #count { A : automaton(A) }.
-nb_level(A,N) :- automaton(A), N = #count { L : automaton_level(A,L) }.
+nb_level(A, N) :- automaton(A), N = #count { L : automaton_level(A,L) }.
 
+% Here is a way to create an order for automatons to read them one by one and putting them into an ASP-list
 enum(1..N) :- nb_automaton(N).
-
-1 { moment(A,N) : enum(N) } 1 :- automaton(A).
-1 { moment(A,N) : automaton(A) } 1 :- enum(N).
-
-:- 
-	moment(A,N),
-	moment(A2,N2),
+1 { moment(A, N) : enum(N) } 1 :- automaton(A).
+1 { moment(A, N) : automaton(A) } 1 :- enum(N).
+:-
+	moment(A, N),
+	moment(A2, N2),
 	automaton(A), automaton(A2),
 	enum(N), enum(N2),
 	N < N2,
-	A < A2. % Par ordre alphabétique
+	A < A2. % Alphabetic order
 
-% /!\ ici on suppose que les niveaux vont de 0 à n-1 dans chacun des automates /!\
-
-build_list(0,empty).
-build_list(N+1,(nb(A,0..K-1),L)) :- 
-	build_list(N,L),
+% Here is the ASP-list creation of length N, the number of automatons
+build_list(0, empty).
+build_list(N+1, (nb(A, 0..K-1), L)) :- 
+	build_list(N, L),
 	enum(N+1),
-	moment(A,N+1),
-	nb_level(A,K).
+	moment(A, N+1),
+	nb_level(A, K).
 
+% After creating the ASP-list, we define the global states gs as list, and we use the fonction "work" in python to make a name for each global state
 gs(L) :- build_list(N,L), nb_automaton(N).
 global_state(@work(gs(L)),L) :- gs(L). 
 global_state(Gs) :- global_state(Gs,_).
 
 %%% ===== %%%
 
+% Enumeration of steps of the path
 step(0..n).
 
+% we can have a cycle of any length between 0 and n, and then stay in this cycle
 1 {main_cycle_length(N) : step(N), N > 0 } 1.
 cycle_step(0..N) :- main_cycle_length(N).
 after_cycle_step(N+1..n) :- main_cycle_length(N).
 
+% Here is chosen the initial global state
 1 { active_g(Gs, 0) : global_state(Gs) } 1.
 
 % From global state we find the active levels of each automaton during a Step
@@ -82,6 +95,7 @@ active(@determine_active_level(Automaton,L),Step) :-
 	active_g(Gs,Step),
 	global_state(Gs,L).
 
+% Each step we chose a move to play
 1 { played(Gs2,Step) : playable(Gs2,Step) } 1 :- step(Step).
 
 % Change the global state after a step
