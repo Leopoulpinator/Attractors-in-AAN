@@ -1,41 +1,3 @@
-#script (python)
-
-from clingo import Number, Function, String, parse_term
-
-def work(g):
-	g = g.arguments[0]
-	list = []
-	while g.name != 'empty':
-		level = g.arguments[0]
-		g = g.arguments[1]
-		if level.name == 'nb':
-			list.append(level.arguments[1].number)
-		else:
-			return -1
-	#print(list)
-	s = '(g' + str(list[0]) # a priori la liste est non vide
-	for i in range(len(list)-1):
-		s += str(list[i+1])
-	s += ')'
-	#print(s)
-	return parse_term(s)
-
-def determine_active_level(a,g):
-	s = a.string
-	#print(s)
-	#print(g)
-	while g.name != 'empty':
-		level = g.arguments[0]
-		g = g.arguments[1]
-		if level.name == 'nb':
-			if level.arguments[0].string == s:
-				return parse_term("level(\""+s+"\","+str(level.arguments[1].number)+")")
-		else:
-			return Number(-1)
-	return Number(-1)
-
-#end.
-
 automaton(A) :- automaton_level(A,_).
 local_transition(Transition, Automaton) :- target(Transition, Automaton, _).
 local_transition(Transition) :- target(Transition, _, _).
@@ -56,7 +18,7 @@ enum(1..N) :- nb_automaton(N).
 	N < N2,
 	A < A2. % Par ordre alphabétique
 
-% /!\ ici on suppose que les niveaux vont de 0 à n-1 dans chacun des automates /!\
+% Construction de la liste
 
 build_list(0,empty).
 build_list(N+1,(nb(A,0..K-1),L)) :- 
@@ -65,17 +27,21 @@ build_list(N+1,(nb(A,0..K-1),L)) :-
 	moment(A,N+1),
 	nb_level(A,K).
 
-gs(L) :- build_list(N,L), nb_automaton(N).
+global_state(L) :- build_list(N,L), nb_automaton(N).
 nb_global_state(N) :- N = #count {L : global_state(L)}.
-global_state(@work(gs(L)),L) :- gs(L). 
-global_state(Gs) :- global_state(Gs,_).
 
-% From global state we find the active levels of each automaton
-active_in_g(@determine_active_level(Automaton,L),Gs) :-
-	automaton(Automaton),
-	global_state(Gs,L).
 
-%%% ===== %%%
+% Dépilage de la liste
+
+unstack_list("EMPTY",Gs,Gs) :- global_state(Gs).
+unstack_list(level(Automaton,Level),Gs,Queue2) :-
+	global_state(Gs),
+	unstack_list(_,Gs,Queue),
+	Queue = (nb(Automaton,Level),Queue2).
+
+active_in_g(X,Gs) :- unstack_list(X,Gs,_), X != "EMPTY".
+	
+% Début du programme
 
 step(0..n).
 
@@ -85,12 +51,12 @@ after_cycle_step(N+1..n) :- main_cycle_length(N).
 
 1 { active_g(Gs, 0) : global_state(Gs) } 1.
 
-% From global state we find the active levels of each automaton during a Step
-active(@determine_active_level(Automaton,L),Step) :-
+active(level(Automaton,Level),Step) :-
 	automaton(Automaton),
+	active_in_g(level(Automaton,Level),Gs),
 	step(Step),
 	active_g(Gs,Step),
-	global_state(Gs,L).
+	global_state(Gs).
 
 1 {
 	played(Gs1,Gs2,Step) :
@@ -99,14 +65,11 @@ active(@determine_active_level(Automaton,L),Step) :-
   } 1 :-
   	step(Step).
 
-
-% Change the global state after a step
 active_g(Gs2,Step) :-
 	step(Step),
 	step(Step-1),
 	played(Gs1,Gs2,Step-1).
 
-% Make sure to do a cycle of length N
 same_state(Step1, Step2) :-
 	active_g(Gs,Step1),
 	active_g(Gs,Step2),
@@ -138,15 +101,7 @@ evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
 
 :- also_playable(Gs1,Gs2,Step), not evolves_in_main_cycle(Gs1,Gs2,Step,_).
 
-%#show test/2.
-%#show playable/2.
-%#show step/1.
-%#show played/3.
 %#show active_in_g/2.
-%#show different_except/3.
-#show active/2.
-%#show main_cycle_length/1.
-%#show active_g/2.
-%#show gs/1.
-#show nb_global_state/1.
-%#show global_state/1.
+%#show active_g/1.
+%#show active/2.
+%#show unstack_list/3.
