@@ -1,4 +1,4 @@
-Le script synch.lp n'est pas fait et n'est donc pas valide.
+Le script synch.lp n'est pas fait.
 
 Le but de cette version est de calculer à partir d'un état global tout les états globaux dans lesquels il peut aller.
 Cependant, comme on manipule les listes en ASP, on doit créer plein d'atomes intermédiaires pour dépiler les listes (qui sont d'une longueur égale au nombre d'automates...).
