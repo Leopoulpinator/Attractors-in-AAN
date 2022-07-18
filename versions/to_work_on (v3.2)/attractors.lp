@@ -42,7 +42,7 @@ unstack_list(level(Automaton,Level),Gs,Queue2,Step) :-
 	unstack_list(_,Gs,Queue,Step),
 	Queue = (nb(Automaton,Level),Queue2).
 
-active(X,Step) :-
+active_in_g(X,Gs) :-
 	unstack_list(X,Gs,_,Step),
 	X != empty,
 	step(Step),
@@ -59,7 +59,11 @@ after_cycle_step(N+1..n) :- main_cycle_length(N).
 
 1 { active_g(Gs, 0) : global_state(Gs) } 1.
 
-1 { played(Gs1,Gs2,Step) : playable(Gs1,Gs2,Step) } 1 :- step(Step).
+1 { 
+	played(Gs1,Gs2,Step) :
+		playable(Gs1,Gs2),
+		active_g(Gs1,Step)
+  } 1 :- step(Step).
 
 active_g(Gs2,Step) :-
 	step(Step),
@@ -85,18 +89,18 @@ valid_state_after_main_cycle(Step2) :-
 
 % Make sure that we cannot escape from the main cycle in a local transition
 also_playable(Gs1,Gs2,Step) :-
-	playable(Gs1,Gs2,Step),
+	playable(Gs1,Gs2),
 	not played(Gs1,Gs2,Step),
 	active_g(Gs1,Step),
 	step(Step).
 
 evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
-	playable(Gs1,Gs2,Step),
+	playable(Gs1,Gs2),
 	active_g(Gs1,Step1),
 	active_g(Gs2,Step2).
 
 :- also_playable(Gs1,Gs2,Step), not evolves_in_main_cycle(Gs1,Gs2,Step,_).
 
-%#show active_g/1.
+#show active_g/2.
 %#show active/2.
 %#show unstack_list/3.

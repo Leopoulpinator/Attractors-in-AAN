@@ -1,0 +1,18 @@
+clingo version 5.5.2
+Reading from attractor_for_synch.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 3300+
+Calls        : 1
+Time         : 100.029s (Solving: 99.62s 1st Model: 1.95s Unsat: 0.00s)
+CPU Time     : 99.874s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 8; skipped: 3292
+Frequencies of attractor sizes:
+{2: 8}
