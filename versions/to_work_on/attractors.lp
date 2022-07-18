@@ -30,17 +30,25 @@ build_list(N+1,(nb(A,0..K-1),L)) :-
 global_state(L) :- build_list(N,L), nb_automaton(N).
 nb_global_state(N) :- N = #count {L : global_state(L)}.
 
-
 % Dépilage de la liste
 
-unstack_list("EMPTY",Gs,Gs) :- global_state(Gs).
-unstack_list(level(Automaton,Level),Gs,Queue2) :-
+unstack_list(empty,Gs,Gs,Step) :-
 	global_state(Gs),
-	unstack_list(_,Gs,Queue),
+	step(Step),
+	active_g(Gs,Step).
+
+unstack_list(level(Automaton,Level),Gs,Queue2,Step) :-
+	global_state(Gs),
+	unstack_list(_,Gs,Queue,Step),
 	Queue = (nb(Automaton,Level),Queue2).
 
-active_in_g(X,Gs) :- unstack_list(X,Gs,_), X != "EMPTY".
-	
+active(X,Step) :-
+	unstack_list(X,Gs,_,Step),
+	X != empty,
+	step(Step),
+	active_g(Gs,Step),
+	global_state(Gs).
+
 % Début du programme
 
 step(0..n).
@@ -51,19 +59,7 @@ after_cycle_step(N+1..n) :- main_cycle_length(N).
 
 1 { active_g(Gs, 0) : global_state(Gs) } 1.
 
-active(level(Automaton,Level),Step) :-
-	automaton(Automaton),
-	active_in_g(level(Automaton,Level),Gs),
-	step(Step),
-	active_g(Gs,Step),
-	global_state(Gs).
-
-1 {
-	played(Gs1,Gs2,Step) :
-		playable(Gs1,Gs2),
-		active_g(Gs1,Step)
-  } 1 :-
-  	step(Step).
+1 { played(Gs1,Gs2,Step) : playable(Gs1,Gs2,Step) } 1 :- step(Step).
 
 active_g(Gs2,Step) :-
 	step(Step),
@@ -89,19 +85,18 @@ valid_state_after_main_cycle(Step2) :-
 
 % Make sure that we cannot escape from the main cycle in a local transition
 also_playable(Gs1,Gs2,Step) :-
-	playable(Gs1,Gs2),
+	playable(Gs1,Gs2,Step),
 	not played(Gs1,Gs2,Step),
 	active_g(Gs1,Step),
 	step(Step).
 
 evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
-	playable(Gs1,Gs2),
+	playable(Gs1,Gs2,Step),
 	active_g(Gs1,Step1),
 	active_g(Gs2,Step2).
 
 :- also_playable(Gs1,Gs2,Step), not evolves_in_main_cycle(Gs1,Gs2,Step,_).
 
-%#show active_in_g/2.
 %#show active_g/1.
 %#show active/2.
 %#show unstack_list/3.
