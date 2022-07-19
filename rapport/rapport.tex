@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage{nameref}
+\usepackage[symbol]{footmisc}
+\usepackage{minitoc}
+\setcounter{tocdepth}{3}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\contentsname}{Table des matières}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \textsc{\Large Rapport de stage de L3}\\
+
+    \vspace{2.5cm}
+
+        \HRule\\
+        {\huge\scshape Analyse de la dynamique des modèles biologiques par programmation logique\par}
+        \HRule\\
+
+    \vspace{3cm}
+
+        \large
+        Léo-Paul \textsc{Delsaux}\footnote[2]{ENS de Lyon}\\
+
+    \vspace{1cm}
+
+        \large
+        \emph{Encadrant du stage} \\
+        Maxime \textsc{Folschette}\footnote[3]{Équipe Bio-Computing, labortaoire CRIStAL, CNRS de Lille}\\
+
+    \vfill
+
+        {\large Juin-Août 2022}
+    \end{center}
+\end{titlepage}
+
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\cfoot{\hyperlink{toc}{\thepage}}%
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\pagestyle{plain}%
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Introduction}
+La biologie s'intéresse à l'étude des systèmes vivants ou composant le vivant (gènes, cellules, écosystèmes...). La bioinformatique est l'utilisation de méthodes informatiques pour aider la biologie. Un des domaines de la bioinformatique 
+s'apelle la \emph{biologie des systèmes} et consiste à proposer des modèles et des méthodes informatiques et mathématiques pour représenter et étudier de tels systèmes.\\ \\
+Ainsi, des études biologiques permettent de déterminer comment certains gènes interagissent entre eux, ce qui peut être représenté mathématiquement sous la forme d'un graphe. De plus, ces interactions peuvent être vues comme des transitions 
+entre les sommets de notre graphe, ce qui se rapproche alors plus d'un automate. La représentation du modèle étudié lors de ce stage est explicité dans le chapitre Modèle.\\ \\
+L'étude de la dynamique de systèmes biologiques lève plusieurs problèmes tels que l'identification d'attracteurs, les bifurcations ou encore la connexité entre deux états globaux. Dans ce rapport je vais discuter de la recherche d'attracteurs 
+dans des réseaux d'automates asynchrones : il s'agit d'un ensemble d'états duquel on ne peut pas s'échapper et minimal au sens de l'inclusion.\\ \\
+Ce qui sera étudié dans ce rapport ne le sera que partiellement : on n'entrera pas en détail dans le code présenté, mais on se penchera simplement sur les grandes lignes et sur les points techniques qu'il arbore.
+
+\section{Answer Set Programming}
+L'Answer Set Programming (ASP) est un paradigme de programmation comparable à Prolog.
+
+\section{Modèle}
+On définit ce qu'est un réseau d'automates asynchrones proprement.
+	\subsection{Avantages du Modèle}
+	Très simple à utiliser en pratique.
+	\subsection{Modèle en ASP}
+	Un bout de code
+
+\section{Définitions}
+état local, sémantique, état global, état stable, domaines de pièges,  attracteurs.
+
+\section{Lemmes}
+
+\section{Algorithme}
+
+\end{document}
