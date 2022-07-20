@@ -1,0 +1,2378 @@
+*** n = 2 ; update=synch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 4.489s (Solving: 0.25s 1st Model: 0.24s Unsat: 0.00s)
+CPU Time     : 4.463s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{2: 4}
+*** n = 2 ; update=synch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 4.467s (Solving: 0.25s 1st Model: 0.24s Unsat: 0.00s)
+CPU Time     : 4.464s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=synch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 4.501s (Solving: 0.25s 1st Model: 0.24s Unsat: 0.00s)
+CPU Time     : 4.495s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 2
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=synch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 49.356s (Solving: 4.82s 1st Model: 4.68s Unsat: 0.09s)
+CPU Time     : 49.281s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{2: 4}
+*** n = 2 ; update=synch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 48.897s (Solving: 4.88s 1st Model: 4.75s Unsat: 0.11s)
+CPU Time     : 48.854s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=synch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 49.378s (Solving: 4.90s 1st Model: 4.75s Unsat: 0.09s)
+CPU Time     : 49.329s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 2
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=synch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 4.467s (Solving: 0.27s 1st Model: 0.00s Unsat: 0.27s)
+CPU Time     : 4.457s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=synch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 4.409s (Solving: 0.27s 1st Model: 0.00s Unsat: 0.27s)
+CPU Time     : 4.405s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=synch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 4.371s (Solving: 0.26s 1st Model: 0.00s Unsat: 0.26s)
+CPU Time     : 4.367s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=synch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.902s
+*** n = 2 ; update=synch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.876s
+*** n = 2 ; update=synch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.907s
+*** n = 2 ; update=synch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.895s
+*** n = 2 ; update=synch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.906s
+*** n = 2 ; update=synch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.887s
+*** n = 2 ; update=synch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.898s
+*** n = 2 ; update=synch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.910s
+*** n = 2 ; update=synch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.918s
+*** n = 2 ; update=synch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.893s
+*** n = 2 ; update=synch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.913s
+*** n = 2 ; update=synch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.898s
+*** n = 5 ; update=synch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 6.181s (Solving: 0.38s 1st Model: 0.36s Unsat: 0.01s)
+CPU Time     : 6.176s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 8; skipped: 0
+Frequencies of attractor sizes:
+{2: 8}
+*** n = 5 ; update=synch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 6.343s (Solving: 0.40s 1st Model: 0.39s Unsat: 0.01s)
+CPU Time     : 6.337s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 5 ; update=synch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 6.255s (Solving: 0.38s 1st Model: 0.36s Unsat: 0.01s)
+CPU Time     : 6.245s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 6
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 5 ; update=synch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 70.504s (Solving: 7.14s 1st Model: 6.89s Unsat: 0.10s)
+CPU Time     : 70.435s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 8; skipped: 0
+Frequencies of attractor sizes:
+{2: 8}
+*** n = 5 ; update=synch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 71.003s (Solving: 7.25s 1st Model: 7.07s Unsat: 0.14s)
+CPU Time     : 70.913s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 5 ; update=synch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 70.831s (Solving: 7.08s 1st Model: 6.84s Unsat: 0.10s)
+CPU Time     : 70.764s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 6
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 5 ; update=synch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 6.164s (Solving: 0.26s 1st Model: 0.24s Unsat: 0.01s)
+CPU Time     : 6.158s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{4: 4}
+*** n = 5 ; update=synch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 6.164s (Solving: 0.24s 1st Model: 0.24s Unsat: 0.01s)
+CPU Time     : 6.158s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 5 ; update=synch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 6.178s (Solving: 0.25s 1st Model: 0.23s Unsat: 0.01s)
+CPU Time     : 6.172s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 3
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 5 ; update=synch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.879s
+*** n = 5 ; update=synch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.902s
+*** n = 5 ; update=synch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.907s
+*** n = 5 ; update=synch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.902s
+*** n = 5 ; update=synch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.903s
+*** n = 5 ; update=synch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.892s
+*** n = 5 ; update=synch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.910s
+*** n = 5 ; update=synch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.888s
+*** n = 5 ; update=synch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.910s
+*** n = 5 ; update=synch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.900s
+*** n = 5 ; update=synch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.909s
+*** n = 5 ; update=synch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.908s
+*** n = 10 ; update=synch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 20
+Calls        : 1
+Time         : 11.424s (Solving: 0.75s 1st Model: 0.67s Unsat: 0.01s)
+CPU Time     : 11.406s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 20; skipped: 0
+Frequencies of attractor sizes:
+{2: 20}
+*** n = 10 ; update=synch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 11.373s (Solving: 0.69s 1st Model: 0.65s Unsat: 0.03s)
+CPU Time     : 11.361s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 10 ; update=synch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 20
+Calls        : 1
+Time         : 11.224s (Solving: 0.73s 1st Model: 0.65s Unsat: 0.01s)
+CPU Time     : 11.211s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 18
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 10 ; update=synch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.886s
+*** n = 10 ; update=synch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.909s
+*** n = 10 ; update=synch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.908s
+*** n = 10 ; update=synch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 11.192s (Solving: 0.44s 1st Model: 0.40s Unsat: 0.01s)
+CPU Time     : 11.182s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 8; skipped: 0
+Frequencies of attractor sizes:
+{4: 8}
+*** n = 10 ; update=synch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 10.962s (Solving: 0.42s 1st Model: 0.41s Unsat: 0.02s)
+CPU Time     : 10.951s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 10 ; update=synch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 11.036s (Solving: 0.45s 1st Model: 0.40s Unsat: 0.02s)
+CPU Time     : 11.026s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 7
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 10 ; update=synch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.918s
+*** n = 10 ; update=synch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.909s
+*** n = 10 ; update=synch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.913s
+*** n = 10 ; update=synch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.888s
+*** n = 10 ; update=synch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.884s
+*** n = 10 ; update=synch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.913s
+*** n = 10 ; update=synch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.906s
+*** n = 10 ; update=synch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.877s
+*** n = 10 ; update=synch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.889s
+*** n = 10 ; update=synch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.915s
+*** n = 10 ; update=synch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.901s
+*** n = 10 ; update=synch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.897s
+*** n = 15 ; update=synch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 28
+Calls        : 1
+Time         : 18.714s (Solving: 0.99s 1st Model: 0.82s Unsat: 0.03s)
+CPU Time     : 18.684s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 28; skipped: 0
+Frequencies of attractor sizes:
+{2: 28}
+*** n = 15 ; update=synch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 18.057s (Solving: 0.80s 1st Model: 0.74s Unsat: 0.05s)
+CPU Time     : 18.038s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 15 ; update=synch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 28
+Calls        : 1
+Time         : 18.404s (Solving: 0.93s 1st Model: 0.76s Unsat: 0.03s)
+CPU Time     : 18.388s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 26
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 15 ; update=synch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+*** n = 15 ; update=synch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.912s
+*** n = 15 ; update=synch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.889s
+*** n = 15 ; update=synch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 12
+Calls        : 1
+Time         : 19.025s (Solving: 0.73s 1st Model: 0.65s Unsat: 0.03s)
+CPU Time     : 19.007s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 12; skipped: 0
+Frequencies of attractor sizes:
+{4: 12}
+*** n = 15 ; update=synch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 18.690s (Solving: 0.66s 1st Model: 0.64s Unsat: 0.03s)
+CPU Time     : 18.666s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 15 ; update=synch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 12
+Calls        : 1
+Time         : 18.908s (Solving: 0.73s 1st Model: 0.64s Unsat: 0.03s)
+CPU Time     : 18.882s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 11
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 15 ; update=synch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.912s
+*** n = 15 ; update=synch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.899s
+*** n = 15 ; update=synch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.913s
+*** n = 15 ; update=synch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.908s
+*** n = 15 ; update=synch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.898s
+*** n = 15 ; update=synch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.904s
+*** n = 15 ; update=synch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.905s
+*** n = 15 ; update=synch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.912s
+*** n = 15 ; update=synch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.897s
+*** n = 15 ; update=synch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.911s
+*** n = 15 ; update=synch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+*** n = 15 ; update=synch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 synch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from synch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.909s
+*** n = 2 ; update=asynch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 8.985s (Solving: 0.03s 1st Model: 0.03s Unsat: 0.00s)
+CPU Time     : 8.977s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=asynch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 9.107s (Solving: 0.04s 1st Model: 0.03s Unsat: 0.01s)
+CPU Time     : 9.097s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=asynch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 8.940s (Solving: 0.04s 1st Model: 0.03s Unsat: 0.00s)
+CPU Time     : 8.932s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 1
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=asynch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 43.123s (Solving: 0.13s 1st Model: 0.12s Unsat: 0.00s)
+CPU Time     : 43.083s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=asynch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 41.807s (Solving: 0.12s 1st Model: 0.11s Unsat: 0.01s)
+CPU Time     : 41.767s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=asynch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 41.964s (Solving: 0.12s 1st Model: 0.11s Unsat: 0.00s)
+CPU Time     : 41.918s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 1
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=asynch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 10.345s (Solving: 0.04s 1st Model: 0.00s Unsat: 0.04s)
+CPU Time     : 10.336s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=asynch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 10.038s (Solving: 0.03s 1st Model: 0.00s Unsat: 0.03s)
+CPU Time     : 10.026s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=asynch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 10.187s (Solving: 0.03s 1st Model: 0.00s Unsat: 0.03s)
+CPU Time     : 10.177s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=asynch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+*** n = 2 ; update=asynch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.908s
+*** n = 2 ; update=asynch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.910s
+*** n = 2 ; update=asynch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.910s
+*** n = 2 ; update=asynch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.901s
+*** n = 2 ; update=asynch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.912s
+*** n = 2 ; update=asynch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.915s
+*** n = 2 ; update=asynch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.908s
+*** n = 2 ; update=asynch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.882s
+*** n = 2 ; update=asynch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.916s
+*** n = 2 ; update=asynch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.906s
+*** n = 2 ; update=asynch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.907s
+*** n = 5 ; update=asynch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 16
+Calls        : 1
+Time         : 9.242s (Solving: 0.08s 1st Model: 0.05s Unsat: 0.00s)
+CPU Time     : 9.232s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 16; skipped: 0
+Frequencies of attractor sizes:
+{2: 4, 4: 12}
+*** n = 5 ; update=asynch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 9.300s (Solving: 0.07s 1st Model: 0.05s Unsat: 0.01s)
+CPU Time     : 9.292s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
+*** n = 5 ; update=asynch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 16
+Calls        : 1
+Time         : 9.519s (Solving: 0.08s 1st Model: 0.04s Unsat: 0.00s)
+CPU Time     : 9.510s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 14
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
+*** n = 5 ; update=asynch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 43.693s (Solving: 0.24s 1st Model: 0.21s Unsat: 0.01s)
+CPU Time     : 43.656s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{2: 4}
+*** n = 5 ; update=asynch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 44.727s (Solving: 0.24s 1st Model: 0.20s Unsat: 0.04s)
+CPU Time     : 44.664s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 5 ; update=asynch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 43.891s (Solving: 0.24s 1st Model: 0.21s Unsat: 0.01s)
+CPU Time     : 43.849s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 3
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 5 ; update=asynch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 10.595s (Solving: 0.04s 1st Model: 0.04s Unsat: 0.00s)
+CPU Time     : 10.583s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{4: 4}
+*** n = 5 ; update=asynch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 10.641s (Solving: 0.04s 1st Model: 0.04s Unsat: 0.00s)
+CPU Time     : 10.630s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 5 ; update=asynch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 10.543s (Solving: 0.04s 1st Model: 0.04s Unsat: 0.00s)
+CPU Time     : 10.526s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 3
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 5 ; update=asynch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.904s
+*** n = 5 ; update=asynch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.913s
+*** n = 5 ; update=asynch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.911s
+*** n = 5 ; update=asynch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.893s
+*** n = 5 ; update=asynch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.908s
+*** n = 5 ; update=asynch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.895s
+*** n = 5 ; update=asynch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.901s
+*** n = 5 ; update=asynch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.921s
+*** n = 5 ; update=asynch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.907s
+*** n = 5 ; update=asynch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.887s
+*** n = 5 ; update=asynch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.899s
+*** n = 5 ; update=asynch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.899s
+*** n = 10 ; update=asynch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1784
+Calls        : 1
+Time         : 12.680s (Solving: 2.20s 1st Model: 0.10s Unsat: 0.01s)
+CPU Time     : 12.668s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1784; skipped: 0
+Frequencies of attractor sizes:
+{2: 10, 4: 1774}
+*** n = 10 ; update=asynch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 10.580s (Solving: 0.15s 1st Model: 0.09s Unsat: 0.02s)
+CPU Time     : 10.569s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
+*** n = 10 ; update=asynch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1784
+Calls        : 1
+Time         : 12.726s (Solving: 2.19s 1st Model: 0.10s Unsat: 0.01s)
+CPU Time     : 12.715s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 1782
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
+*** n = 10 ; update=asynch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 10
+Calls        : 1
+Time         : 54.137s (Solving: 3.78s 1st Model: 0.62s Unsat: 0.12s)
+CPU Time     : 54.083s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 10; skipped: 0
+Frequencies of attractor sizes:
+{2: 10}
+*** n = 10 ; update=asynch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 55.205s (Solving: 4.14s 1st Model: 0.63s Unsat: 3.51s)
+CPU Time     : 55.150s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 10 ; update=asynch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 10
+Calls        : 1
+Time         : 54.355s (Solving: 3.89s 1st Model: 0.65s Unsat: 0.13s)
+CPU Time     : 54.280s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 9
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 10 ; update=asynch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 11.615s (Solving: 0.10s 1st Model: 0.09s Unsat: 0.00s)
+CPU Time     : 11.604s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 8; skipped: 0
+Frequencies of attractor sizes:
+{4: 8}
+*** n = 10 ; update=asynch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 11.546s (Solving: 0.09s 1st Model: 0.08s Unsat: 0.01s)
+CPU Time     : 11.536s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 10 ; update=asynch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 11.850s (Solving: 0.10s 1st Model: 0.09s Unsat: 0.00s)
+CPU Time     : 11.839s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 7
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 10 ; update=asynch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.890s
+*** n = 10 ; update=asynch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.910s
+*** n = 10 ; update=asynch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.885s
+*** n = 10 ; update=asynch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.882s
+*** n = 10 ; update=asynch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.915s
+*** n = 10 ; update=asynch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.883s
+*** n = 10 ; update=asynch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.896s
+*** n = 10 ; update=asynch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.866s
+*** n = 10 ; update=asynch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.875s
+*** n = 10 ; update=asynch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.889s
+*** n = 10 ; update=asynch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.885s
+*** n = 10 ; update=asynch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.903s
+*** n = 15 ; update=asynch ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 49906+
+Calls        : 1
+Time         : 100.007s (Solving: 87.42s 1st Model: 0.17s Unsat: 0.00s)
+CPU Time     : 99.913s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 49906; skipped: 0
+Frequencies of attractor sizes:
+{2: 7, 4: 49899}
+*** n = 15 ; update=asynch ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 12.684s (Solving: 0.45s 1st Model: 0.17s Unsat: 0.08s)
+CPU Time     : 12.673s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
+*** n = 15 ; update=asynch ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/example.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 50054+
+Calls        : 1
+Time         : 100.006s (Solving: 87.65s 1st Model: 0.17s Unsat: 0.00s)
+CPU Time     : 99.907s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 50052
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
+*** n = 15 ; update=asynch ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 14
+Calls        : 1
+Time         : 79.625s (Solving: 20.47s 1st Model: 20.09s Unsat: 0.15s)
+CPU Time     : 79.549s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 14; skipped: 0
+Frequencies of attractor sizes:
+{2: 14}
+*** n = 15 ; update=asynch ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 80.469s (Solving: 20.51s 1st Model: 20.20s Unsat: 0.31s)
+CPU Time     : 80.393s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 15 ; update=asynch ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 14
+Calls        : 1
+Time         : 79.999s (Solving: 20.30s 1st Model: 19.93s Unsat: 0.14s)
+CPU Time     : 79.926s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 13
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 15 ; update=asynch ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 12
+Calls        : 1
+Time         : 13.356s (Solving: 0.16s 1st Model: 0.13s Unsat: 0.00s)
+CPU Time     : 13.343s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 12; skipped: 0
+Frequencies of attractor sizes:
+{4: 12}
+*** n = 15 ; update=asynch ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 13.399s (Solving: 0.15s 1st Model: 0.14s Unsat: 0.01s)
+CPU Time     : 13.379s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 15 ; update=asynch ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 12
+Calls        : 1
+Time         : 13.547s (Solving: 0.16s 1st Model: 0.13s Unsat: 0.00s)
+CPU Time     : 13.525s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 11
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 15 ; update=asynch ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.918s
+*** n = 15 ; update=asynch ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+*** n = 15 ; update=asynch ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.911s
+*** n = 15 ; update=asynch ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.911s
+*** n = 15 ; update=asynch ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+*** n = 15 ; update=asynch ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/mammalian.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.884s
+*** n = 15 ; update=asynch ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.883s
+*** n = 15 ; update=asynch ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.890s
+*** n = 15 ; update=asynch ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.906s
+*** n = 15 ; update=asynch ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.869s
+*** n = 15 ; update=asynch ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.857s
+*** n = 15 ; update=asynch ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost --const print_solutions=0 --const print_solution_sizes=1 asynch.lp attractors.lp ../../resources/filtering-attractors.lp ../../models/t-helper.lp
+clingo version 5.5.2
+Reading from asynch.lp ...
+UNKNOWN
+
+TIME LIMIT   : 1
+Models       : 0+
+Calls        : 1
+Time         : 100.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.888s

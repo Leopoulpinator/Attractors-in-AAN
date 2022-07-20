@@ -1,7 +1,3 @@
-
-
-
-
 % synch semantic
 
 different_on(Gs1,Gs2,Automaton) :-
@@ -41,18 +37,11 @@ not_playable(Gs1,Gs2) :-
 	automaton(A).
 
 % not playable because if Gs1 has no move on automaton A, then Gs2 has to be on the same level
-same_level(Gs1,Gs2,Automaton) :-
-	global_state(Gs1),
-	global_state(Gs2),
-	automaton(Automaton),
-	active_in_g(level(Automaton,Level),Gs1),
-	active_in_g(level(Automaton,Level),Gs2).
-
 not_playable(Gs1,Gs2) :- 
 	try(Gs1,Gs2),
 	automaton(A),
 	not has_playable(A,Gs1,_,_),
-	not same_level(Gs1,Gs2,A).
+	different_on(Gs1,Gs2,A).
 
 % not playable because Gs2 isn't reachable from Gs1 (it exists a transition that makes an error)
 exist_transition_from_gs1(Gs1,Gs2,Automaton) :-
@@ -81,6 +70,6 @@ playable(Gs1,Gs2) :-
 
 %#show is_stuck/1.
 %#show try/2.
-#show playable/2.
-#show not_playable/2.
+%#show playable/2.
+%#show not_playable/2.
 %#show exist_transition_from_gs1/3.

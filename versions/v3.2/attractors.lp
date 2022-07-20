@@ -101,6 +101,10 @@ evolves_in_main_cycle(Gs1,Gs2,Step1,Step2) :-
 
 :- also_playable(Gs1,Gs2,Step), not evolves_in_main_cycle(Gs1,Gs2,Step,_).
 
+active(X,Step) :-
+	active_g(Gs,Step),
+	active_in_g(X,Gs).
+
 #show active_g/2.
 %#show active/2.
 %#show unstack_list/3.

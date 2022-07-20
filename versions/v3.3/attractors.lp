@@ -15,7 +15,7 @@ def work(g):
 	#print(list)
 	s = '(g' + str(list[0]) # a priori la liste est non vide
 	for i in range(len(list)-1):
-		s += str(list[i+1])
+		s += '_'+str(list[i+1])
 	s += ')'
 	#print(s)
 	return parse_term(s)

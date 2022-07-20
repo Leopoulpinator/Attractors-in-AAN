@@ -17,6 +17,8 @@ def playable(g, a, level):
 		level2 = g.arguments[0]
 		g = g.arguments[1]
 		if level2.name == 'nb':
+			if to_return != "(g":
+				to_return += "_"
 			if level2.arguments[0].string == s:
 				to_return += l
 			else :
@@ -27,7 +29,6 @@ def playable(g, a, level):
 	return parse_term(to_return)
 
 #end.
-
 
 % asynch semantic
 
