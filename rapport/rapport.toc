@@ -1,9 +1,10 @@
 \hypertarget {toc}{}
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {section}{\numberline {2}Answer Set Programming}{2}{section.2}%
-\contentsline {section}{\numberline {3}Modèle}{2}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Avantages du Modèle}{2}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Modèle en ASP}{2}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Définitions}{2}{section.4}%
+\contentsline {section}{\numberline {3}Modèle}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Avantages du Modèle}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Modèle en ASP}{3}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Définitions}{3}{section.4}%
 \contentsline {section}{\numberline {5}Lemmes}{3}{section.5}%
 \contentsline {section}{\numberline {6}Algorithme}{3}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{3}{section.7}%

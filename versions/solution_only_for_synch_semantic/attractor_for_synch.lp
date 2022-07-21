@@ -358,14 +358,6 @@ valid_state_after_main_cycle(Step2) :-
 % Constraint: remove answer sets that visit new states after the main cycle
 :- not valid_state_after_main_cycle(Step1), after_cycle_step(Step1).
 
-%%% Check if there is a transition that can be played and leads out of the cycle
-% Enumerate transitions also playable in a state (but not chosen to build the path)
-also_playable(Transition, Step) :-
-  not unplayable(Transition, Step),
-  not played(Transition, Step),
-  local_transition(Transition),
-  step(Step).
-
 %%% Synchronous semantics
 % Automata that have at least one playable local transition
 has_playable(Automaton, Step) :-

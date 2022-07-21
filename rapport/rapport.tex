@@ -63,7 +63,26 @@ dans des réseaux d'automates asynchrones : il s'agit d'un ensemble d'états duq
 Ce qui sera étudié dans ce rapport ne le sera que partiellement : on n'entrera pas en détail dans le code présenté, mais on se penchera simplement sur les grandes lignes et sur les points techniques qu'il arbore.
 
 \section{Answer Set Programming}
-L'Answer Set Programming (ASP) est un paradigme de programmation comparable à Prolog.
+L'Answer Set Programming (ASP) est un paradigme de programmation comparable à Prolog. Ces dernières décennies, ASP s'est trouvé être paradigme de programmation logique puissant pour traiter des modèles biologiques, permettant de parcourir un 
+grand nombre de configurations rapidement. ASP peut énumérer facilement un grand nombre d'ensembles solutions au problème encodé : c'est un paradigme très efficace pour la combinatoire. Nous allons ici présenter brièvement son fonctionnement, et 
+plus précisément, les outils qui ont été utiles pour mon stage.\\ \\
+Un \emph{programme d'ensemble solutions ( = answer set program)} est un nombre fini de règles de la forme :
+
+\begin{center}
+$a_0$ :- $a_1,...,a_m,not \: a_{m+1},...,not \: a_n.$
+\end{center}
+
+avec $n\geq m\geq m\geq 0$, $a_0$ est un \textbf{atome} ou $\bot$ (Bottom/le Faux) et représente ici la \textbf{tête} de la règle. Les $a_1,...,a_n$ sont des atomes et représente quant à eux le \textbf{corps} de la règle, et le symbole $"not"$ 
+représente la négation par l'échec. Cette règle se lit intuitivement : si les atomes $a_1,..,a_m$ sont tous vrais et qu'aucun des atomes $a_{m+1},...,a_n$ n'est vrai, alors $a_0$ est vrai.\\ \\
+Si $n=m=0$, cela signifie que $a_0$ est vrai. Dans ce cas, on parle d'un fait, et on ne doit pas renseigner ":-". D'une autre part, si $a_0=\bot$, on parle de contrainte : comme $\bot$ ne peut jamais être vrai, si le corps de la règle est vrai, cela 
+invalide la solution actuelle. On ne renseigne pas $\bot$ pour la tête, on laisse une tête vide au niveau du code.\\ \\
+Cette notion de "solution actuelle" se formalise de la façon suivante : on parle d'une \textbf{interprétation} $I$ en tant qu'ensemble fini d'atomes propositionnels. Une règle $r$ définie comme ci-dessus est \emph{vraie dans I} si et seulement si :
+
+\begin{center}
+$\left\{a_1,...,a_m\right\}\subseteq I \wedge \left\{a_{m+1},...,a_n\right\} \cap I = \emptyset \Rightarrow a_0 \in I$
+\end{center}
+
+Si toutes les règles d'un programme $P$ sont vraies dans une même interprétation $I$, alors on dit que $I$ est un \textbf{modèle} de $P$
 
 \section{Modèle}
 On définit ce qu'est un réseau d'automates asynchrones proprement.
@@ -78,5 +97,7 @@ On définit ce qu'est un réseau d'automates asynchrones proprement.
 \section{Lemmes}
 
 \section{Algorithme}
+
+\section{Conclusion}
 
 \end{document}

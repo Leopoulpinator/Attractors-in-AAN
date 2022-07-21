@@ -309,7 +309,7 @@ unplayable(Transition, Step) :-
 % In Step, Automaton uses Transition to change from LevelI to LevelJ
 change(Transition, Automaton, LevelI, LevelJ, Step) :-
   played(Transition, Step),
-  Transition != none,
+  %Transition != none, % add it if you consider no moves as a transition (*)
   target(Transition, Automaton, LevelJ),
   condition(Transition, Automaton, LevelI).
 % Change for the new active level if there is a change on Automaton
@@ -353,14 +353,6 @@ valid_state_after_main_cycle(Step2) :-
 % Constraint: remove answer sets that visit new states after the main cycle
 :- not valid_state_after_main_cycle(Step1), after_cycle_step(Step1).
 
-%%% Check if there is a transition that can be played and leads out of the cycle
-% Enumerate transitions also playable in a state (but not chosen to build the path)
-also_playable(Transition, Step) :-
-  not unplayable(Transition, Step),
-  not played(Transition, Step),
-  local_transition(Transition),
-  step(Step).
-
 %%% Synchronous semantics
 % Automata that have at least one playable local transition
 has_playable(Automaton, Step) :-
@@ -376,10 +368,12 @@ has_playable(Automaton, Step) :-
 } 1 :-
   has_playable(Automaton, Step).
 
-played(none, Step) :-
+%*played(none, Step) :- % (*) If you want to consider no moves as a transition, add it and remove the next line
 	step(Step),
 	local_transition(Transition),
-	not played(Transition, Step).
+	not played(Transition, Step).*%
+
+:- step(Step), not played(_,Step). %(*) If you want to consider no moves as a transition, remove that line
 
 %#show played/2.
 #show active/2.
