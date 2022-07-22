@@ -1,75 +1,72 @@
-% synch semantic
-
-different_on(Gs1,Gs2,Automaton) :-
+% synchrone semantic
+%%% In this semantics, if Gs2 has only K > 0 different local states from Gs1 and there is a playable transition in Gs1 that brings us to Gs2, the global transition Gs1-Gs2 is playable
+%%% different_on(Gs1, Gs2, Automaton2) is True if Gs1 and Gs2 have different levels on the automaton Automaton2
+different_on(Gs1, Gs2, Automaton) :-
 	global_state(Gs1),
 	global_state(Gs2),
 	Gs1 != Gs2,
 	automaton(Automaton),
-	active_in_g(level(Automaton,LevelI),Gs1),
-	active_in_g(level(Automaton,LevelJ),Gs2),
+	active_in_g(level(Automaton, LevelI), Gs1),
+	active_in_g(level(Automaton, LevelJ), Gs2),
 	LevelI != LevelJ.
 
+%%% unplayable(Transition, Global_state) is True if the transition Transition cannot be played in the global state Global_State
 unplayable(Transition, Gs) :-
 	local_transition(Transition),
 	global_state(Gs),
 	automaton(Automaton),
-	active_in_g(level(Automaton,LevelI),Gs),
-	condition(Transition,Automaton,LevelJ),
+	active_in_g(level(Automaton, LevelI), Gs),
+	condition(Transition, Automaton, LevelJ),
 	LevelI != LevelJ.
 
-has_playable(Automaton,Gs,LevelI,LevelJ) :-
-	not unplayable(Transition,Gs),
-	condition(Transition,Automaton,LevelI),
-	target(Transition,Automaton,LevelJ),
-	local_transition(Transition,Automaton),
+%%% has_playable(Automaton, Gs, I, J) is True if the automaton Automaton can change from level I to level J with a transition
+has_playable(Automaton, Gs, LevelI, LevelJ) :-
+	not unplayable(Transition, Gs),
+	condition(Transition, Automaton, LevelI),
+	target(Transition, Automaton, LevelJ),
+	local_transition(Transition, Automaton),
 	global_state(Gs).
 
-try(Gs1,Gs2) :-
+%%% try(Gs1, Gs2) is True if Gs1 and Gs2 are different -> so this code bloc create a lot of atoms (N² if N is the number of global state...)
+try(Gs1, Gs2) :-
 	global_state(Gs1),
 	global_state(Gs2),
 	Gs1 != Gs2.
 
-% not playable because Gs1 and Gs2 are equal on A and A has a possible move
-not_playable(Gs1,Gs2) :-
-	try(Gs1,Gs2),
-	has_playable(A,Gs1,_,_),
-	not different_on(Gs1,Gs2,A),
-	automaton(A).
-
-% not playable because if Gs1 has no move on automaton A, then Gs2 has to be on the same level
-not_playable(Gs1,Gs2) :- 
-	try(Gs1,Gs2),
+% not_playable(Gs1, Gs2) is True if we cannot reach Gs2 from Gs1
+%%% here, we cannot reach Gs2 from Gs1 if they are different on an automaton A and A has no possible move
+not_playable(Gs1, Gs2) :- 
+	try(Gs1, Gs2),
 	automaton(A),
-	not has_playable(A,Gs1,_,_),
-	different_on(Gs1,Gs2,A).
+	not has_playable(A, Gs1, _, _),
+	different_on(Gs1, Gs2, A).
 
-% not playable because Gs2 isn't reachable from Gs1 (it exists a transition that makes an error)
-exist_transition_from_gs1(Gs1,Gs2,Automaton) :-
-	try(Gs1,Gs2),
-	has_playable(A,Gs1,_,Level),
+%%% exist_transition_from_gs1(Gs1, Gs2, Automaton) is True if there is at least one playable transition that change the level of Automaton in Gs1 into the level they have in Gs2
+exist_transition_from_gs1(Gs1, Gs2, Automaton) :-
+	try(Gs1, Gs2),
+	has_playable(A, Gs1, _, Level),
 	local_transition(Transition),
-	not unplayable(Transition,Gs1),
-	target(Transition,Automaton,Level),
-	active_in_g(level(Automaton,Level),Gs2).
-
-not_playable(Gs1,Gs2) :-
-	try(Gs1,Gs2),
+	not unplayable(Transition, Gs1),
+	target(Transition, Automaton, Level),
+	active_in_g(level(Automaton, Level), Gs2).
+%%% here, we cannot reach Gs2 from Gs1 if there is no transition that can change the level of an automaton A which has a playable move in Gs1 into the level they have in Gs2
+not_playable(Gs1, Gs2) :-
+	try(Gs1, Gs2),
 	automaton(A),
-	has_playable(A,Gs1,_,_),
-	not exist_transition_from_gs1(Gs1,Gs2,A).
+	has_playable(A, Gs1, _, _),
+	not exist_transition_from_gs1(Gs1, Gs2, A).
 
-% not playable because it is a stuck state
-is_stuck(Gs) :- global_state(Gs),not has_playable(_,Gs,_,_).
-not_playable(Gs1,Gs2) :-
-	try(Gs1,Gs2),
+%%% Also, (Gs1, Gs2) is not playable if Gs1 is a stuck state
+is_stuck(Gs) :- global_state(Gs), not has_playable(_, Gs, _, _).
+not_playable(Gs1, Gs2) :-
+	try(Gs1, Gs2),
 	is_stuck(Gs1).
 
-playable(Gs1,Gs2) :-
-	try(Gs1,Gs2),
-	not not_playable(Gs1,Gs2).
+%%% playable(Gs1, Gs2) is True if the transition isn't unplayable
+playable(Gs1, Gs2) :-
+	try(Gs1, Gs2),
+	not not_playable(Gs1, Gs2).
 
-%#show is_stuck/1.
-%#show try/2.
-%#show playable/2.
-%#show not_playable/2.
-%#show exist_transition_from_gs1/3.
+% Nota Bene :
+% This version is not constructive : we try each Gs2 possible for each Gs1 and we create playable(Gs1, Gs2) if that is possible to make the transition
+
