@@ -12,7 +12,7 @@ ModelFiles="example.lp lambda-phage.lp trp-reg.lp fisson-yeast.lp mammalian.lp t
 # Filter modes
 FilterModes="no pre post"
 # Semantics
-Semantics="synch"
+Semantics="gen"
 # Clingo time limit in seconds (0 = no time limit)
 TimeLimit="100"
 
@@ -20,7 +20,7 @@ TimeLimit="100"
 # Additional parameters
 AdditionalParameters="--const print_solutions=0 --const print_solution_sizes=1"
 # Folder containing model files
-ModelsFolder="../../models/"
+ModelsFolder="../../../models/"
 # Template file name for number of solutions of current filter (without .csv extension)
 GatherNbrSolutions="nbrsolutions"
 # Template file name for execution times of current filter (without .csv extension)
@@ -82,7 +82,7 @@ do
         CurGatherFile="$GatherNbrSolutions$CurFilter"
         CurTimeFile="$Time$CurFilter"
         echo "*** n = ${CurSize} ; update=${CurSemantics} ; filter=${CurFilter} ; model=${CurModel} ***" | tee -a "$GlobalOutputFile"
-        Command="clingo 0 --quiet=2 --time-limit=${TimeLimit} --const n=${CurSize} --const filtering=${CurFilter} --const write_nbr_solutions=${CurGatherFile} ${AdditionalParameters} attractor_for_synch.lp ${ModelsFolder}${CurModel}"
+        Command="clingo 0 --quiet=2 --time-limit=${TimeLimit} --const n=${CurSize} --const filtering=${CurFilter} --const write_nbr_solutions=${CurGatherFile} attractor_for_gen.lp ${AdditionalParameters} ${ModelsFolder}${CurModel}"
         echo $Command | tee -a "$GlobalOutputFile"
         echo -n ", " >> "$CurGatherFile"
         eval $Command | tee -a "$GlobalOutputFile" | tee "$TempOutputFile"

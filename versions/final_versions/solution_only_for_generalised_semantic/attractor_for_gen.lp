@@ -47,8 +47,10 @@ def main(prg):
   
   # Pyhton set for conditions of transitions ([transition][automata] = level)
   condition_transitions = {}
-  # Python set for target of transitions ([transition][automata] = level)
-  target_transitions = {}
+  # Python set for target of transitions ([transition] = automaton_name)
+  target_transitions_automaton_name = {}
+  # Python set for target of transitions ([transition] = level)
+  target_transitions_automaton_level = {}
   # A boolean to say if transitions is already created or not
   transitions_already_done = False
   # Set of unique solutions
@@ -118,10 +120,6 @@ def main(prg):
     print('[ Solving ]')
     # Enumerate models
     for cur_model in it:
-      # Creation unique (the first time we occurs in the loop) of the set for transitions
-      time_to_create = False
-      if not transitions_already_done :
-      	time_to_create = True
       # Dictionary for current attractor ([step][automata] = level)
       cur_dict = {}
       # Enumerate predicates
@@ -139,7 +137,7 @@ def main(prg):
           cur_dict[step_number][automata_name] = active_level
           
         # Creation of the python sets for transitions
-        elif time_to_create :
+        elif not transitions_already_done :
           if x.name == 'condition' :
             transition = x.arguments[0].name
             automata_name = x.arguments[1].string
@@ -152,12 +150,13 @@ def main(prg):
             transition = x.arguments[0].name
             automata_name = x.arguments[1].string
             level = x.arguments[2].number
-            if transition not in target_transitions:
-              target_transitions[transition] = {}
-            assert automata_name not in target_transitions[transition]
-            target_transitions[transition][automata_name] = level
-      if time_to_create :
-        transitions_already_done = True
+            if transition not in target_transitions_automaton_name:
+              target_transitions_automaton_name[transition] = automata_name
+            if transition not in target_transitions_automaton_level:
+              target_transitions_automaton_level[transition] = level
+      
+      # Creation unique (the first time we occurs in the loop) of the set for transitions
+      transitions_already_done = True
       # After predicates enumeration
       
       # DEBUG: Pretty-print the current path
@@ -188,10 +187,8 @@ def main(prg):
             if global_state[sorted_automata_names.index(automata_name)] != condition_transitions[transition][automata_name]: # Level of global state
               can_be_played = False
           if can_be_played:
-            level = -1
-            for temp in target_transitions[transition]: # Only one element
-              automata_name = temp
-              level = target_transitions[transition][automata_name]
+            automata_name = target_transitions_automaton_name[transition]
+            level = target_transitions_automaton_level[transition]
             playable[global_state][automata_name][transition] = level
       
       # list_of_list is the list associated to the previous set with the last automaton level for each automaton which cannot move
@@ -209,19 +206,13 @@ def main(prg):
       # list_of_product is the cartesian product of each possible moves for a global state
       list_of_product = []
       for l in list_of_list:
-        #print(l)
-        #print(list(product(tuple(l))))
         list_of_product += list(product(tuple(l)))
       
-      #print(playable)
-      #print(list_of_list)
-      #print(list_of_product)
-      
       # we assure the fact that each neighbour of a glopbal state is also a global state of cur_set
-      in_solutions = True
+      neighbours_are_main_states = True
       for global_state in list_of_product:
         if global_state not in cur_set:
-          in_solutions = False
+          neighbours_are_main_states = False
       
       # Check if solution id redundant
       #   If pre-filtering is enabled, this doesn't happen (because of constraints)
@@ -231,7 +222,7 @@ def main(prg):
         if SETTING_verbose:
           print('*** Already found, skipping. ({} found, {} skipped)'
                 .format(nbr_solutions, nbr_skipped))
-      elif in_solutions:  # Solution is NOT redundant
+      elif neighbours_are_main_states:  # Solution is NOT redundant
         nbr_solutions += 1
         if SETTING_verbose:
           print('*** New model found! ({} found, {} skipped)'
