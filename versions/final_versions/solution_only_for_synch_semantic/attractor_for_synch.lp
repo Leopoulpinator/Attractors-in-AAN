@@ -118,10 +118,6 @@ def main(prg):
     print('[ Solving ]')
     # Enumerate models
     for cur_model in it:
-      # Creation unique (the first time we occurs in the loop) of the set for transitions
-      time_to_create = False
-      if not transitions_already_done :
-      	time_to_create = True
       # Dictionary for current attractor ([step][automata] = level)
       cur_dict = {}
       # Enumerate predicates
@@ -139,7 +135,7 @@ def main(prg):
           cur_dict[step_number][automata_name] = active_level
           
         # Creation of the python sets for transitions
-        elif time_to_create :
+        elif not transitions_already_done :
           if x.name == 'condition' :
             transition = x.arguments[0].name
             automata_name = x.arguments[1].string
@@ -156,8 +152,8 @@ def main(prg):
               target_transitions[transition] = {}
             assert automata_name not in target_transitions[transition]
             target_transitions[transition][automata_name] = level
-      if time_to_create :
-        transitions_already_done = True
+      # Creation unique (the first time we occurs in the loop) of the set for transitions
+      transitions_already_done = True
       # After predicates enumeration
       
       # DEBUG: Pretty-print the current path
@@ -223,7 +219,7 @@ def main(prg):
       #print(list_of_list)
       #print(list_of_product)
       
-      # we assure the fact that each neighbour of a glopbal state is also a global state of cur_set
+      # we assure the fact that each neighbour of a global state is also a global state of cur_set
       in_solutions = True
       for global_state in list_of_product:
         if global_state not in cur_set:
