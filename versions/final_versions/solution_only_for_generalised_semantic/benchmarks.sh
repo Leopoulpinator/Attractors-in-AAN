@@ -8,7 +8,7 @@
 # Size of paths
 PathSizes="2 5 10 15"
 # Model files
-ModelFiles="example.lp lambda-phage.lp trp-reg.lp fisson-yeast.lp mammalian.lp tcrsig.lp t-helper.lp"
+ModelFiles="embetant.lp simplified_annoying_one_for_asynch.lp the_annoying_one.lp personal_example.lp example.lp lambda-phage.lp trp-reg.lp fisson-yeast.lp mammalian.lp tcrsig.lp t-helper.lp"
 # Filter modes
 FilterModes="no pre post"
 # Semantics

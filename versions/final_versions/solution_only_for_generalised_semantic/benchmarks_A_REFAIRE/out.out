@@ -1,0 +1,974 @@
+*** n = 2 ; update=gen ; filter=no ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 80
+Calls        : 1
+Time         : 0.057s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.051s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=pre ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 80
+Calls        : 1
+Time         : 0.053s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.052s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=post ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 80
+Calls        : 1
+Time         : 0.053s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.053s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 0.040s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.040s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=pre ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 0.040s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.040s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 0.043s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.043s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 19
+Calls        : 1
+Time         : 0.049s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.049s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 19
+Calls        : 1
+Time         : 0.045s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.045s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 19
+Calls        : 1
+Time         : 0.038s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.038s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=no ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 60
+Calls        : 1
+Time         : 0.054s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.053s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=pre ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 60
+Calls        : 1
+Time         : 0.048s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.048s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=post ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 60
+Calls        : 1
+Time         : 0.050s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.050s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 50
+Calls        : 1
+Time         : 0.053s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.053s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=gen ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 49
+Calls        : 1
+Time         : 0.048s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.048s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=gen ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 50
+Calls        : 1
+Time         : 0.054s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.054s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 1
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=gen ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 252
+Calls        : 1
+Time         : 0.175s (Solving: 0.14s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.175s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 2}
+*** n = 2 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 251
+Calls        : 1
+Time         : 0.179s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.179s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=gen ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 252
+Calls        : 1
+Time         : 0.169s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.168s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 1
+Frequencies of attractor sizes:
+{2: 1}
+*** n = 2 ; update=gen ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.038s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.038s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.040s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.040s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.037s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.037s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 6612
+Calls        : 1
+Time         : 6.467s (Solving: 6.43s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 6.451s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 6612
+Calls        : 1
+Time         : 6.406s (Solving: 6.37s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 6.403s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 6612
+Calls        : 1
+Time         : 6.432s (Solving: 6.38s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 6.423s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 2 ; update=gen ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 2 ; update=gen ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 2 ; update=gen ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 2 ; update=gen ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 2 ; update=gen ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 2 ; update=gen ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 2 ; update=gen ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 2 ; update=gen ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 2 ; update=gen ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=no ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 26
+Calls        : 1
+Time         : 0.044s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.044s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
+*** n = 5 ; update=gen ; filter=pre ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 0.041s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.041s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 3
+Frequencies of attractor sizes:
+{4: 1}
+*** n = 5 ; update=gen ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 5 ; update=gen ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 5 ; update=gen ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=no ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=pre ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=post ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=pre ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=no ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=pre ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=post ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 10 ; update=gen ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 10 ; update=gen ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=post ; model=embetant.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=pre ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=no ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=post ; model=personal_example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=pre ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=post ; model=example.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=no ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=lambda-phage.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+Solving...
+*** n = 15 ; update=gen ; filter=pre ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=trp-reg.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=mammalian.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=tcrsig.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=no ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=pre ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...
+*** n = 15 ; update=gen ; filter=post ; model=t-helper.lp ***
+clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
+clingo version 5.5.2
+Reading from attractor_for_gen.lp ...

@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage[a4paper,margin=30mm]{geometry}
 \usepackage{nameref}
@@ -63,16 +63,31 @@ dans des réseaux d'automates asynchrones : il s'agit d'un ensemble d'états duq
 Ce qui sera étudié dans ce rapport ne le sera que partiellement : on n'entrera pas en détail dans le code présenté, mais on se penchera simplement sur les grandes lignes et sur les points techniques qu'il arbore.
 
 \section{Answer Set Programming}
-L'Answer Set Programming (ASP) est un paradigme de programmation comparable à Prolog. Ces dernières décennies, ASP s'est trouvé être paradigme de programmation logique puissant pour traiter des modèles biologiques, permettant de parcourir un 
-grand nombre de configurations rapidement. ASP peut énumérer facilement un grand nombre d'ensembles solutions au problème encodé : c'est un paradigme très efficace pour la combinatoire. Nous allons ici présenter brièvement son fonctionnement, et 
-plus précisément, les outils qui ont été utiles pour mon stage.\\ \\
+L'Answer Set Programming (ASP) est un paradigme de programmation logique comparable à Prolog. Ces dernières décennies, ASP s'est trouvé être puissant pour traiter des modèles biologiques, permettant de parcourir un 
+grand nombre de configurations rapidement. ASP peut énumérer facilement les ensembles solutions à un problème qu'on lui encode : c'est un paradigme très efficace pour la combinatoire. Nous allons ici présenter brièvement 
+son fonctionnement, et plus précisément, les outils qui ont été utiles pour mon stage.
+\subsection{Termes}
+On commence par définir un terme (ou atome) en ASP :
+\begin{enumerate}
+	\item terme simple :
+		\begin{itemize}
+		\item un entier relatif (0, 1, 42, -35, ...)
+		\item une constante qui démarre par un enderscore ou une lettre minuscule, et est suivie par des lettres/chiffres/enderscore (v0us, av35, p3rdu, au, j3u, \_\_sisi\_\_, ...)
+		\item une chaîne de caractères sous la forme "ma\_chaine\_de\_caracteres" ("gf43ha43gG", "42", ...)
+		\item une variable identique grammaticalement à la constante, mais dont la première lettre doit être majuscule (Je, Suis, Une, Variable, ...)
+		\item un enderscore symbolisant une variable sans nom
+		\item $\#sup$ et $\#inf$ qui sont des constantes définies par ASP
+		\end{itemize}
+	\item une fonction est de la forme : constante(terme, terme, ..., terme) avec un nombre de termes fini qui peut être nul, et qu'on appelle 'arité' ( f(23), je(suis(une(fonction(42, true)), et(pas\_moi))), ...)
+	\item un tuple de la forme : (terme, terme, ..., terme) avec un nombre de termes fini qui ne peut être nul, et qu'on appelle 'arité' ((37, oui), (), (1,h(-4),0,1), ...)
+\end{enumerate}
+\subsection{Règles et modèles d'un programme}
 Un \emph{programme d'ensemble solutions ( = answer set program)} est un nombre fini de règles de la forme :
 
 \begin{center}
 $a_0$ :- $a_1,...,a_m,not \: a_{m+1},...,not \: a_n.$
 \end{center}
-
-avec $n\geq m\geq m\geq 0$, $a_0$ est un \textbf{atome} ou $\bot$ (Bottom/le Faux) et représente ici la \textbf{tête} de la règle. Les $a_1,...,a_n$ sont des atomes et représente quant à eux le \textbf{corps} de la règle, et le symbole $"not"$ 
+avec $n\geq m\geq m\geq 0$. $a_0$ est un atome ou $\bot$ (Bottom/le Faux) et représente ici la \textbf{tête} de la règle. Les $a_1,...,a_n$ sont des atomes et représente quant à eux le \textbf{corps} de la règle, et le symbole $"not"$ 
 représente la négation par l'échec. Cette règle se lit intuitivement : si les atomes $a_1,..,a_m$ sont tous vrais et qu'aucun des atomes $a_{m+1},...,a_n$ n'est vrai, alors $a_0$ est vrai.\\ \\
 Si $n=m=0$, cela signifie que $a_0$ est vrai. Dans ce cas, on parle d'un fait, et on ne doit pas renseigner ":-". D'une autre part, si $a_0=\bot$, on parle de contrainte : comme $\bot$ ne peut jamais être vrai, si le corps de la règle est vrai, cela 
 invalide la solution actuelle. On ne renseigne pas $\bot$ pour la tête, on laisse une tête vide au niveau du code.\\ \\
@@ -82,22 +97,54 @@ Cette notion de "solution actuelle" se formalise de la façon suivante : on parl
 $\left\{a_1,...,a_m\right\}\subseteq I \wedge \left\{a_{m+1},...,a_n\right\} \cap I = \emptyset \Rightarrow a_0 \in I$
 \end{center}
 
-Si toutes les règles d'un programme $P$ sont vraies dans une même interprétation $I$, alors on dit que $I$ est un \textbf{modèle} de $P$
+Si toutes les règles d'un programme $P$ sont vraies dans une même interprétation $I$, alors on dit que $I$ est un \textbf{modèle} de $P$. Lorsque l'on déclare un problème $P$ en ASP, le solveur nous renverra en sortie tout 
+les modèles possibles pour $P$.
+\subsection{Variables}
+Si une variable apparaît dans un atome de la tête, elle doit également être dans la queue. Chaque instance d'une variable va être groundée par clingo afin de trouver tous les modèles à notre problème.
+Prenons un petit exemple, voici un problème encodé avec 2 règles :
+\begin{center}
+  parentOf(jenny, charles).\\
+  parentOf(mary, jenny).
+\end{center}
+Ce programme contient 2 faits : Charles est un parent de Jenny, et Jenny est un parent de Mary. C'est ainsi que l'on souhaite comprendre les termes "parentOf(jenny, charles)" et "parentOf(mary, jenny)".
+Si on souhaite désormais spécifier que Charles est un grand parent de Mary, on peut le faire en ajoutant le terme : "grandparentOf(Mary, Charles)". Cependant, ASP est capable de faire bien mieux pour cela.
+En effet, on peut généraliser la notion de grand parent comme étant le parent d'un parent de la façon suivante :
+\begin{center}
+  grandparentOf(X, Z) :- parentOf(X, Y), parentOf(Y, Z).
+\end{center}
+Pour chaque valeurs possible de X, Y, et Z, le grounding d'ASP va nous créer des règles associées.
+Ainsi, les 27 règles dont grandparentOf(mary, mary) :- parentOf(mary, mary), parentOf(mary, mary), ou encore grandparentOf(charles, mary) :- parentOf(charles, jenny), parentOf(jenny, mary) vont être créées 
+par cette façon de procéder. Ceci n'est pas du tout un problème : le solveur d'ASP va simplement regarder si les atomes des queues sont vraies ou pas. Si ce n'est pas le cas, comme le faux implique tout, 
+les règles seront vraies. Si c'est le cas, la tête sera alors mise à vraie. Sachant qu'une seule de ces 27 possibilités mène à la véracité d'un nouvel atome, on obtiendra en sortie d'ASP les faits suivants :
+\begin{center}
+  SATISFAIBLE\\
+  parentOf(jenny, charles)\\
+  parentOf(mary, jenny)\\
+  grandparentOf(mary, charles)
+\end{center}
+\subsection{Agrégats}
+Les agrégats forment le dernier outil d'ASP que j'ai utilisé dans le cadre de mon stage. Il s'agit d'un moyen de sélectionner un certain nombre d'atomes parmi un ensemble, et de les mettre à vrai. Ils se 
+structurent suivant l'exemple suivant :
+\begin{center}
+  0 $\left\{ f(A,B):g(A)\right\}$ 2.
+\end{center}
+La \textbf{borne inférieure}, située à gauche des accolades, et la \textbf{borne supérieure} définissent l'intervalle discret du nombre d'atomes que l'on va mettre à vrai. Si l'une de ces deux bornes est omise, 
+ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible.
 
-\section{Modèle}
+\section{Formalismes d'automates}
 On définit ce qu'est un réseau d'automates asynchrones proprement.
-	\subsection{Avantages du Modèle}
-	Très simple à utiliser en pratique.
-	\subsection{Modèle en ASP}
-	Un bout de code
+	\subsection{AAN}
+	Très simple à utiliser en pratique (pour la bio).
+	\subsection{Traduction en ASP}
+	Un bout de code à expliquer en ASP.
 
-\section{Définitions}
-état local, sémantique, état global, état stable, domaines de pièges,  attracteurs.
+\section{Dynamique}
+état local, sémantique, état global, état stable, domaines de pièges,  attracteurs + les lemmes et tout ça.
 
-\section{Lemmes}
-
-\section{Algorithme}
+\section{Révision du code}
 
 \section{Conclusion}
+
+\section{Bibliographie}
 
 \end{document}
