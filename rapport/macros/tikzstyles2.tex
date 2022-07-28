@@ -1,0 +1,156 @@
+% Styles TikZ et couleurs personnalisées
+
+\usepackage{tikz}
+
+\newdimen\pgfex
+\newdimen\pgfem
+\usetikzlibrary{arrows,shapes,shadows,scopes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows,shapes}
+
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+\definecolor{lightgrey}{rgb}{0.8,0.8,0.8}
+
+\definecolor{lightred}{rgb}{1,0.8,0.8}
+\definecolor{lightgreen}{rgb}{0.7,1,0.7}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkyellow}{rgb}{0.5,0.5,0}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{darkcyan}{rgb}{0,0.6,0.6}
+\definecolor{lightcyan}{rgb}{0.6,1,1}
+\definecolor{darkorange}{rgb}{0.8,0.2,0}
+\definecolor{notsodarkred}{rgb}{0.8,0,0}
+
+\definecolor{notsodarkgreen}{rgb}{0,0.7,0}
+
+%\definecolor{coloract}{rgb}{0,1,0}
+%\definecolor{colorinh}{rgb}{1,0,0}
+\colorlet{coloract}{darkgreen}
+\colorlet{colorinh}{red}
+\colorlet{coloractgray}{lightgreen}
+\colorlet{colorinhgray}{lightred}
+\colorlet{colorinf}{darkgray}
+\colorlet{coloractgray}{lightgreen}
+\colorlet{colorinhgray}{lightred}
+
+\colorlet{colorgray}{lightgray}
+\colorlet{colorhl}{blue}
+
+
+\tikzstyle{boxed ph}=[]
+\tikzstyle{sort}=[fill=lightgray, rounded corners, draw=black]
+\tikzstyle{process}=[circle,draw,minimum size=15pt,fill=white,font=\footnotesize,inner sep=1pt]
+%\tikzstyle{black process}=[process, draw=blue, fill=red,text=black,font=\bfseries]
+\tikzstyle{gray process}=[process, draw=black, fill=lightgray]
+\tikzstyle{highlighted process}=[current process, fill=gray]
+\tikzstyle{process box}=[fill=none,draw=black,rounded corners]
+%\tikzstyle{current process}=[process, draw=black, fill=lightgray]
+\tikzstyle{current process}=[process,fill=lightgray]
+\tikzstyle{hl process}=[process,fill=blue!30]
+\tikzstyle{tick label}=[font=\footnotesize]
+\tikzstyle{tick}=[densely dotted] %-
+\tikzstyle{hit}=[->,>=angle 45]
+\tikzstyle{selfhit}=[min distance=50pt,curve to]
+\tikzstyle{bounce}=[densely dotted,>=stealth',->]
+\tikzstyle{ulhit}=[draw=lightgray,fill=lightgray]
+\tikzstyle{pulhit}=[fill=lightgray]
+\tikzstyle{bulhit}=[draw=lightgray]
+\tikzstyle{hl}=[very thick,colorhl]
+\tikzstyle{hlb}=[very thick]
+\tikzstyle{hlhit}=[hl]
+%\tikzstyle{hl2}=[hl]
+%\tikzstyle{nohl}=[font=\normalfont,thin]
+
+\tikzstyle{update}=[draw,->,dashed,shorten >=.7cm,shorten <=.7cm]
+
+\tikzstyle{unprio}=[draw,thin]%[double]
+%\tikzstyle{prio}=[draw,thick,-stealth]%[double]
+\tikzstyle{prio}=[draw,-stealth,double]
+
+\tikzstyle{hitless graph}=[every edge/.style={draw=red,-}]
+
+\tikzstyle{aS}=[every edge/.style={draw,->,>=stealth}]
+\tikzstyle{Asol}=[draw,circle,minimum size=5pt,inner sep=0,node distance=1cm]
+\tikzstyle{Aproc}=[draw,node distance=1.2cm]
+\tikzstyle{Aobj}=[node distance=1.5cm]
+\tikzstyle{Anos}=[font=\Large]
+
+\tikzstyle{AsolPrio}=[Asol,double]
+\tikzstyle{AprocPrio}=[Aproc,double]
+\tikzstyle{aSPrio}=[aS,double]
+
+\colorlet{colorhlwarn}{notsodarkred}
+\colorlet{colorhlwarnbg}{lightred}
+\tikzstyle{Ahl}=[very thick,fill=colorhlwarnbg,draw=colorhlwarn,text=colorhlwarn]
+\tikzstyle{Ahledge}=[very thick,double=colorhlwarnbg,draw=colorhlwarn,color=colorhlwarn]
+
+
+
+
+
+%\definecolor{darkred}{rgb}{0.5,0,0}
+
+
+
+\tikzstyle{grn}=[every node/.style={circle,draw=black,outer sep=2pt,minimum
+                size=15pt,text=black}, node distance=1.5cm, ->]
+\tikzstyle{inh}=[>=|,-|,draw=colorinh,thick, text=black,label]
+\tikzstyle{act}=[->,>=triangle 60,draw=coloract,thick,color=coloract]
+\tikzstyle{inhgray}=[>=|,-|,draw=colorinhgray,thick, text=black,label]
+\tikzstyle{actgray}=[->,>=triangle 60,draw=coloractgray,thick,color=coloractgray]
+\tikzstyle{inf}=[->,draw=colorinf,thick,color=colorinf]
+%\tikzstyle{elabel}=[fill=none, above=-1pt, sloped,text=black, minimum size=10pt, outer sep=0, font=\scriptsize,draw=none]
+\tikzstyle{elabel}=[fill=none,text=black, above=-2pt,%sloped,
+minimum size=10pt, outer sep=0, font=\scriptsize, draw=none]
+%\tikzstyle{elabel}=[]
+
+
+\tikzstyle{plot}=[every path/.style={-}]
+\tikzstyle{axe}=[black,->,>=stealth']
+\tikzstyle{ticks}=[font=\scriptsize,every node/.style={black}]
+\tikzstyle{mean}=[thick]
+\tikzstyle{interval}=[line width=5pt,red,draw opacity=0.7]
+%\definecolor{lightred}{rgb}{1,0.3,0.3}
+
+%\tikzstyle{hl}=[yellow]
+%\tikzstyle{hl2}=[orange]
+
+%\tikzstyle{every matrix}=[ampersand replacement=\&]
+%\tikzstyle{shorthandoff}=[]
+%\tikzstyle{shorthandon}=[]
+\tikzstyle{objective}=[process,very thick,fill=yellow!50]
+
+\tikzstyle{coopupdate}=[-stealth,decorate,decoration={zigzag,amplitude=1.5pt,post=lineto,post length=.3cm,pre=lineto,pre length=.3cm}]
+
+\tikzstyle{labelprio}=[circle, fill=blue!30, inner sep=0pt, minimum size=13pt]
+\tikzstyle{labelprio1}=[labelprio]
+\tikzstyle{labelprio2}=[labelprio, fill=red!60]
+\tikzstyle{labelprio3}=[labelprio, fill=orange!50]
+\tikzstyle{labelprio4}=[labelprio, fill=brown!50]
+
+\tikzstyle{labelstocha}=[rectangle, rounded corners=4pt]
+
+\tikzstyle{andot}=[circle, fill=black, inner sep=1.2pt, draw=transparent]
+\tikzstyle{anligne}=[thick]
+
+\tikzstyle{apdot}=[andot] %[circle, fill=black, draw=black, inner sep=1]
+\tikzstyle{apdotsimple}=[] %[circle, fill=black, draw=black, inner sep=1]
+
+% Figure de résumé des liens entre les formalismes
+\tikzstyle{equiv-externe}=[thick, rounded corners, draw=gray, fill=gray!10, align=center,
+  inner sep=8]
+
+% label pour les délais des actions 
+ \tikzstyle{labeldelai1}=[circle, fill=red!60, inner sep=0pt, minimum size=8pt]
+  \tikzstyle{labeldelai2}=[circle, fill=blue!30, inner sep=0pt, minimum size=8pt]
+  \tikzstyle{labeldelai3}=[circle, fill=brown!50, inner sep=0pt, minimum size=8pt]
+  \tikzstyle{labeldelai4}=[circle, fill=green!50, inner sep=0pt, minimum size=8pt]
+  
+  % Automata Networks:
+\tikzstyle{local transitions}=[->,>=latex',thick,bend left=30,
+               every node/.style={fill=white,inner sep=1pt,outer sep=1pt}]
+\tikzstyle{reach}=[fill=lightgray,ellipse]

@@ -7,8 +7,8 @@ SATISFIABLE
 
 Models       : 80
 Calls        : 1
-Time         : 0.057s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.051s
+Time         : 0.070s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.054s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -26,8 +26,8 @@ SATISFIABLE
 
 Models       : 80
 Calls        : 1
-Time         : 0.053s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.052s
+Time         : 0.042s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.042s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -45,8 +45,8 @@ SATISFIABLE
 
 Models       : 80
 Calls        : 1
-Time         : 0.053s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.053s
+Time         : 0.043s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.042s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -64,8 +64,8 @@ SATISFIABLE
 
 Models       : 8
 Calls        : 1
-Time         : 0.040s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.040s
+Time         : 0.032s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.032s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -83,8 +83,8 @@ SATISFIABLE
 
 Models       : 8
 Calls        : 1
-Time         : 0.040s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.040s
+Time         : 0.036s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.036s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -102,8 +102,8 @@ SATISFIABLE
 
 Models       : 8
 Calls        : 1
-Time         : 0.043s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.043s
+Time         : 0.036s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.036s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -121,8 +121,8 @@ SATISFIABLE
 
 Models       : 19
 Calls        : 1
-Time         : 0.049s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.049s
+Time         : 0.036s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.035s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -140,8 +140,8 @@ SATISFIABLE
 
 Models       : 19
 Calls        : 1
-Time         : 0.045s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.045s
+Time         : 0.033s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.033s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -159,8 +159,8 @@ SATISFIABLE
 
 Models       : 19
 Calls        : 1
-Time         : 0.038s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.038s
+Time         : 0.033s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.033s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -178,8 +178,8 @@ SATISFIABLE
 
 Models       : 60
 Calls        : 1
-Time         : 0.054s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.053s
+Time         : 0.043s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.043s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -197,8 +197,8 @@ SATISFIABLE
 
 Models       : 60
 Calls        : 1
-Time         : 0.048s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.048s
+Time         : 0.043s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.043s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -216,8 +216,8 @@ SATISFIABLE
 
 Models       : 60
 Calls        : 1
-Time         : 0.050s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.050s
+Time         : 0.051s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.051s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -235,8 +235,8 @@ SATISFIABLE
 
 Models       : 50
 Calls        : 1
-Time         : 0.053s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.053s
+Time         : 0.046s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.046s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -254,8 +254,8 @@ SATISFIABLE
 
 Models       : 49
 Calls        : 1
-Time         : 0.048s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.048s
+Time         : 0.051s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.051s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -292,8 +292,8 @@ SATISFIABLE
 
 Models       : 252
 Calls        : 1
-Time         : 0.175s (Solving: 0.14s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.175s
+Time         : 0.160s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.159s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -311,8 +311,8 @@ SATISFIABLE
 
 Models       : 251
 Calls        : 1
-Time         : 0.179s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.179s
+Time         : 0.165s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.165s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -330,8 +330,8 @@ SATISFIABLE
 
 Models       : 252
 Calls        : 1
-Time         : 0.169s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.168s
+Time         : 0.165s (Solving: 0.13s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.165s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -349,8 +349,8 @@ UNSATISFIABLE
 
 Models       : 0
 Calls        : 1
-Time         : 0.038s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.038s
+Time         : 0.035s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.034s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -368,8 +368,8 @@ UNSATISFIABLE
 
 Models       : 0
 Calls        : 1
-Time         : 0.040s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.040s
+Time         : 0.038s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.038s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -387,8 +387,8 @@ UNSATISFIABLE
 
 Models       : 0
 Calls        : 1
-Time         : 0.037s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.037s
+Time         : 0.035s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.035s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -406,8 +406,8 @@ SATISFIABLE
 
 Models       : 6612
 Calls        : 1
-Time         : 6.467s (Solving: 6.43s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 6.451s
+Time         : 6.375s (Solving: 6.34s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 6.372s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -425,8 +425,8 @@ SATISFIABLE
 
 Models       : 6612
 Calls        : 1
-Time         : 6.406s (Solving: 6.37s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 6.403s
+Time         : 6.385s (Solving: 6.35s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 6.382s
 [ Calling Python ]
 Pre : True ; Post : False
 [ Grounding ]
@@ -444,8 +444,8 @@ SATISFIABLE
 
 Models       : 6612
 Calls        : 1
-Time         : 6.432s (Solving: 6.38s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 6.423s
+Time         : 6.373s (Solving: 6.34s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 6.355s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -459,57 +459,190 @@ clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const wri
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 72224+
+Calls        : 1
+Time         : 100.001s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.907s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 2 ; update=gen ; filter=pre ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 71765+
+Calls        : 1
+Time         : 0.000s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.956s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 2 ; update=gen ; filter=post ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 66963+
+Calls        : 1
+Time         : 100.000s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.959s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 2 ; update=gen ; filter=no ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.052s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.046s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 2 ; update=gen ; filter=pre ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.046s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.046s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 2 ; update=gen ; filter=post ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.043s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.043s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 2 ; update=gen ; filter=no ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 2 ; update=gen ; filter=pre ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 2 ; update=gen ; filter=post ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=2 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 5 ; update=gen ; filter=no ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 7080
+Calls        : 1
+Time         : 1.727s (Solving: 1.67s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 1.708s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2560; skipped: 0
+Frequencies of attractor sizes:
+{4: 2560}
 *** n = 5 ; update=gen ; filter=pre ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 715
+Calls        : 1
+Time         : 0.195s (Solving: 0.16s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.195s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 5 ; update=gen ; filter=post ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 7080
+Calls        : 1
+Time         : 1.663s (Solving: 1.63s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 1.663s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 2559
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 5 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
@@ -519,8 +652,8 @@ SATISFIABLE
 
 Models       : 26
 Calls        : 1
-Time         : 0.044s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.044s
+Time         : 0.039s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.039s
 [ Calling Python ]
 Pre : False ; Post : False
 [ Grounding ]
@@ -533,81 +666,306 @@ Frequencies of attractor sizes:
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 26
+Calls        : 1
+Time         : 0.033s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.033s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 26
+Calls        : 1
+Time         : 0.034s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.034s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 178
+Calls        : 1
+Time         : 0.084s (Solving: 0.05s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.083s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 178
+Calls        : 1
+Time         : 0.090s (Solving: 0.06s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.090s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 178
+Calls        : 1
+Time         : 0.080s (Solving: 0.05s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.080s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=no ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 2480
+Calls        : 1
+Time         : 0.976s (Solving: 0.94s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.975s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=pre ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 2480
+Calls        : 1
+Time         : 0.984s (Solving: 0.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.984s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=post ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 2480
+Calls        : 1
+Time         : 0.985s (Solving: 0.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.984s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=no ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 657
+Calls        : 1
+Time         : 0.349s (Solving: 0.31s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.348s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 130; skipped: 0
+Frequencies of attractor sizes:
+{2: 4, 4: 126}
 *** n = 5 ; update=gen ; filter=pre ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 169
+Calls        : 1
+Time         : 0.117s (Solving: 0.08s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.117s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
 *** n = 5 ; update=gen ; filter=post ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 657
+Calls        : 1
+Time         : 0.352s (Solving: 0.32s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.352s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 128
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
 *** n = 5 ; update=gen ; filter=no ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 15823
+Calls        : 1
+Time         : 11.940s (Solving: 11.90s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 11.933s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{2: 4}
 *** n = 5 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 15820
+Calls        : 1
+Time         : 11.914s (Solving: 11.88s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 11.909s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{2: 1}
 *** n = 5 ; update=gen ; filter=post ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 15823
+Calls        : 1
+Time         : 12.051s (Solving: 12.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 12.046s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 3
+Frequencies of attractor sizes:
+{2: 1}
 *** n = 5 ; update=gen ; filter=no ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 4
+Calls        : 1
+Time         : 0.047s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.041s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 4; skipped: 0
+Frequencies of attractor sizes:
+{4: 4}
 *** n = 5 ; update=gen ; filter=pre ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.034s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.034s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 5 ; update=gen ; filter=post ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
@@ -617,8 +975,8 @@ SATISFIABLE
 
 Models       : 4
 Calls        : 1
-Time         : 0.041s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
-CPU Time     : 0.041s
+Time         : 0.039s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.039s
 [ Calling Python ]
 Pre : False ; Post : True
 [ Grounding ]
@@ -632,343 +990,1312 @@ clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const wri
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 56934+
+Calls        : 1
+Time         : 100.001s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.959s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 56649+
+Calls        : 1
+Time         : 100.002s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.941s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 57514+
+Calls        : 1
+Time         : 100.002s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.960s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=no ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 43066+
+Calls        : 1
+Time         : 100.002s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.954s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=pre ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 43557+
+Calls        : 1
+Time         : 100.001s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.960s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=post ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 43364+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.958s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 5 ; update=gen ; filter=no ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 5 ; update=gen ; filter=pre ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 5 ; update=gen ; filter=post ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 5 ; update=gen ; filter=no ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 5 ; update=gen ; filter=pre ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 5 ; update=gen ; filter=post ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=5 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 10 ; update=gen ; filter=no ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 261803+
+Calls        : 1
+Time         : 100.000s (Solving: 99.94s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.898s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 204695; skipped: 0
+Frequencies of attractor sizes:
+{4: 204695}
 *** n = 10 ; update=gen ; filter=pre ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 217
+Calls        : 1
+Time         : 0.125s (Solving: 0.09s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.124s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 10 ; update=gen ; filter=post ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 254792+
+Calls        : 1
+Time         : 100.000s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.802s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 198231
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 10 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 432
+Calls        : 1
+Time         : 0.216s (Solving: 0.18s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.210s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=pre ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 432
+Calls        : 1
+Time         : 0.210s (Solving: 0.18s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.210s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 432
+Calls        : 1
+Time         : 0.202s (Solving: 0.17s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.202s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 8436
+Calls        : 1
+Time         : 3.955s (Solving: 3.91s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 3.951s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 8436
+Calls        : 1
+Time         : 3.850s (Solving: 3.82s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 3.847s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 8436
+Calls        : 1
+Time         : 3.960s (Solving: 3.93s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 3.948s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=no ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 160324+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.869s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 239; skipped: 0
+Frequencies of attractor sizes:
+{6: 239}
 *** n = 10 ; update=gen ; filter=pre ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 158016+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.902s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{6: 1}
 *** n = 10 ; update=gen ; filter=post ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 163172+
+Calls        : 1
+Time         : 100.001s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.934s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 238
+Frequencies of attractor sizes:
+{6: 1}
 *** n = 10 ; update=gen ; filter=no ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 99738
+Calls        : 1
+Time         : 77.236s (Solving: 77.20s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 77.106s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 70220; skipped: 0
+Frequencies of attractor sizes:
+{2: 10, 4: 70210}
 *** n = 10 ; update=gen ; filter=pre ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 2925
+Calls        : 1
+Time         : 2.417s (Solving: 2.38s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 2.416s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
 *** n = 10 ; update=gen ; filter=post ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 99738
+Calls        : 1
+Time         : 79.324s (Solving: 79.28s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 79.258s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 70218
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
 *** n = 10 ; update=gen ; filter=no ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 85051+
+Calls        : 1
+Time         : 100.000s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 85480+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.847s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=post ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 84778+
+Calls        : 1
+Time         : 100.000s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.866s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=no ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 0.052s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.051s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 8; skipped: 0
+Frequencies of attractor sizes:
+{4: 8}
 *** n = 10 ; update=gen ; filter=pre ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.046s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.046s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 10 ; update=gen ; filter=post ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 8
+Calls        : 1
+Time         : 0.045s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.045s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 7
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 10 ; update=gen ; filter=no ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 42423+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.914s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 42627+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.906s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 42094+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.873s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=no ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 29981+
+Calls        : 1
+Time         : 100.003s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.850s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=pre ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 28515+
+Calls        : 1
+Time         : 100.003s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.810s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=post ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 29755+
+Calls        : 1
+Time         : 100.002s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.876s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=no ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 5+
+Calls        : 1
+Time         : 101.958s (Solving: 101.88s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 101.806s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=pre ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 5+
+Calls        : 1
+Time         : 101.353s (Solving: 101.29s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 101.224s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=post ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 5+
+Calls        : 1
+Time         : 100.875s (Solving: 100.81s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 100.824s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 10 ; update=gen ; filter=no ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 10 ; update=gen ; filter=pre ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 10 ; update=gen ; filter=post ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=10 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 15 ; update=gen ; filter=no ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 180667+
+Calls        : 1
+Time         : 100.000s (Solving: 99.93s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.760s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 133837; skipped: 0
+Frequencies of attractor sizes:
+{4: 133837}
 *** n = 15 ; update=gen ; filter=pre ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 1193
+Calls        : 1
+Time         : 0.691s (Solving: 0.66s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.683s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 15 ; update=gen ; filter=post ; model=embetant.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/embetant.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 182124+
+Calls        : 1
+Time         : 100.000s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.817s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 135133
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 15 ; update=gen ; filter=no ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 3266
+Calls        : 1
+Time         : 1.873s (Solving: 1.83s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 1.864s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=pre ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 3266
+Calls        : 1
+Time         : 1.826s (Solving: 1.79s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 1.822s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=post ; model=simplified_annoying_one_for_asynch.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/simplified_annoying_one_for_asynch.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 3266
+Calls        : 1
+Time         : 1.835s (Solving: 1.80s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 1.833s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=no ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 165238+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.767s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=pre ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 167060+
+Calls        : 1
+Time         : 100.000s (Solving: 99.97s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.809s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=post ; model=the_annoying_one.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/the_annoying_one.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 166081+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.691s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=no ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 114158+
+Calls        : 1
+Time         : 100.001s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.777s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=pre ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 115290+
+Calls        : 1
+Time         : 100.001s (Solving: 99.96s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.845s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=post ; model=personal_example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/personal_example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 115574+
+Calls        : 1
+Time         : 100.001s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.936s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=no ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 90119+
+Calls        : 1
+Time         : 100.000s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.841s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 79040; skipped: 0
+Frequencies of attractor sizes:
+{4: 79040}
 *** n = 15 ; update=gen ; filter=pre ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 52659
+Calls        : 1
+Time         : 60.649s (Solving: 60.61s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 60.621s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 2; skipped: 0
+Frequencies of attractor sizes:
+{2: 1, 4: 1}
 *** n = 15 ; update=gen ; filter=post ; model=example.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/example.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 90932+
+Calls        : 1
+Time         : 100.000s (Solving: 99.96s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 99.955s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 79732
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 15 ; update=gen ; filter=no ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 66325+
+Calls        : 1
+Time         : 100.001s (Solving: 99.94s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.956s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=pre ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 67083+
+Calls        : 1
+Time         : 100.001s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.905s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=post ; model=lambda-phage.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/lambda-phage.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 65933+
+Calls        : 1
+Time         : 100.001s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.956s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=no ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
 Solving...
+SATISFIABLE
+
+Models       : 12
+Calls        : 1
+Time         : 0.072s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.066s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 12; skipped: 0
+Frequencies of attractor sizes:
+{4: 12}
 *** n = 15 ; update=gen ; filter=pre ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.047s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.046s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 0
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 15 ; update=gen ; filter=post ; model=trp-reg.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/trp-reg.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+Models       : 12
+Calls        : 1
+Time         : 0.067s (Solving: 0.02s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.067s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 1; skipped: 11
+Frequencies of attractor sizes:
+{4: 1}
 *** n = 15 ; update=gen ; filter=no ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 31617+
+Calls        : 1
+Time         : 100.002s (Solving: 99.95s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 99.897s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=pre ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 31922+
+Calls        : 1
+Time         : 100.003s (Solving: 99.95s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 99.906s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=post ; model=fisson-yeast.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/fisson-yeast.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 32097+
+Calls        : 1
+Time         : 100.000s (Solving: 99.95s 1st Model: 0.02s Unsat: 0.00s)
+CPU Time     : 99.834s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=no ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 21243+
+Calls        : 1
+Time         : 100.002s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.777s
+[ Calling Python ]
+Pre : False ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=pre ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 21354+
+Calls        : 1
+Time         : 100.003s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.789s
+[ Calling Python ]
+Pre : True ; Post : False
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=post ; model=mammalian.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/mammalian.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
+SATISFIABLE
+
+TIME LIMIT   : 1
+Models       : 21638+
+Calls        : 1
+Time         : 100.002s (Solving: 99.95s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 99.746s
+[ Calling Python ]
+Pre : False ; Post : True
+[ Grounding ]
+[ Solving ]
+[ Solving ended ]
+*** Solutions found: 0; skipped: 0
+Frequencies of attractor sizes:
+{}
 *** n = 15 ; update=gen ; filter=no ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 15 ; update=gen ; filter=pre ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 15 ; update=gen ; filter=post ; model=tcrsig.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/tcrsig.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 15 ; update=gen ; filter=no ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=no --const write_nbr_solutions=nbrsolutionsno attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 15 ; update=gen ; filter=pre ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=pre --const write_nbr_solutions=nbrsolutionspre attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...
 *** n = 15 ; update=gen ; filter=post ; model=t-helper.lp ***
 clingo 0 --quiet=2 --time-limit=100 --const n=15 --const filtering=post --const write_nbr_solutions=nbrsolutionspost attractor_for_gen.lp --const print_solutions=0 --const print_solution_sizes=1 ../../../models/t-helper.lp
 clingo version 5.5.2
 Reading from attractor_for_gen.lp ...
+Solving...

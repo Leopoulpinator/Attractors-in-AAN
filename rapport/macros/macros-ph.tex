@@ -1,0 +1,143 @@
+\usepackage{ifthen}
+
+\newcommand{\currentScope}{}
+\newcommand{\currentSort}{}
+\newcommand{\currentSortLabel}{}
+\newcommand{\currentAlign}{}
+\newcommand{\currentSize}{}
+
+\newcounter{la}
+\newcommand{\TSetSortLabel}[2]{
+  \expandafter\repcommand\expandafter{\csname TUserSort@#1\endcsname}{#2}
+}
+\newcommand{\TSort}[4]{
+  \renewcommand{\currentScope}{#1}
+  \renewcommand{\currentSort}{#2}
+  \renewcommand{\currentSize}{#3}
+  \renewcommand{\currentAlign}{#4}
+  \ifcsname TUserSort@\currentSort\endcsname
+    \renewcommand{\currentSortLabel}{\csname TUserSort@\currentSort\endcsname}
+  \else
+    \renewcommand{\currentSortLabel}{\currentSort}
+  \fi
+  \begin{scope}[shift={\currentScope}]
+  \ifthenelse{\equal{\currentAlign}{l}}{
+    \filldraw[process box] (-0.5,-0.5) rectangle (0.5,\currentSize-0.5);
+    \node[sort] at (-0.2,\currentSize-0.4) {\currentSortLabel};
+   }{\ifthenelse{\equal{\currentAlign}{r}}{
+     \filldraw[process box] (-0.5,-0.5) rectangle (0.5,\currentSize-0.5);
+     \node[sort] at (0.2,\currentSize-0.4) {\currentSortLabel};
+   }{
+    \filldraw[process box] (-0.5,-0.5) rectangle (\currentSize-0.5,0.5);
+    \ifthenelse{\equal{\currentAlign}{t}}{
+      \node[sort,anchor=east] at (-0.3,0.2) {\currentSortLabel};
+    }{
+      \node[sort] at (-0.6,-0.2) {\currentSortLabel};
+    }
+   }}
+  \setcounter{la}{\currentSize}
+  \addtocounter{la}{-1}
+  \foreach \i in {0,...,\value{la}} {
+    \TProc{\i}
+  }
+  \end{scope}
+}
+
+\newcommand{\TTickProc}[2]{ % pos, label
+  \ifthenelse{\equal{\currentAlign}{l}}{
+    \draw[tick] (-0.6,#1) -- (-0.4,#1);
+    \node[tick label, anchor=east] at (-0.55,#1) {#2};
+   }{\ifthenelse{\equal{\currentAlign}{r}}{
+    \draw[tick] (0.6,#1) -- (0.4,#1);
+    \node[tick label, anchor=west] at (0.55,#1) {#2};
+   }{
+    \ifthenelse{\equal{\currentAlign}{t}}{
+      \draw[tick] (#1,0.6) -- (#1,0.4);
+      \node[tick label, anchor=south] at (#1,0.55) {#2};
+    }{
+      \draw[tick] (#1,-0.6) -- (#1,-0.4);
+      \node[tick label, anchor=north] at (#1,-0.55) {#2};
+    }
+   }}
+}
+\newcommand{\TSetTick}[3]{
+  \expandafter\repcommand\expandafter{\csname TUserTick@#1_#2\endcsname}{#3}
+}
+
+\newcommand{\myProc}[3]{
+  \ifcsname TUserTick@\currentSort_#1\endcsname
+    \TTickProc{#1}{\csname TUserTick@\currentSort_#1\endcsname}
+  \else
+    \TTickProc{#1}{#1}
+  \fi
+  \ifthenelse{\equal{\currentAlign}{l}\or\equal{\currentAlign}{r}}{
+    \node[#2] (\currentSort_#1) at (0,#1) {#3};
+  }{
+    \node[#2] (\currentSort_#1) at (#1,0) {#3};
+  }
+}
+\newcommand{\TSetProcStyle}[2]{
+  \expandafter\repcommand\expandafter{\csname TUserProcStyle@#1\endcsname}{#2}
+}
+\newcommand{\TProc}[1]{
+  \ifcsname TUserProcStyle@\currentSort_#1\endcsname
+    \myProc{#1}{\csname TUserProcStyle@\currentSort_#1\endcsname}{}
+  \else
+    \myProc{#1}{process}{}
+  \fi
+}
+
+\newcommand{\repcommand}[2]{
+  \providecommand{#1}{#2}
+  \renewcommand{#1}{#2}
+}
+\newcommand{\THit}[5]{
+  \path[hit] (#1) edge[#2] (#3#4);
+  \expandafter\repcommand\expandafter{\csname TBounce@#3@#5\endcsname}{#4}
+}
+\newcommand{\TBounce}[4]{
+  (#1\csname TBounce@#1@#3\endcsname) edge[#2] (#3#4)
+}
+
+%\newcommand{\TState}[1]{
+%  \foreach \proc in {#1} {
+%    \node[current process] (\proc) at (\proc.center) {};
+%  }
+%}
+
+\newcommand{\TState}[1]{
+  \foreach \proc in {#1} {
+        \node[current process] (\proc) at (\proc.center) {};
+  };
+}
+\newcommand{\TCoopHit}[6]{
+  \node[#2, apdot] at (#3) {};
+  \foreach \proc in {#1} {
+    \draw[#2,-] (#3) edge (\proc);
+  }
+  \path[hit] (#3) edge[#2] (#4#5);
+  \expandafter\repcommand\expandafter{\csname TBounce@#4@#6\endcsname}{#5}
+}
+
+% ex : \TAction{c_1}{a_1.west}{a_0.north west}{}{right}
+% #1 = frappeur
+% #2 = cible
+% #3 = bond
+% #4 = style frappe
+% #5 = style bond
+\newcommand{\TAction}[5]{
+  \THit{#1}{#4}{#2}{}{#3}
+  \path[bounce, bend #5=50] \TBounce{#2}{}{#3}{};
+}
+
+% ex : \TActionPlur{f_1, c_0}{a_0.west}{a_1.south west}{}{3.5,2.5}{left}
+% #1 = frappeur
+% #2 = cible
+% #3 = bond
+% #4 = style frappe
+% #5 = coordonnées point central
+% #6 = direction bond
+\newcommand{\TActionPlur}[6]{
+  \TCoopHit{#1}{#4}{#5}{#2}{}{#3}
+  \path[bounce, bend #6=50] \TBounce{#2}{}{#3}{};
+}

@@ -1,0 +1,126 @@
+% Macros relatives à la traduction de PH avec arcs neutralisants vers PH à k-priorités fixes
+
+% Macros générales
+%\newcommand{\ie}{\textit{i.e.} }
+\newcommand{\segm}[2]{\llbracket #1; #2 \rrbracket}
+%\newcommand{\f}[1]{\mathsf{#1}}
+
+% Notations générales pour PH
+\newcommand{\PH}{\mathcal{PH}}
+%\newcommand{\PHs}{\mathcal{S}}
+\newcommand{\PHs}{\Sigma}
+%\newcommand{\PHp}{\mathcal{P}}
+\newcommand{\PHp}{\textcolor{red}{\mathcal{P}}}
+%\newcommand{\PHproc}{\mathcal{P}}
+\newcommand{\PHproc}{\mathbf{Proc}}
+\newcommand{\Proc}{\PHproc}
+\newcommand{\PHh}{\mathcal{H}}
+\newcommand{\PHa}{\PHh}
+%\newcommand{\PHa}{\mathcal{A}}
+\newcommand{\PHl}{\mathcal{L}}
+\newcommand{\PHn}{\mathcal{N}}
+\newcommand{\PHt}{\mathcal{H}_{t}} % Ensemble des action du T-PH avec des actions temporisées
+
+\newcommand{\PHhitter}{\mathsf{hitter}}
+\newcommand{\PHtarget}{\mathsf{target}}
+\newcommand{\PHbounce}{\mathsf{bounce}}
+%\newcommand{\PHsort}{\Sigma}
+\newcommand{\PHsort}{\PHs}
+%State of PH
+\newcommand{\PHst}{\zeta}
+
+%Automata Network
+\newcommand{\AN}{\mathcal{AAN}}
+\newcommand{\TAN}{T-\mathcal{AN}}
+\newcommand{\ANsort}{\Sigma}
+\newcommand{\ANbound}[1]{\operatorname{b}(#1)}
+\newcommand{\ANstate}{\mathcal{S}}
+\newcommand{\ANtrans}{\mathcal{T}}
+\newcommand{\ANst}{\zeta}
+%\newcommand{\LS}{\textbf{LS}}
+\newcommand{\LS}{\mathcal{LS}}
+\newcommand{\ANgt}{\rightarrow}
+\newcommand{\ANgtu}[1]{\ANgt_{#1}}
+\newcommand{\origin}[1]{\mathsf{ori}(#1)}
+\newcommand{\condition}[1]{\mathsf{cond}(#1)}
+\newcommand{\destination}[1]{\mathsf{dest}(#1)}
+%\newcommand{\ANuexp}[1]{U^{#1}}
+\newcommand{\ANuexpsymbol}{\,\mathcal{U}}
+\newcommand{\ANuexp}[1]{\ANuexpsymbol^{#1}}
+\newcommand{\U}{\ANuexpsymbol}
+\newcommand{\Ua}{\ANuexp{\mathsf{asyn}}}
+\newcommand{\Us}{\ANuexp{\mathsf{syn}}}
+\newcommand{\ANglobalstate}[1]{\langle #1 \rangle}
+\newcommand{\ANltsymb}[4]{#1 \overset{#2}{#4} #3}
+\newcommand{\ANlt}[3]{\ANltsymb{#1}{#2}{#3}{\rightarrow}}
+\newcommand{\ANlts}[3]{\ANltsymb{#1}{\{#2\}}{#3}{\longrightarrow}}
+\newcommand{\ANltsc}[3]{\textcolor{commentgray}{\ANlts{#1}{#2}{#3}}}
+\newcommand{\aiellaj}{\ANlt{a_i}{\ell}{a_j}}
+\newcommand{\trace}{\mathsf{trace}}
+\newcommand{\successiverep}{\mathsf{sr}}
+
+%\newcommand{\PHfrappeur}{\mathsf{frappeur}}
+%\newcommand{\PHcible}{\mathsf{cible}}
+%\newcommand{\PHbond}{\mathsf{bond}}
+%\newcommand{\PHsorte}{\mathsf{sorte}}
+%\newcommand{\PHbloquant}{\mathsf{bloquante}}
+%\newcommand{\PHbloque}{\mathsf{bloquee}}
+
+%\newcommand{\PHfrappeR}{\textcolor{red}{\rightarrow}}
+%\newcommand{\PHmonte}{\textcolor{red}{\Rsh}}
+
+\newcommand{\PHhitA}{\rightarrow}
+\newcommand{\PHhitB}{\Rsh}
+%\newcommand{\PHfrappe}[3]{\mbox{$#1\PHhitA#2\PHhitB#3$}}
+%\newcommand{\PHfrappebond}[2]{\mbox{$#1\PHhitB#2$}}
+\newcommand{\PHhit}[3]{#1\PHhitA#2\PHhitB#3}
+\newcommand{\PHfrappe}{\PHhit}
+\newcommand{\PHhbounce}[2]{#1\PHhitB#2}
+\newcommand{\PHobj}[2]{\mbox{$#1\PHhitB^*\!#2$}}
+\newcommand{\PHobjectif}{\PHobj}
+\newcommand{\PHconcat}{::}
+%\newcommand{\PHneutralise}{\rtimes}
+\def\Sce{\mathbf{Sce}}
+
+% Actions plurielles
+\newcommand{\PHhitmultsymbol}{\rightarrowtail}
+\newcommand{\PHhitmult}[2]{\mbox{$#1 \PHhitmultsymbol #2$}}
+\newcommand{\PHfrappemult}{\PHhitmult}
+\newcommand{\PHfrappemults}[2]{\PHhitmult{\{#1\}}{\{#2\}}}
+
+%Action plurielle avec délai
+\newcommand{\PHhitdelayB}{\Rsh}
+\newcommand{\PHhitdelayA}[1]{\xrightarrow{#1} }
+\newcommand{\PHhitdelay}[4]{#1\PHhitdelayA{#2} #3 \PHhitdelayB #4}
+\newcommand{\PHfrappedelay}{\PHhitdelay}
+
+\def\PHget#1#2{{#1[#2]}}
+%\newcommand{\PHchange}[2]{#1\langle #2 \rangle}
+%\newcommand{\PHchange}[2]{(#1 \Lleftarrow #2)}
+%\newcommand{\PHarcn}[2]{\mbox{$#1\PHneutralise#2$}}
+\newcommand{\PHplay}{\cdot}
+
+\newcommand{\PHstate}[1]{\mbox{$\langle #1 \rangle$}}
+\newcommand{\PHetat}{\PHstate}
+
+\def\supp{\mathsf{support}}
+\def\first{\mathsf{first}}
+\def\last{\mathsf{last}}
+
+\def\DNtrans{\rightarrow_{ADN}}
+\def\DNdef{(\mathbb F, \langle f^1, \dots, f^n\rangle)}
+\def\DNdep{\mathsf{dep}}
+\def\PHPtrans{\rightarrow_{PH}}
+\def\get#1#2{#1[{#2}]}
+\def\encodeF#1{\mathbf{#1}}
+\def\toPH{\encodeF{PH}}
+\def\card#1{|#1|}
+\def\decode#1{\llbracket#1\rrbracket}
+\def\encode#1{\llparenthesis#1\rrparenthesis}
+\def\Hits{\PHa}
+\def\hit{\PHhit}
+\def\play{\cdot}
+
+\def\Pint{\textsc{PINT}}
+
+\newcommand{\sN}{\mathbb{N}}

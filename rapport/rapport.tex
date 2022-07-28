@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage[a4paper,margin=20mm]{geometry}
 \usepackage{nameref}
 \usepackage[symbol]{footmisc}
 \usepackage{minitoc}
@@ -10,6 +10,10 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \renewcommand{\contentsname}{Table des matières}
+
+\input{macros/macros}
+\input{macros/macros-ph}
+\input{macros/tikzstyles2.tex}
 
 \begin{document}
 
@@ -72,9 +76,9 @@ On commence par définir un terme (ou atome) en ASP :
 	\item terme simple :
 		\begin{itemize}
 		\item un entier relatif (0, 1, 42, -35, ...)
-		\item une constante qui démarre par un enderscore ou une lettre minuscule, et est suivie par des lettres/chiffres/enderscore (v0us, av35, p3rdu, au, j3u, \_\_sisi\_\_, ...)
+		\item une constante qui démarre par un enderscore ou une lettre minuscule, et est suivie par des lettres/chiffres/enderscore (v0us, lis35, un, ex3mpl3, \_\_sisi\_\_, ...)
 		\item une chaîne de caractères sous la forme "ma\_chaine\_de\_caracteres" ("gf43ha43gG", "42", ...)
-		\item une variable identique grammaticalement à la constante, mais dont la première lettre doit être majuscule (Je, Suis, Une, Variable, ...)
+		\item une variable identique grammaticalement à la constante, mais dont la première lettre doit être majuscule (Nous, Sommes, Des, Variables, ...)
 		\item un enderscore symbolisant une variable sans nom
 		\item $\#sup$ et $\#inf$ qui sont des constantes définies par ASP
 		\end{itemize}
@@ -128,15 +132,108 @@ structurent suivant l'exemple suivant :
 \begin{center}
   0 $\left\{ f(A,B):g(A)\right\}$ 2.
 \end{center}
-La \textbf{borne inférieure}, située à gauche des accolades, et la \textbf{borne supérieure} définissent l'intervalle discret du nombre d'atomes que l'on va mettre à vrai. Si l'une de ces deux bornes est omise, 
-ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible.
+La \textbf{borne inférieure}, située à gauche des accolades, et la \textbf{borne supérieure} définissent l'intervalle discret du nombre d'atomes que le solveur peut mettre à vrai. Si l'une de ces deux bornes est omise, 
+ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible (à savoir 0 pour la borne inf et cardinal de l'ensemble défini par les accolades pour la borne sup).\\
+Les agrégats permettent de faire des disjonctions de cas.
+\subsection{Exemple du sudoku}
+Durant les premières semaines de mon stage, j'ai encodé différents jeux de logique en ASP afin de me familiariser avec le langage. Le jeu le plus simple et connu que j'ai encodé a été le sudoku. Dans cette section, je vais 
+briévement détailler le fonctionnement de ce code.\\
+On codera une grille de sudoku en ASP en utilisant s, une fonction d'arité 3 prenant R, C et V comme argument, où R est la ligne, C la colonne et V la valeur de la case (R,C) dans la grille.
+\begin{center}
+$val(1..9)$.\\
+\emph{1..9 est un raccourci pour dire itérer pour les entiers allant de 1 à 9. Ici, on déclare qu'il y a 9 valeurs dans une fonction d'arité 1 : 'val'}\\
+$border(1;4;7)$.\\
+\emph{On déclare également 3 autres faits pour mémoriser où sont situés les bordures de notre grille}\\
+$1\left\{ s(R,C,V): val(V) \right\}1$ :- $val(R) ; val(C)$.\\
+\emph{On ne prend qu'une seule valeur par carré}\\
+$1\left\{ s(R,C,V): val(R) \right\}1$ :- $val(C) ; val(V)$.\\
+\emph{Une valeur ne peut pas apparaître plusieurs fois dans la même colonne}\\
+$1\left\{ s(R,C,V): val(C) \right\}1$ :- $val(R) ; val(V)$.\\
+\emph{Ni dans la même ligne}\\
+$1\left\{ s(R,C,V): val(R), val(C), R1<=R, R<=(R1+2), C1<=C, C<=(C1+2)\right\}1$ :- $val(V) ; border(R1) ; border(C1)$.\\
+\emph{Une valeur ne peut pas apparaître plusieurs fois dans une sous-grille.}\\
+\end{center}
+Une fois que l'on a fait cela, il ne nous reste plus qu'à instancier notre problème sur une grille. Pour cela, on renseigne s(R,C,V) pour chaque case déjà pré-numérotée de la grille à notre code, et le solveur se chargera 
+de nous renvoyer l'intégralité de la grille complétée.
 
 \section{Formalismes d'automates}
-On définit ce qu'est un réseau d'automates asynchrones proprement.
-	\subsection{AAN}
-	Très simple à utiliser en pratique (pour la bio).
-	\subsection{Traduction en ASP}
-	Un bout de code à expliquer en ASP.
+Différents modèles existent pour représenter efficacement un système biologique et manipuler sa dynamique : les deux principaux sont les réseaux booléens synchrones de Stuart Kauffman, et les réseaux asynchrones de René Thomas.
+Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) [Folschette et al., 2015, Paulevé, 2016a], qui forment une extension d'une précédente 
+structure appelé "Process Hitting"  [Paulevé et al., 2014].
+\subsection{AAN}
+Un automate $A$, dans le contexte de mon stage, sera défini comme étant un ensemble d'états $q_0, q_1, ..., q_{|A|-1}$ avec des transitions dont les étiquettes seront définies juste après. Il n'y a donc ni état final, ni état 
+initial. On ne lui donnera pas non plus de mot à lire en entrée puisqu'on va s'intéresser à la dynamique de nos ensembles d'automates. On parlera alors de transition locale : $t(q_i,q_j,l)$ symbolisera le fait que l'on peut 
+passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiés.\\
+Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$ avec :
+\begin{itemize}
+	\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.
+	\item Si $C_a$ est le nombre d'états d'un automate $a$, alors $S_a=\left\{a_0,a_1,...,a_{C_a-1}\right\}$ est l'ensemble des \textbf{états locaux} de l'automate $a$. $S=\displaystyle{\prod_{a\in\Sigma}}S_a$ est l'ensemble 
+	fini des \textbf{états globaux}, et $LS=\displaystyle{\bigcup_{a\in\Sigma}}S_a$ représente l'ensemble de tous les états locaux.
+	\item Pour chaque $a\in\Sigma$, $T_a\subseteq\left\{(a_i,a_j,l)\in S_a\times S_a\times\rho(LS/S_a)|t(a_i,a_j,l), a_i\neq a_j\right\}$ est l'ensemble des \textbf{transitions locales} d'un automate $a$, avec $\rho$ qui 
+	désigne la puissance ensembliste. $T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.
+\end{itemize}
+\textbf{Exemple :}
+
+\begin{center}
+\begin{tikzpicture}[apdotsimple/.style={apdot}]
+
+  \TSort{(0,2)}{a}{3}{r}
+  \TSort{(2.5,0)}{b}{2}{r}
+  \TSort{(5,2)}{c}{3}{r}
+
+  \path[local transitions]
+    (a_0) edge node[auto] {$b_0$} (a_1)
+    (a_1) edge node[auto] {$b_0$} (a_2)
+    (a_2) edge node[auto] {$b_1$} (a_1)
+    (a_1) edge node[auto] {$b_1$} (a_0)
+
+    (b_0) edge node[auto] {$c_0$} (b_1)
+    (b_1) edge node[auto] {$a_2$} (b_0)
+
+    (c_0) edge node[auto] {$b_1$} (c_1)
+    (c_1) edge node[auto] {$b_0$} (c_0)
+    (c_1) edge node[auto] {$a_1$} (c_2)
+    ;
+  \path[local transitions, bend left = 105]
+      (a_0) edge node[auto] {$b_1, c_1$} (a_1)
+    ;
+  \path[local transitions, bend left = 90]
+      (c_0) edge node[auto] {$a_2$} (c_2)
+    ;
+  \path[local transitions, bend left = 90]
+      (c_2) edge node[auto] {$b_1$} (c_0)
+    ;
+
+  \TState{a_0, b_1, c_1}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Traduction en ASP}
+En ASP, on définira un AAN en deux temps :
+\begin{itemize}
+	\item On commencera par déclarer chacun de nos automates avec les niveaux (= états) qu'il contient :
+	\begin {center}
+	automaton\_level("a", 0..2).\\
+	automaton\_level("b", 0..1).\\
+	automaton\_level("c", 0..2).\\
+	\end{center}
+	\item Enfin, les transitions seront encodés via des labels (t1, t2, ...), et on donnera chacune des conditions, ainsi que l'état d'arrivée, via un fait :
+	\begin {center}
+	condition(t1, "a", 0). target(t1, "a", 1). condition(t1, "b", 0).\\
+	condition(t2, "a", 1). target(t2, "a", 2). condition(t2, "b", 0).\\
+	condition(t3, "a", 2). target(t3, "a", 1). condition(t3, "b", 1).\\
+	condition(t4, "a", 1). target(t4, "a", 0). condition(t4, "b", 1).\\
+	condition(t5, "b", 0). target(t5, "b", 1). condition(t5, "c", 0).\\
+	condition(t6, "b", 1). target(t6, "b", 0). condition(t6, "a", 2).\\
+	condition(t7, "c", 0). target(t7, "c", 1). condition(t7, "b", 1).\\
+	condition(t8, "c", 1). target(t8, "c", 0). condition(t8, "b", 0).\\
+	condition(t9, "c", 1). target(t9, "c", 2). condition(t9, "a", 1).\\
+	condition(t10, "c", 0). target(t10, "c", 2). condition(t10, "a", 2).\\
+	condition(t11, "c", 2). target(t11, "c", 0). condition(t11, "b", 1).\\
+	condition(t12, "a", 0). target(t12, "a", 1). condition(t12, "b", 1). condition(t12, "c", 1).\\
+	\end{center}
+Nous avons ainsi défini l'automate de notre \textbf{exemple} en ASP.
+\end{itemize}
 
 \section{Dynamique}
 état local, sémantique, état global, état stable, domaines de pièges,  attracteurs + les lemmes et tout ça.
