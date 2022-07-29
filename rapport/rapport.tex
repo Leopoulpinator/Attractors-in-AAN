@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage[a4paper,margin=20mm]{geometry}
+\usepackage[a4paper,margin=19mm]{geometry}
 \usepackage{nameref}
 \usepackage[symbol]{footmisc}
 \usepackage{minitoc}
+\usepackage{color}
 \setcounter{tocdepth}{3}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -107,30 +108,44 @@ les modèles possibles pour $P$.
 Si une variable apparaît dans un atome de la tête, elle doit également être dans la queue. Chaque instance d'une variable va être groundée par clingo afin de trouver tous les modèles à notre problème.
 Prenons un petit exemple, voici un problème encodé avec 2 règles :
 \begin{center}
+\emph{
+	\textcolor{blue}{
   parentOf(jenny, charles).\\
   parentOf(mary, jenny).
+	}
+}
 \end{center}
 Ce programme contient 2 faits : Charles est un parent de Jenny, et Jenny est un parent de Mary. C'est ainsi que l'on souhaite comprendre les termes "parentOf(jenny, charles)" et "parentOf(mary, jenny)".
 Si on souhaite désormais spécifier que Charles est un grand parent de Mary, on peut le faire en ajoutant le terme : "grandparentOf(Mary, Charles)". Cependant, ASP est capable de faire bien mieux pour cela.
 En effet, on peut généraliser la notion de grand parent comme étant le parent d'un parent de la façon suivante :
 \begin{center}
+\emph{
+	\textcolor{blue}{
   grandparentOf(X, Z) :- parentOf(X, Y), parentOf(Y, Z).
+	}
+}
 \end{center}
 Pour chaque valeurs possible de X, Y, et Z, le grounding d'ASP va nous créer des règles associées.
 Ainsi, les 27 règles dont grandparentOf(mary, mary) :- parentOf(mary, mary), parentOf(mary, mary), ou encore grandparentOf(charles, mary) :- parentOf(charles, jenny), parentOf(jenny, mary) vont être créées 
 par cette façon de procéder. Ceci n'est pas du tout un problème : le solveur d'ASP va simplement regarder si les atomes des queues sont vraies ou pas. Si ce n'est pas le cas, comme le faux implique tout, 
 les règles seront vraies. Si c'est le cas, la tête sera alors mise à vraie. Sachant qu'une seule de ces 27 possibilités mène à la véracité d'un nouvel atome, on obtiendra en sortie d'ASP les faits suivants :
 \begin{center}
+\textcolor{blue}{
   SATISFAIBLE\\
+	\emph{
   parentOf(jenny, charles)\\
   parentOf(mary, jenny)\\
   grandparentOf(mary, charles)
+	}
+}
 \end{center}
 \subsection{Agrégats}
 Les agrégats forment le dernier outil d'ASP que j'ai utilisé dans le cadre de mon stage. Il s'agit d'un moyen de sélectionner un certain nombre d'atomes parmi un ensemble, et de les mettre à vrai. Ils se 
 structurent suivant l'exemple suivant :
 \begin{center}
+\textcolor{blue}{
   0 $\left\{ f(A,B):g(A)\right\}$ 2.
+}
 \end{center}
 La \textbf{borne inférieure}, située à gauche des accolades, et la \textbf{borne supérieure} définissent l'intervalle discret du nombre d'atomes que le solveur peut mettre à vrai. Si l'une de ces deux bornes est omise, 
 ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible (à savoir 0 pour la borne inf et cardinal de l'ensemble défini par les accolades pour la borne sup).\\
@@ -140,17 +155,29 @@ Durant les premières semaines de mon stage, j'ai encodé différents jeux de lo
 briévement détailler le fonctionnement de ce code.\\
 On codera une grille de sudoku en ASP en utilisant s, une fonction d'arité 3 prenant R, C et V comme argument, où R est la ligne, C la colonne et V la valeur de la case (R,C) dans la grille.
 \begin{center}
-$val(1..9)$.\\
+\textcolor{blue}{
+	$val(1..9)$.\\
+}
 \emph{1..9 est un raccourci pour dire itérer pour les entiers allant de 1 à 9. Ici, on déclare qu'il y a 9 valeurs dans une fonction d'arité 1 : 'val'}\\
-$border(1;4;7)$.\\
+\textcolor{blue}{
+	$border(1;4;7)$.\\
+}
 \emph{On déclare également 3 autres faits pour mémoriser où sont situés les bordures de notre grille}\\
-$1\left\{ s(R,C,V): val(V) \right\}1$ :- $val(R) ; val(C)$.\\
+\textcolor{blue}{
+	$1\left\{ s(R,C,V): val(V) \right\}1$ :- $val(R) ; val(C)$.\\
+}
 \emph{On ne prend qu'une seule valeur par carré}\\
-$1\left\{ s(R,C,V): val(R) \right\}1$ :- $val(C) ; val(V)$.\\
+\textcolor{blue}{
+	$1\left\{ s(R,C,V): val(R) \right\}1$ :- $val(C) ; val(V)$.\\
+}
 \emph{Une valeur ne peut pas apparaître plusieurs fois dans la même colonne}\\
-$1\left\{ s(R,C,V): val(C) \right\}1$ :- $val(R) ; val(V)$.\\
+\textcolor{blue}{
+	$1\left\{ s(R,C,V): val(C) \right\}1$ :- $val(R) ; val(V)$.\\
+}
 \emph{Ni dans la même ligne}\\
-$1\left\{ s(R,C,V): val(R), val(C), R1<=R, R<=(R1+2), C1<=C, C<=(C1+2)\right\}1$ :- $val(V) ; border(R1) ; border(C1)$.\\
+\textcolor{blue}{
+	$1\left\{ s(R,C,V): val(R), val(C), R1<=R, R<=(R1+2), C1<=C, C<=(C1+2)\right\}1$ :- $val(V) ; border(R1) ; border(C1)$.\\
+}
 \emph{Une valeur ne peut pas apparaître plusieurs fois dans une sous-grille.}\\
 \end{center}
 Une fois que l'on a fait cela, il ne nous reste plus qu'à instancier notre problème sur une grille. Pour cela, on renseigne s(R,C,V) pour chaque case déjà pré-numérotée de la grille à notre code, et le solveur se chargera 
@@ -159,11 +186,12 @@ de nous renvoyer l'intégralité de la grille complétée.
 \section{Formalismes d'automates}
 Différents modèles existent pour représenter efficacement un système biologique et manipuler sa dynamique : les deux principaux sont les réseaux booléens synchrones de Stuart Kauffman, et les réseaux asynchrones de René Thomas.
 Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) [Folschette et al., 2015, Paulevé, 2016a], qui forment une extension d'une précédente 
-structure appelé "Process Hitting"  [Paulevé et al., 2014].
+structure appelé "Process Hitting"  [Paulevé et al., 2014].\\
+
 \subsection{AAN}
-Un automate $A$, dans le contexte de mon stage, sera défini comme étant un ensemble d'états $q_0, q_1, ..., q_{|A|-1}$ avec des transitions dont les étiquettes seront définies juste après. Il n'y a donc ni état final, ni état 
-initial. On ne lui donnera pas non plus de mot à lire en entrée puisqu'on va s'intéresser à la dynamique de nos ensembles d'automates. On parlera alors de transition locale : $t(q_i,q_j,l)$ symbolisera le fait que l'on peut 
-passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiés.\\
+Un automate $A$, dans le contexte de mon stage, sera défini comme étant un ensemble d'états $q_0, q_1, ..., q_{|A|-1}$ avec des transitions dont les étiquettes seront un ou plusieurs états (qu'on appellera également \emph{niveaux}) 
+d'automates externes. Il n'y a donc ni état final, ni état initial. On ne lui donnera pas non plus de mot à lire en entrée puisqu'on va s'intéresser à la dynamique de nos ensembles d'automates. On parlera alors de 
+transition locale : $t(q_i,q_j,l)$ symbolisera le fait que l'on peut passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiés.\\
 Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$ avec :
 \begin{itemize}
 	\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.
@@ -172,8 +200,14 @@ Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$ avec :
 	\item Pour chaque $a\in\Sigma$, $T_a\subseteq\left\{(a_i,a_j,l)\in S_a\times S_a\times\rho(LS/S_a)|t(a_i,a_j,l), a_i\neq a_j\right\}$ est l'ensemble des \textbf{transitions locales} d'un automate $a$, avec $\rho$ qui 
 	désigne la puissance ensembliste. $T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.
 \end{itemize}
-\textbf{Exemple :}
-
+\textbf{Exemple :} On représente l'AAN suivant de cette manière :
+\begin{itemize}
+	\item $\Sigma =\left\{a,b,c\right\}$
+	\item $S_a=\left\{a_0,a_1,a_2\right\}$, $S_b=\left\{b_0,b_1\right\}$ et $S_c=\left\{c_0,c_1,c_2\right\}$
+	\item $T_a = \left\{t(a_0,a_1,[b_0]),t(a_0,a_1,[b_1,c_1]),t(a_1,a_0,[b_1]),t(a_1,a_2,[b_0]),t(a_2,a_1,[b_1])\right\}$\\
+	$T_b=\left\{t(b_0,b_1,[c_0]),t(b_1,b_0,[a_2])\right\}$\\
+	$T_c=\left\{t(c_0,c_1,[b_1]),t(c_0,c_2,[a_2]),t(c_1,c_0,[b_0]),t(c_1,c_2,[a_1]),t(c_2,c_0,[b_1])\right\}$
+\end{itemize}
 \begin{center}
 \begin{tikzpicture}[apdotsimple/.style={apdot}]
 
@@ -213,30 +247,126 @@ En ASP, on définira un AAN en deux temps :
 \begin{itemize}
 	\item On commencera par déclarer chacun de nos automates avec les niveaux (= états) qu'il contient :
 	\begin {center}
-	automaton\_level("a", 0..2).\\
-	automaton\_level("b", 0..1).\\
-	automaton\_level("c", 0..2).\\
+	\emph{
+		\textcolor{blue}{
+		automaton\_level("a", 0..2).\\
+		automaton\_level("b", 0..1).\\
+		automaton\_level("c", 0..2).\\
+		}
+	}
 	\end{center}
 	\item Enfin, les transitions seront encodés via des labels (t1, t2, ...), et on donnera chacune des conditions, ainsi que l'état d'arrivée, via un fait :
 	\begin {center}
-	condition(t1, "a", 0). target(t1, "a", 1). condition(t1, "b", 0).\\
-	condition(t2, "a", 1). target(t2, "a", 2). condition(t2, "b", 0).\\
-	condition(t3, "a", 2). target(t3, "a", 1). condition(t3, "b", 1).\\
-	condition(t4, "a", 1). target(t4, "a", 0). condition(t4, "b", 1).\\
-	condition(t5, "b", 0). target(t5, "b", 1). condition(t5, "c", 0).\\
-	condition(t6, "b", 1). target(t6, "b", 0). condition(t6, "a", 2).\\
-	condition(t7, "c", 0). target(t7, "c", 1). condition(t7, "b", 1).\\
-	condition(t8, "c", 1). target(t8, "c", 0). condition(t8, "b", 0).\\
-	condition(t9, "c", 1). target(t9, "c", 2). condition(t9, "a", 1).\\
-	condition(t10, "c", 0). target(t10, "c", 2). condition(t10, "a", 2).\\
-	condition(t11, "c", 2). target(t11, "c", 0). condition(t11, "b", 1).\\
-	condition(t12, "a", 0). target(t12, "a", 1). condition(t12, "b", 1). condition(t12, "c", 1).\\
+	\emph{
+		\textcolor{blue}{
+		condition(t1, "a", 0). target(t1, "a", 1). condition(t1, "b", 0).\\
+		condition(t2, "a", 1). target(t2, "a", 2). condition(t2, "b", 0).\\
+		condition(t3, "a", 2). target(t3, "a", 1). condition(t3, "b", 1).\\
+		condition(t4, "a", 1). target(t4, "a", 0). condition(t4, "b", 1).\\
+		condition(t5, "b", 0). target(t5, "b", 1). condition(t5, "c", 0).\\
+		condition(t6, "b", 1). target(t6, "b", 0). condition(t6, "a", 2).\\
+		condition(t7, "c", 0). target(t7, "c", 1). condition(t7, "b", 1).\\
+		condition(t8, "c", 1). target(t8, "c", 0). condition(t8, "b", 0).\\
+		condition(t9, "c", 1). target(t9, "c", 2). condition(t9, "a", 1).\\
+		condition(t10, "c", 0). target(t10, "c", 2). condition(t10, "a", 2).\\
+		condition(t11, "c", 2). target(t11, "c", 0). condition(t11, "b", 1).\\
+		condition(t12, "a", 0). target(t12, "a", 1). condition(t12, "b", 1). condition(t12, "c", 1).\\
+		}
+	}
 	\end{center}
-Nous avons ainsi défini l'automate de notre \textbf{exemple} en ASP.
 \end{itemize}
+Nous avons ainsi défini l'automate de notre \textbf{exemple} en ASP.
 
 \section{Dynamique}
-état local, sémantique, état global, état stable, domaines de pièges,  attracteurs + les lemmes et tout ça.
+Soit $R = (\Sigma,S,T)$ un AAN (défini ci-dessus). On définit quelques notions :
+\begin{itemize}
+	\item On dit qu'une transition locale est \textbf{jouable} si toutes les conditions de celle-ci sont vérifiés\\
+	On notera $P_{\zeta}$ l'ensemble des transitions locales jouables depuis un état global $\zeta$\\
+	\emph{L'état global $(a_0,b_1,c_1)$ de l'\textbf{exemple} admet une seule transition jouable : $t(a_0,a_1,[b_1,c_1])$}
+	\item On appelle \textbf{état stable} un état global ne possédant aucune transition jouable.\\
+	\emph{Dans l'\textbf{exemple}, aucun état global n'est stable}
+\end{itemize}
+La dynamique d'un AAN se définit à l'aide de sa \textbf{sémantique}. La sémantique forme l'ensemble des propriétés définissant les \textbf{transitions globales jouables} : dans un AAN on s'intéresse à l'évolution globale du réseau.
+\subsection{Sémantiques}
+\subsubsection{Asynchrone}
+Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{asynchrone} est donnée par :
+\begin{center}
+	$U^{asyn}(\zeta)=\left\{\left\{t(a_i,a_j,l)\right\}|t(a_i,a_j,l)\in P_{\zeta}\right\}$
+\end{center}
+De manière informelle : chaque transition locale jouable est une transition globale.\\ \\
+En ASP, on commence donc par déclarer que deux états globaux sont différents sur un automate à l'aide de la règle suivante :\\
+\emph{
+1. \textcolor{blue}{different\_on(Gs1, Gs2, Automaton) :-} \% Cet atome est vrai\\
+2.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2), Gs1 != Gs2,} \% si deux états globaux diffèrent\\
+3.\qquad \textcolor{blue}{automaton(Automaton),} \% qu'il existe un automate\\
+4.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelI), Gs1),} \% sur lequel $Gs1$ vaut $I$\\
+5.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelJ), Gs2),} \% et sur lequel $Gs2$ vaut $J$\\
+6.\qquad \textcolor{blue}{LevelI != LevelJ.} \% avec $I \neq J$\\ \\
+}
+Ensuite, on fait comprendre à ASP qu'une transition locale n'est pas jouable si l'une (au moins) de ses conditions n'est pas vérifiée de la façon suivante :\\
+\emph{
+1. \textcolor{blue}{unplayable(Transition, Gs) :-} \% Cet atome est vrai\\
+2.\qquad \textcolor{blue}{local\_transition(Transition),} \% s'il existe une transition locale\\
+3.\qquad \textcolor{blue}{global\_state(Gs),} \% un état global\\
+4.\qquad \textcolor{blue}{automaton(Automaton),} \% et un automate\\
+5.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelI), Gs),} \% sur lequel $Gs$ vaut $I$\\
+6.\qquad \textcolor{blue}{condition(Transition, Automaton, LevelJ),} \% alors qu'il devrait valoir $J\neq I$\\
+7.\qquad \textcolor{blue}{LevelI != LevelJ.} \% pour que la transition soit jouable\\ \\
+}
+On déclare ensuite que deux états globaux différent sur au moins un autre automate qu'$Automaton$ avec le terme $not\_equal\_except(Automaton, Gs1, Gs2)$ comme ceci :\\
+\emph{
+1. \textcolor{blue}{not\_equal\_except(Automaton, Gs1, Gs2) :-} \% Cet atome est vrai\\
+2.\qquad \textcolor{blue}{automaton(Automaton), automaton(Automaton2),} \% s'il existe deux automates\\
+3.\qquad \textcolor{blue}{Automaton != Automaton2,} \% qui différent\\
+4.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2),} \% deux états globaux\\
+5.\qquad \textcolor{blue}{different\_on(Gs1, Gs2, Automaton2).} \% tels que $Gs1 \neq Gs2$ sur Automaton2\\ \\
+}
+On peut enfin définir ce qu'est une transition globale jouable à l'aide de nos trois précédentes règles :\\
+\emph{
+1. \textcolor{blue}{playable(Gs1, Gs2) :-} \% Cet atome est vrai\\
+2.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2),} \% s'il existe deux états globaux $Gs1$ et $Gs2$\\
+3.\qquad \textcolor{blue}{automaton(Automaton), local\_transition(Transition),} \% un automate et une transition\\
+4.\qquad \textcolor{blue}{target(Transition, Automaton, LevelJ),} \% qui fait changer le niveau de l'automate\\
+5.\qquad \textcolor{blue}{not unplayable(Transition, Gs1),} \% et avec la transition (locale) qui est jouable\\
+6.\qquad \textcolor{blue}{not not\_equal\_except(Automaton, Gs1, Gs2),} \% et $Gs1=Gs2$ excepté sur Automaton\\
+7.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelI), Gs1),} \% tel que le niveau d'$Automaton$ dans $Gs1$\\
+8.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelJ), Gs2),} \% et celui dans $Gs2$\\
+9.\qquad \textcolor{blue}{LevelI != LevelJ.} \% sont différents\\
+}
+\subsubsection{Synchrone}
+Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{synchrone} est donnée par :
+\begin{center}
+	$U^{syn}(\zeta)=\left\{u\subseteq T|u \neq \emptyset \wedge \forall a\in\Sigma,(P_{\zeta}\bigcap T_a = \emptyset \Rightarrow u\bigcap 
+	T_a=\emptyset)\wedge(P_{\zeta}\bigcap T_a\neq\emptyset\Rightarrow |u\bigcap T_a |=1\right\}$
+\end{center}
+De manière informelle : tous les automates possédant au moins une transition locale jouable doivent changer de niveau.\\ \\
+Pour coder cela en ASP, on peut se servir des atomes \emph{\textcolor{blue}{different\_on}} et \emph{\textcolor{blue}{unplayable}}.\\
+On ajoute de plus une autre règle : \emph{\textcolor{blue}{has\_playable(Automaton, Gs, LevelI, LevelJ)}} spécifiant que l'on peut faire changer $Automaton$ dans $Gs$ du niveau $I$ vers le niveau $J$.\\
+Enfin, il ne nous reste plus qu'a déclarer (par la négation) quelles sont les transitions globales qui ne sont pas jouables. Pour cela, on essaie pour toutes les paires d'états globaux si on peut faire la transition de l'un à 
+l'autre en créant un terme \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}} si la transition ne peut pas avoir lieu. On énumère alors les différents cas de figure :
+\begin{enumerate}
+	\item si $Automaton$ n'admet aucune transition locale jouable dans $Gs1$ et que $Gs1\neq Gs2$ sur $Automaton$
+	\item si $Automaton$ admet une (ou plusieurs) transition locale jouable dans $Gs1$ et qu'il n'existe pas de transition pour faire passer le niveau d'$Automaton$ sur $Gs1$ à celui de $Gs2$
+	\item si aucune transition locale n'est jouable depuis $Gs1$
+\end{enumerate}
+alors la transition $Gs1\rightarrow Gs2$ n'est pas jouable.\\
+Enfin, il nous suffit de tester pour toutes les paires d'états globaux distincts si on a \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}} ou pas. Dans le cas contraire, alors on crée l'atome 
+\emph{\textcolor{blue}{playable(Gs1,Gs2)}}.
+
+\subsubsection{Généralisée}
+Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{généralisée} est donnée par :
+\begin{center}
+	$U^{gen}(\zeta)=\left\{u\subseteq T|u \neq \emptyset \wedge \forall a\in\Sigma,(P_{\zeta}\bigcap T_a = \emptyset \Rightarrow u\bigcap 
+	T_a=\emptyset)\wedge(P_{\zeta}\bigcap T_a\neq\emptyset\Rightarrow |u\bigcap T_a |\leq 1\right\}$
+\end{center}
+De manière informelle : tous les automates possédant au moins une transition locale jouable \underline{peuvent} changer de niveau.\\ \\
+Pour coder cela en ASP, on prend exactement le code de la sémantique synchrone, en remplaçant le second cas de figure par ceci :\\ \\
+2. si $Gs1$ différe de $Gs2$ sur $Automaton$ et qu'il n'existe pas de transition pour faire passer le niveau d'$Automaton$ sur $Gs1$ à celui de $Gs2$\\ \\
+Cela permet bien de ne pas prendre une transition par automate qui est jouable puisqu'on va tester des paires d'états globaux qui ont peut-être 3 automates jouables, et si l'on ne fait qu'une seule transition locale cela ne sera pas 
+filtré par notre atome \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}}.
+
+	
+%état local, sémantique, état global, état stable, domaines de pièges,  attracteurs + les lemmes et tout ça.
 
 \section{Révision du code}
 
@@ -245,3 +375,32 @@ Nous avons ainsi défini l'automate de notre \textbf{exemple} en ASP.
 \section{Bibliographie}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
