@@ -6,14 +6,14 @@
 \contentsline {subsection}{\numberline {2.3}Variables}{3}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Agrégats}{4}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Exemple du sudoku}{4}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Formalismes d'automates}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}AAN}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Traduction en ASP}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Dynamique}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Sémantiques}{6}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Asynchrone}{6}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Synchrone}{7}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Généralisée}{8}{subsubsection.4.1.3}%
-\contentsline {section}{\numberline {5}Révision du code}{8}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{8}{section.6}%
-\contentsline {section}{\numberline {7}Bibliographie}{8}{section.7}%
+\contentsline {subsection}{\numberline {2.6}Scripting Python}{5}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Formalismes d'automates et leur dynamique}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}AAN et leur traduction en ASP}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sémantiques}{7}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Asynchrone}{7}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Synchrone}{8}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Généralisée}{9}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Dynamique}{9}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Contribution personnelle}{10}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}%
+\contentsline {section}{\numberline {6}Bibliographie}{10}{section.6}%
