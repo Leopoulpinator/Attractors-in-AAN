@@ -4,15 +4,15 @@
 \BOOKMARK [2][-]{subsection.2.2}{R\350gles et mod\350les d'un programme}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Variables}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.4}{Agr\351gats}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Exemple du sudoku}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Premier exemple : le sudoku}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.6}{Scripting Python}{section.2}% 8
-\BOOKMARK [1][-]{section.3}{Formalismes d'automates et leur dynamique}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{AAN et leur traduction en ASP}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.2}{S\351mantiques}{section.3}% 11
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Asynchrone}{subsection.3.2}% 12
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Synchrone}{subsection.3.2}% 13
-\BOOKMARK [3][-]{subsubsection.3.2.3}{G\351n\351ralis\351e}{subsection.3.2}% 14
-\BOOKMARK [2][-]{subsection.3.3}{Dynamique}{section.3}% 15
-\BOOKMARK [1][-]{section.4}{Contribution personnelle}{}% 16
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
-\BOOKMARK [1][-]{section.6}{Bibliographie}{}% 18
+\BOOKMARK [2][-]{subsection.2.7}{Second exemple : le sokoban}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Formalismes d'automates et leur dynamique}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{AAN et leur traduction en ASP}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{S\351mantiques}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Asynchrone}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Synchrone}{subsection.3.2}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.3}{G\351n\351ralis\351e}{subsection.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.3}{Dynamique}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{Contribution personnelle}{}% 17
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 18
