@@ -251,7 +251,7 @@ sous-programmes \emph{base}, \emph{step(k)} et \emph{check(k)}.\\
 		22. \textcolor{blue}{caisse\_pas\_place(k) :- caisse\_a\_instant(k, R, C), not arrivee(R, C).}\\
 		\% On détermine s'il existe encore des caisses qui ne sont pas placées pour l'étape $k$\\ \\
 		23. \textcolor{blue}{fini(k) :- not caisse\_pas\_place(k).}\\
-		\% Si toutes les caisses sont placées, on a fini la grille
+		\% Si toutes les caisses sont placées, on a fini la grille\\
 	}
 	\item \textbf{check(k) :}\\
 	\emph{
@@ -265,20 +265,20 @@ On récupère alors la liste des coups de caisses à faire, et on peut résoudre
 
 \section{Formalismes d'automates et leur dynamique}
 Différents modèles existent pour représenter efficacement un système biologique et manipuler sa dynamique : les deux principaux sont les réseaux booléens synchrones de Stuart Kauffman, et les réseaux asynchrones de René Thomas.
-Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) \cite{folschette2015sufficient} et \cite{pauleve2016pint}, qui forment une extension d'une précédente 
-structure appelé "Process Hitting" \cite{pauleve14}.\\
+Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) [\cite{folschette2015sufficient}] et [\cite{pauleve2016pint}], qui forment une extension d'une précédente 
+structure appelé "Process Hitting" [\cite{pauleve14}].\\
 
 \subsection{AAN et leur traduction en ASP}
 Un automate $A$, dans le contexte de mon stage, sera défini comme étant un ensemble d'états $q_0, q_1, ..., q_{|A|-1}$ avec des transitions dont les étiquettes seront un ou plusieurs états (qu'on appellera également \emph{niveaux}) 
 d'automates externes. Il n'y a donc ni état final, ni état initial. On ne lui donnera pas non plus de mot à lire en entrée puisqu'on va s'intéresser à la dynamique de nos ensembles d'automates. On parlera alors de 
-transition locale : $q_i\xrightarrow{l}q_j$symbolisera le fait que l'on peut passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiés.\\
+transition locale : $q_i\xrightarrow{l}q_j$ symbolisera le fait que l'on peut passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiés.\\
 Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$ avec :
 \begin{itemize}
 	\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.
 	\item Si $C_a$ est le nombre d'états d'un automate $a$, alors $S_a=\left\{a_0,a_1,...,a_{C_a-1}\right\}$ est l'ensemble des \textbf{états locaux} de l'automate $a$. $S=\displaystyle{\prod_{a\in\Sigma}}S_a$ est l'ensemble 
 	fini des \textbf{états globaux}, et $LS=\displaystyle{\bigcup_{a\in\Sigma}}S_a$ représente l'ensemble de tous les états locaux.
 	\item Pour chaque $a\in\Sigma$, $T_a\subseteq\left\{a_i\xrightarrow{l}a_j\in S_a\times\rho(LS/S_a)\times S_a|a_i\neq a_j\right\}$ est l'ensemble des \textbf{transitions locales} d'un automate $a$, avec 
-	$\rho$ qui désigne la puissance ensembliste. $T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.
+	$\rho$ qui désigne la puissance ensembliste. $T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.\\ \\
 \end{itemize}
 \textbf{Exemple :} On représente l'AAN suivant de cette manière :
 \begin{itemize}
@@ -452,10 +452,95 @@ Soit $U$ une sémantique. On introduit les dernières notions nécessaires pour 
 \end{itemize}
 Enfin, on peut définir ce qu'est un attracteur.\\
 Un ensemble $A\subseteq S$ d'états globaux, avec $|A|\geq2$ est appellé \textbf{attracteur} si et seulement si c'est un domaine de piège minimal en terme d'inclusion ensembliste.\\
-Un travail précédent~\cite{abdallah2015exhaustive} à démontrer le résultat mathématique suivant dont on va se servir pour trouver les attracteurs au sein d'un AAN :\\ \\
+Un travail précédent a démontré le résultat mathématique suivant dont on va se servir pour trouver les attracteurs au sein d'un AAN :\\ \\
 \textbf{Lemme :} Les attracteurs d'un AAN sont exactement les domaines de piège cycliques.
 
 \section{Contribution personnelle}
+La version de laquelle j'ai commencé à travailler est assez proche du travail que j'ai effectué. Cette version était fonctionnelle et efficace pour la sémantique synchrone, mais ne fonctionnait pour la sémantique synchrone que 
+lorsque les attracteurs étaient exactement des cycles simples (chaque état global du graphe produit doit avoir un degré sortant égal à $1$), et ne fonctionnait pas pour les autres AAN comme celui-ci :
+
+\begin{center}
+\begin{tikzpicture}[apdotsimple/.style={apdot}]
+
+  \TSort{(0,2)}{a}{3}{r}
+  \TSort{(3,2)}{b}{3}{r}
+
+  \path[local transitions]
+    (a_0) edge node[auto] {$b_0$} (a_1)
+    (a_1) edge node[auto] {$b_1$} (a_2)
+    (a_2) edge node[auto] {$b_1$} (a_1)
+
+    (b_0) edge node[auto] {$a_0$} (b_1)
+    (b_1) edge node[auto] {$a_1$} (b_2)
+    (b_2) edge node[auto] {$a_1$} (b_1)
+    ;
+    
+    \path[local transitions, bend left = 90]
+      (a_0) edge node[auto] {$b_0$} (a_2)
+    ;
+    \path[local transitions, bend left = 90]
+      (a_2) edge node[auto] {$b_2$} (a_0)
+    ;
+    \path[local transitions, bend left = 90]
+      (b_0) edge node[auto] {$a_0$} (b_2)
+    ;
+    \path[local transitions, bend left = 90]
+      (b_2) edge node[auto] {$a_2$} (b_0)
+    ;
+\end{tikzpicture}
+\end{center}
+En effet, l'ensemble $\left\{(0,0),(1,1),(1,2),(2,1),(2,2)\right\}$ est un attracteur de cet AAN pour la sémantique synchrone. De plus, il existe deux (même quatre ici) transitions globales jouables depuis l'état global $(0,0)$ : 
+on peut aller en $(1,1)$ ou encore en $(2,2)$.\\ \\
+Après avoir identifié le problème au sein du code, j'ai trouvé deux alternatives pour corriger cela : la première consiste à reprendre tout le code, enlever le problème ciblé et corriger cela avec un script Python, et la seconde 
+consiste à considérer les états globaux et à définir les transitions globales jouables dans des fichiers dédiés aux sémantiques.\\
+Lors de mon exploration de la seconde alternative, je me suis confronté à de nombreux problèmes, et la complexité finale de mon algorithme étant piteuse, je ne prèfère parler dans ce rapport que de la première alternative.\\
+Je vais donc détailler comment nous arrivons à trouver les attracteurs au sein des AAN en ASP avec la sémantique synchrone.
+
+\subsection{Code pré-existant}
+\emph{
+	On commence par renseigner quelques faits utiles pour pouvoir manipuler aisèment les informations que l'on a à disposition.\\ \\
+	\%\%\% Initialisation (faits étendus)\\
+	\% Noms des automates\\
+	1. \textcolor{blue}{automaton(Automaton) :- automaton\_level(Automaton, \_).}\\
+	\% Noms des transitions locales\\
+	2. \textcolor{blue}{local\_transition(Transition, Automaton) :- target(Transition, Automaton, \_).}\\
+	3. \textcolor{blue}{local\_transition(Transition) :- target(Transition, \_, \_).}\\ \\
+	\%\%\% Etapes\\
+	\% Etapes dans tout le chemin\\
+	4. \textcolor{blue}{step(0..n).}\\
+	\% Longueur du cycle principal (i.e., un sous-chemin cyclique)\\
+	5. \textcolor{blue}{1 \{main\_cycle\_length(N) : step(N), N \textgreater 0 \} 1.}\\
+	\% Etapes dans le cycle principal\\
+	6. \textcolor{blue}{cycle\_step(0..N) :- main\_cycle\_length(N).}\\
+	\% Etapes après le cycle principal\\
+	7. \textcolor{blue}{after\_cycle\_step(N+1..n) :- main\_cycle\_length(N).}\\ \\ \\
+	On choisit ensuite un état initial, on définit les transitions non jouables, et la sémantique.\\ \\
+	\%\%\% Etat initial\\
+	\% On sélectionne aléatoirement un état inital (step "0")\\
+	8. \textcolor{blue}{1 \{ active(level(Automaton, Level), 0) : automaton\_level(Automaton, Level) \} 1 :-}\\
+	9.\qquad\qquad\textcolor{blue}{automaton(Automaton).}\\ \\
+	\%\%\% Préparation pour le calcul des transitions jouables par la sémantique\\
+	\% Calcule les transitions locales non jouables pour chaque étape\\
+	10. \textcolor{blue}{unplayable(Transition, Step) :-}\\
+	11.\qquad\qquad\textcolor{blue}{active(level(Automaton, LevelI), Step),}\\
+	12.\qquad\qquad\textcolor{blue}{condition(Transition, Automaton, LevelJ),}\\
+	13.\qquad\qquad\textcolor{blue}{LevelI != LevelJ,}\\
+	14.\qquad\qquad\textcolor{blue}{step(Step).}\\ \\
+	\%\%\% Sémantique synchrone\\
+	\% On renseigne les automates qui ont au moins une transition locale jouable\\
+	15. \textcolor{blue}{has\_playable(Automaton, Step) :-}\\
+	16.\qquad\qquad\textcolor{blue}{not unplayable(Transition, Step),}\\
+	17.\qquad\qquad\textcolor{blue}{local\_transition(Transition, Automaton),}\\
+	18.\qquad\qquad\textcolor{blue}{step(Step).}\\ \\
+	\% On sélectionne une transition à jouer pour chaque automate si possible\\
+	19. \textcolor{blue}{1 \{played(Transition, Step) :}\\
+	20.\qquad\qquad\textcolor{blue}{not unplayable(Transition, Step),}\\
+	21.\qquad\qquad\textcolor{blue}{local\_transition(Transition, Automaton)}\\
+	22. \textcolor{blue}{\} 1 :- has\_playable(Automaton, Step).}\\ \\
+	\% Contrainte : on doit jouer au moins une transition locale\\
+	23. \textcolor{blue}{:- 0 \{ played(\_, Step) \} 0, step(Step).}\\
+}
+\subsection{Nouveau code}
 
 \section{Conclusion}
 

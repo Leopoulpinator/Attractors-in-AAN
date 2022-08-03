@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  3 AUG 2022 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  3 AUG 2022 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,12 +1075,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--256
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 227--256
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 256--263
 
  []
 
 [6]
 Underfull \hbox (badness 10000) in paragraph at lines 267--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--282
 
  []
 
@@ -1147,7 +1162,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 453--457
 
  []
 
-[11] (./rapport.bbl)
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--498
+
+ []
+
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 542.
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+[11] [12] [13] (./rapport.bbl)
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the rapport.maf file.
@@ -1156,26 +1228,21 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the rapport.log file..
- [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
- (./rapport.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
+ [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 550.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 550.
+ (./rapport.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 550.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 550.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: B692ED9BC3FC58A17EAE92C739ECE787;1185.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
+(rerunfilecheck)             Checksum: EA4436291433BF45D9A65E29D580F1EC;1317.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
  ) 
 Here is how much of TeX's memory you used:
- 24139 strings out of 481239
- 475762 string characters out of 5920377
- 787953 words of memory out of 5000000
- 38675 multiletter control sequences out of 15000+600000
+ 24153 strings out of 481239
+ 475947 string characters out of 5920377
+ 786953 words of memory out of 5000000
+ 38685 multiletter control sequences out of 15000+600000
  541223 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,14n,85p,419b,977s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1200,10 +1267,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/
 public/cm-super/sfrm1000.pfb>
-Output written on rapport.pdf (13 pages, 224870 bytes).
+Output written on rapport.pdf (15 pages, 231595 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
