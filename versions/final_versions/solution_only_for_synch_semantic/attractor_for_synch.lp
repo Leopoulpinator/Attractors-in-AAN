@@ -150,10 +150,9 @@ def main(prg):
             transition = x.arguments[0].name
             automata_name = x.arguments[1].string
             level = x.arguments[2].number
-            if transition not in target_transitions_automaton_name:
-              target_transitions_automaton_name[transition] = automata_name
-            if transition not in target_transitions_automaton_level:
-              target_transitions_automaton_level[transition] = level
+            assert transition not in (target_transitions_automaton_name or target_transitions_automaton_level)
+            target_transitions_automaton_name[transition] = automata_name
+            target_transitions_automaton_level[transition] = level
       
       # Creation unique (the first time we occurs in the loop) of the set for transitions
       transitions_already_done = True

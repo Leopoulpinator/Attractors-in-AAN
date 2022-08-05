@@ -11,43 +11,43 @@ Database file #1: biblio.bib
 Warning--empty pages in pauleve2016pint
 You've used 4 entries,
             3552 wiz_defined-function locations,
-            822 strings with 6955 characters,
-and the built_in function-call counts, 3792 in all, are:
-= -- 476
-> -- 58
-< -- 110
-+ -- 141
-- -- 42
-* -- 352
-:= -- 642
+            822 strings with 6885 characters,
+and the built_in function-call counts, 3526 in all, are:
+= -- 437
+> -- 55
+< -- 101
++ -- 130
+- -- 39
+* -- 331
+:= -- 601
 add.period$ -- 5
 call.type$ -- 4
 change.case$ -- 26
 chr.to.int$ -- 4
 cite$ -- 5
-duplicate$ -- 82
-empty$ -- 236
-format.name$ -- 74
-if$ -- 718
+duplicate$ -- 80
+empty$ -- 217
+format.name$ -- 69
+if$ -- 662
 int.to.chr$ -- 0
 int.to.str$ -- 1
-missing$ -- 10
-newline$ -- 34
+missing$ -- 9
+newline$ -- 35
 num.names$ -- 16
 pop$ -- 33
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 25
 quote$ -- 0
-skip$ -- 164
+skip$ -- 150
 stack$ -- 0
-substring$ -- 357
-swap$ -- 24
-text.length$ -- 14
+substring$ -- 320
+swap$ -- 23
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 44
 warning$ -- 1
-while$ -- 40
+while$ -- 37
 width$ -- 0
 write$ -- 52
 (There was 1 warning)

@@ -7,16 +7,15 @@
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
 
-\bibitem[Ben~Abdallah u.\,a.(2015)Ben~Abdallah, Folschette, Roux und
-  Magnin]{abdallah2015exhaustive}
-\dinatlabel{Ben~Abdallah u.\,a. 2015} \textsc{Ben~Abdallah}, Emna~;
-  \textsc{Folschette}, Maxime~; \textsc{Roux}, Olivier~; \textsc{Magnin},
-  Morgan:
-\newblock Exhaustive analysis of dynamical properties of Biological Regulatory
-  Networks with Answer Set Programming.
-\newblock In: \emph{Bioinformatics and Biomedicine (BIBM), 2015 IEEE
-  International Conference on}
-\newblock IEEE (Veranst.), 2015, S.~281--285
+\bibitem[Ben~Abdallah u.\,a.(2022)Ben~Abdallah, Folschette und
+  Morgan]{chapitre}
+\dinatlabel{Ben~Abdallah u.\,a. 2022} \textsc{Ben~Abdallah}, Emna~;
+  \textsc{Folschette}, Maxime~; \textsc{Morgan}, Magnin:
+\newblock \emph{{Analyzing Long-Term Dynamics of Biological Networks with
+  Answer Set Programming}}.
+\newblock Juli 2022. --
+\newblock URL \url{https://hal.archives-ouvertes.fr/hal-03735849}. --
+\newblock working paper or preprint
 
 \bibitem[Folschette u.\,a.(2015)Folschette, Paulev{\'e}, Magnin und
   Roux]{folschette2015sufficient}

@@ -12,11 +12,13 @@
 \contentsline {section}{\numberline {3}Formalismes d'automates et leur dynamique}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}AAN et leur traduction en ASP}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Sémantiques}{8}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Asynchrone}{8}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Synchrone}{9}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Asynchrone}{9}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Synchrone}{10}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Généralisée}{10}{subsubsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.3}Dynamique}{10}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Contribution personnelle}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Code pré-existant}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Nouveau code}{13}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Conclusion}{13}{section.5}%
+\contentsline {subsection}{\numberline {4.1}Code pré-existant}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Résolution de la troisième contrainte en Python}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Légère modification pour sémantique généralisée}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Quelques mots sur la seconde manière de procéder}{18}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusion et pistes pour la suite}{19}{section.5}%
