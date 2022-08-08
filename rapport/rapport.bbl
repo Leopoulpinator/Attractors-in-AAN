@@ -1,46 +1,37 @@
 \begin{thebibliography}{4}
-% this bibliography was produced with the style dinat.bst v2.5
-\makeatletter
-\newcommand{\dinatlabel}[1]%
-{\ifNAT@numbers\else\NAT@biblabelnum{#1}\hspace{2\labelsep}\fi}
-\makeatother
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Ben~Abdallah u.\,a.(2022)Ben~Abdallah, Folschette und
+\bibitem[Ben~Abdallah et~al.(2022)Ben~Abdallah, Folschette, and
   Morgan]{chapitre}
-\dinatlabel{Ben~Abdallah u.\,a. 2022} \textsc{Ben~Abdallah}, Emna~;
-  \textsc{Folschette}, Maxime~; \textsc{Morgan}, Magnin:
-\newblock \emph{{Analyzing Long-Term Dynamics of Biological Networks with
-  Answer Set Programming}}.
-\newblock Juli 2022. --
-\newblock URL \url{https://hal.archives-ouvertes.fr/hal-03735849}. --
-\newblock working paper or preprint
+Emna Ben~Abdallah, Maxime Folschette, and Magnin Morgan.
+\newblock {Analyzing Long-Term Dynamics of Biological Networks with Answer Set
+  Programming}.
+\newblock working paper or preprint, July 2022.
+\newblock URL \url{https://hal.archives-ouvertes.fr/hal-03735849}.
 
-\bibitem[Folschette u.\,a.(2015)Folschette, Paulev{\'e}, Magnin und
+\bibitem[Folschette et~al.(2015)Folschette, Paulev{\'e}, Magnin, and
   Roux]{folschette2015sufficient}
-\dinatlabel{Folschette u.\,a. 2015} \textsc{Folschette}, Maxime~;
-  \textsc{Paulev{\'e}}, Lo{\"\i}c~; \textsc{Magnin}, Morgan~; \textsc{Roux},
-  Olivier:
+Maxime Folschette, Lo{\"\i}c Paulev{\'e}, Morgan Magnin, and Olivier Roux.
 \newblock Sufficient conditions for reachability in automata networks with
   priorities.
-\newblock In: \emph{Theoretical Computer Science}
-\newblock 608 (2015), S.~66--83
+\newblock \emph{Theoretical Computer Science}, 608:\penalty0 66--83, 2015.
 
 \bibitem[Paulev{\'e}(2016)]{pauleve2016pint}
-\dinatlabel{Paulev{\'e} 2016} \textsc{Paulev{\'e}}, Lo{\"\i}c:
-\newblock Pint, a static analyzer for dynamics of Automata Networks.
-\newblock In: \emph{14th International Conference on Computational Methods in
-  Systems Biology (CMSB 2016)}, 2016
+Lo{\"\i}c Paulev{\'e}.
+\newblock Pint, a static analyzer for dynamics of automata networks.
+\newblock In \emph{14th International Conference on Computational Methods in
+  Systems Biology (CMSB 2016)}, 2016.
 
-\bibitem[Paulev{\'e} u.\,a.(2014)Paulev{\'e}, Chancellor, Folschette, Magnin
-  und Roux]{pauleve14}
-\dinatlabel{Paulev{\'e} u.\,a. 2014} \textsc{Paulev{\'e}}, Lo{\"i}c~;
-  \textsc{Chancellor}, Courtney~; \textsc{Folschette}, Maxime~;
-  \textsc{Magnin}, Morgan~; \textsc{Roux}, Olivier:
-\newblock Analyzing Large Network Dynamics with Process Hitting.
-\newblock In: \emph{Logical Modeling of Biological Systems}
-\newblock (2014), S.~125 -- 166.
-\newblock ISBN 978-1-4020-4222-5
+\bibitem[Paulev{\'e} et~al.(2014)Paulev{\'e}, Chancellor, Folschette, Magnin,
+  and Roux]{pauleve14}
+Lo{\"i}c Paulev{\'e}, Courtney Chancellor, Maxime Folschette, Morgan Magnin,
+  and Olivier Roux.
+\newblock Analyzing large network dynamics with process hitting.
+\newblock \emph{Logical Modeling of Biological Systems}, pages 125 -- 166,
+  2014.
 
 \end{thebibliography}
