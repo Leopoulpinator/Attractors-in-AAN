@@ -27,7 +27,7 @@ Le code a eu un problème au niveau de la sémantique synchrone : une transition
 
 Ce travail a pour but de corriger ce souci avec la sémantique synchrone, mais également de rajouter une sémantique "généralisée" dans le code.
 
-<=======================================================================================>
+<======================================================================================>
 
 Dans la première partie de mon stage, j'ai découvert ce qu'était ASP et comment l'utiliser. Tout mes exercices sont dans le dossier first_exercices_in_asp.
 Le dossier de resources contient un peu tout et n'importe quoi.
