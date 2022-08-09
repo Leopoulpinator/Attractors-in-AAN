@@ -350,7 +350,7 @@ En ASP, on définira un AAN en deux temps :
 Nous avons ainsi défini l'automate de notre \hyperlink{exemple}{\textbf{exemple}} en ASP.
 
 \subsection{Sémantiques}
-Soit $R = (\Sigma,S,T)$ un AAN (défini ci-dessus). On définit la notion de transition jouable:
+\hypertarget{semantiques}{Soit $R = (\Sigma,S,T)$ un AAN (défini ci-dessus). On définit la notion de transition jouable:}
 \begin{itemize}
 	\item On dit qu'une transition locale est \textbf{jouable} si toutes les conditions de celle-ci sont vérifiés.\\
 	On notera $P_{\zeta}$ l'ensemble des transitions locales jouables depuis un état global $\zeta$.\\
@@ -505,7 +505,7 @@ Après avoir identifié le problème au sein du code, j'ai trouvé deux alternat
 consiste à considérer les états globaux et à définir les transitions globales jouables dans des fichiers dédiés aux sémantiques. Je vais donc détailler deux manières de trouver les attracteurs d'un AAN en ASP.
 
 \subsection{Code pré-existant}
-On introduit la base du code.\\ \\
+\hypertarget{preexistante}{On explique tout d'abord comment générer des chemins d'une longueur définie dans un AAN.}\\ \\
 \emph{
 	\% On mémorise quelques informations : noms des automates et des transitions locales\\
 	1. \textcolor{blue}{automaton(Automaton) :- automaton\_level(Automaton, \_).}\\
@@ -565,190 +565,144 @@ principal telles que l'on ait l'atome \textcolor{blue}{\emph{same\_state(Step1, 
 \textcolor{blue}{\emph{:- not valid\_state\_after\_main\_cycle(Step1), after\_cycle\_step(Step1).}}\\ \\
 La troisième contrainte contenait la raison du bug du code (cf début \hyperlink{debutpartie4}{partie 4}). Comme la modélisation actuelle des choses ne mémorise pas quels sont les coups jouables pour la sémantique choisie 
 (cela permettait d'avoir un code qui fonctionne pour toutes les sémantiques en scindant le fichier ASP en deux : recherche des attracteurs, et sémantique, ce qui permettait d'avoir un seul solveur d'attracteur, universel 
-pour toutes les sémantiques), cela n'était pas possible. Deux options étaient alors envisageables pour résoudre ce problème : faire un script ASP dans laquelle je rajoute la dernière contrainte en introduisant une notion d'état global ; ou bien utiliser Python pour résoudre ce problème 
-lors du solving de clingo.
+pour toutes les sémantiques), cela n'était pas possible. Deux options étaient alors envisageables pour résoudre ce problème : faire un script ASP dans laquelle je rajoute la dernière contrainte en introduisant une notion d'état 
+global ; ou bien utiliser Python pour résoudre ce problème lors du solving de clingo.
 
 \subsection{Résolution de la troisième contrainte en Python}
 Je ne vais pas rentrer en détail dans la manière dont on peut réussir à récupérer des atomes lors du grounding et du solving d'ASP en Python : on admettra que cela est faisable. Nous avons donc en Python une 
-\textcolor{blue}{\emph{boucle for}} qui va, à chaque instance, avoir un ensemble d'atomes tous vrais tel que l'interprétation qu'il forme satisfasse toutes les règles de notre programme ASP.\\ \\
-Lors de la première itération de cette boucle, il est nécessaire de mémoriser toutes les transitions, les conditions, ainsi que les cibles de ces transitions.\\ \\
+\textcolor{blue}{\emph{boucle for}} qui va, à chaque instance, avoir un ensemble d'atomes tous vrais tel que l'interprétation qu'ils forment satisfasse toutes les règles de notre programme ASP.\\ \\
+Lors de la première itération de cette boucle, il est nécessaire de mémoriser toutes les transitions, les conditions, ainsi que les cibles de ces transitions. On introduit donc quelques ensembles pour stocker cela en mémoire.\\ \\
 \emph{
-	On commence par créer des ensembles vides, ainsi qu'une variable booléenne pour savoir si nous avons déjà mémorisé ce que l'on souhaite.\\ \\
-	\textcolor{white}{2c}\#Ensemble Python pour les conditions des transitions ([transition][automata] = level).\\
-	1. \textcolor{blue}{condition\_transitions = \{\}}\\ \\
-	\textcolor{white}{2c}\#Ensemble Python pour l'automate cible des transitions ([transition] = automaton\_name).\\
-	2. \textcolor{blue}{target\_transitions\_automaton\_name = \{\}}\\ \\
-	\textcolor{white}{2c}\#Ensemble Python pour le niveau cible des transitions ([transition] = level).\\
-	3. \textcolor{blue}{target\_transitions\_automaton\_level = \{\}}\\ \\
-	\textcolor{white}{2c}\#Une variable booléenne pour dire si les 3 ensembles précédents sont déjà créés ou pas.\\
+	1. \textcolor{blue}{condition\_transitions = \{\}} \# de la forme [transition][automata] = level\\
+	2. \textcolor{blue}{target\_transitions\_automaton\_name = \{\}} \# de la forme [transition] = automaton\_name\\
+	3. \textcolor{blue}{target\_transitions\_automaton\_level = \{\}}  \# de la forme [transition] = level\\
 	4. \textcolor{blue}{transitions\_already\_done = False}\\ \\
-	\textcolor{blue}{Boucle for magique}\\
-	Ensuite, dans notre boucle for magique, on introduit une variable associé à l'attracteur courant, qu'on remplit, ainsi que les 3 autres variables.\\ \\
-	5. \textcolor{blue}{cur\_dict = \{\}}\\
-	6. \textcolor{blue}{for x in cur\_model.symbols(shown = True):}\\
-		\textcolor{white}{2c}\qquad\qquad\#On considère les atomes 'active(level(AUTOMATA, LEVEL), STEP)'\\
-		7.\qquad\qquad\textcolor{blue}{if x.name == 'active' and x.arguments[0].name == 'level':}\\
-			8.\qquad\qquad\qquad\textcolor{blue}{step\_number = x.arguments[1].number}\\
-			9.\qquad\qquad\qquad\textcolor{blue}{automata\_name = x.arguments[0].arguments[0].string}\\
-			10.\qquad\qquad\qquad\textcolor{blue}{active\_level = x.arguments[0].arguments[1].number}\\
-			\textcolor{white}{3ch}\qquad\qquad\qquad\#Si c'est un nouveau numéro d'étape\\
-			11.\qquad\qquad\qquad\textcolor{blue}{if step\_number not in cur\_dict:}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\#On le rajoute dans le dictionnaire\\
-				12.\qquad\qquad\qquad\qquad\textcolor{blue}{cur\_dict[step\_number] = \{\}}\\
-			\textcolor{white}{3ch}\qquad\qquad\qquad\#A priori il n'y a pas plusieurs niveaux pour un automate à une étape (?)\\
-			13.\qquad\qquad\qquad\textcolor{blue}{assert automata\_name not in cur\_dict[step\_number]}\\
-			14.\qquad\qquad\qquad\textcolor{blue}{cur\_dict[step\_number][automata\_name] = active\_level}\\ \\
-		\textcolor{white}{3ch}\qquad\qquad\#Création des 3 ensembles pour les transitions si ce n'est pas déjà fait\\
-		15.\qquad\qquad\textcolor{blue}{elif not transitions\_already\_done :}\\
-			\textcolor{white}{3ch}\qquad\qquad\qquad\#On considère les atomes 'condition(TRANSITION, AUTOMATA, LEVEL)'\\
-			16.\qquad\qquad\qquad\textcolor{blue}{if x.name == 'condition' :}\\
-				17.\qquad\qquad\qquad\qquad\textcolor{blue}{transition = x.arguments[0].name}\\
-				18.\qquad\qquad\qquad\qquad\textcolor{blue}{automata\_name = x.arguments[1].string}\\
-				19.\qquad\qquad\qquad\qquad\textcolor{blue}{level = x.arguments[2].number}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\#Si c'est une nouvelle transition\\
-				20.\qquad\qquad\qquad\qquad\textcolor{blue}{if transition not in condition\_transitions:}\\
-					\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\qquad\#On la rajoute dans le dictionnaire\\
-					21.\qquad\qquad\qquad\qquad\qquad\textcolor{blue}{condition\_transitions[transition] = \{\}}\\
-				22.\qquad\qquad\qquad\qquad\textcolor{blue}{assert automata\_name not in condition\_transitions[transition]}\\
-				23.\qquad\qquad\qquad\qquad\textcolor{blue}{condition\_transitions[transition][automata\_name] = level}\\
-			\textcolor{white}{3ch}\qquad\qquad\qquad\#On considère les atomes 'target(TRANSITION, AUTOMATA, LEVEL)'\\
-			24.\qquad\qquad\qquad\textcolor{blue}{elif x.name == 'target' :}\\
-				25.\qquad\qquad\qquad\qquad\textcolor{blue}{transition = x.arguments[0].name}\\
-				26.\qquad\qquad\qquad\qquad\textcolor{blue}{automata\_name = x.arguments[1].string}\\
-				27.\qquad\qquad\qquad\qquad\textcolor{blue}{level = x.arguments[2].number}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\#A priori il n'y a qu'un atome target par transition\\
-				28.\qquad\qquad\qquad\qquad\textcolor{blue}{assert transition not in (target\_transitions\_automaton\_name}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\qquad$\hookrightarrow$ \textcolor{blue}{or target\_transitions\_automaton\_level)}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\#Donc on vient rajouter ces informations dans nos ensembles\\
-				29.\qquad\qquad\qquad\qquad\textcolor{blue}{target\_transitions\_automaton\_name[transition] = automata\_name}\\
-				30.\qquad\qquad\qquad\qquad\textcolor{blue}{target\_transitions\_automaton\_level[transition] = level}\\
-	\textcolor{white}{3ch}\#Cette dernière ligne nous certifie qu'on ne crée qu'une fois les 3 ensembles\\
-	31. \textcolor{blue}{transitions\_already\_done = True}\\ \\
-	On introduit deux variables.\\ \\
-	\textcolor{white}{3ch}\#La liste des noms d'automates triée par ordre alphabétique.\\
-	32. \textcolor{blue}{sorted\_automata\_names == []}\\
-	33. \textcolor{blue}{if sorted\_automata\_names == []:}\\
-		34.\qquad\textcolor{blue}{sorted\_automata\_names = sorted(cur\_dict[0])}\\ \\
-	\textcolor{white}{3ch}\#Ensemble (non ordonné) d'états dans l'attracteur courant.\\
-	35. \textcolor{blue}{cur\_set = set()}\\
-	\textcolor{white}{3ch}\#Pour chaque étape\\
-	36. \textcolor{blue}{for step\_number in cur\_dict:}\\
-		\textcolor{white}{3ch}\qquad\#On ajoute l'état correspondant à cur\_set\\
-		37.\qquad\textcolor{blue}{cur\_set.add(tuple(cur\_dict[step\_number][automata\_name]}\\
-		\textcolor{white}{3ch}\qquad\qquad\qquad\qquad$\hookrightarrow$ \textcolor{blue}{for automata\_name in sorted\_automata\_names))}\\ \\
-	On commence par créer et compléter l'ensemble des transitions locales jouables depuis chacun des états globaux de l'attracteur courant.\\ \\
-	\textcolor{white}{3ch}\#playable est l'ensemble de toutes les transitions locales jouables depuis chaque état global de l'attracteur courant et chaque automate de celui-ci. Il est de la forme playable[global\_state]
-	[automata\_name][transition] = level où 'level' est le niveau de l'automate après la transition.\\
-	38. \textcolor{blue}{playable = \{\}}\\
-	39. \textcolor{blue}{number\_automaton = len(sorted\_automata\_names)}\\
-	\textcolor{white}{3ch}\#Pour chaque automate de l'attracteur courant\\
-	40. \textcolor{blue}{for global\_state in cur\_set:}\\
-		41.\qquad\textcolor{blue}{playable[global\_state] = \{\}}\\
-		\textcolor{white}{3ch}\qquad\#Pour chaque transition\\
-		42.\qquad\textcolor{blue}{for transition in condition\_transitions:}\\
-			\textcolor{white}{3ch}\qquad\qquad\#On teste si elle est jouable pour l'état global courant\\
-			43.\qquad\qquad\textcolor{blue}{can\_be\_played = True}\\
-			\textcolor{white}{3ch}\qquad\qquad\#En regardant pour chaque condition de la transition\\
-			44.\qquad\qquad\textcolor{blue}{for automata\_name in condition\_transitions[transition]:}\\
-				45.\qquad\qquad\qquad\textcolor{blue}{if automata\_name not in playable[global\_state]:}\\
-					46.\qquad\qquad\qquad\qquad\textcolor{blue}{playable[global\_state][automata\_name] = \{\}}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\#Si elle est vérifiée ou pas\\
-				47.\qquad\qquad\qquad\textcolor{blue}{if global\_state[sorted\_automata\_names.index(automata\_name)] != }\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\qquad$\hookrightarrow$ \textcolor{blue}{condition\_transitions[transition][automata\_name]:}\\
-					48.\qquad\qquad\qquad\qquad\textcolor{blue}{can\_be\_played = False}\\
-			\textcolor{white}{3ch}\qquad\qquad\#Si elle est bien jouable\\
-			49.\qquad\qquad\textcolor{blue}{if can\_be\_played:}\\
-				50.\qquad\qquad\qquad\textcolor{blue}{automata\_name = target\_transitions\_automaton\_name[transition]}\\
-				51.\qquad\qquad\qquad\textcolor{blue}{level = target\_transitions\_automaton\_level[transition]}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\#On l'ajoute au dictionnaire\\
-				52.\qquad\qquad\qquad\textcolor{blue}{playable[global\_state][automata\_name][transition] = level}\\ \\
-	\textcolor{white}{3ch}\#list\_of\_list est une liste de listes de listes d'entiers. Pour faire simple, chacune de ses sous-listes représente un état global de l'attracteur courant. Chacune des sous-listes de ces états 
-	globaux représente un automate, et chacune des sous-listes de cet automate correspond à l'ensemble des niveaux dans lesquels il peut se retrouver après une transition locale jouable depuis l'état global. 
-	Si aucune transition locale n'est jouable, la sous-liste de l'automate en question sera vide.\\
-	53. \textcolor{blue}{list\_of\_list = []}\\
-	\textcolor{white}{3ch}\#Pour chaque état global de l'attracteur courant\\
-	54. \textcolor{blue}{for global\_state in playable:}\\
-		\textcolor{white}{3ch}\qquad\#On crée une liste pour l'état global courant\\
-		55.\qquad\textcolor{blue}{list\_for\_current\_state = []}\\
-		\textcolor{white}{3ch}\qquad\#Pour chaque automate\\
-		56.\qquad\textcolor{blue}{for automaton\_name in sorted\_automata\_names:}\\
-			\textcolor{white}{3ch}\qquad\qquad\#On crée une liste pour l'automate courant\\
-			57.\qquad\qquad\textcolor{blue}{list\_for\_automaton = []}\\
-			\textcolor{white}{3ch}\qquad\qquad\#Si aucune transition locale n'est jouable pour l'automate, on le laisse à son niveau\\
-			58.\qquad\qquad\textcolor{blue}{if playable[global\_state][automaton\_name] == \{\}:}\\
-				59.\qquad\qquad\qquad\textcolor{blue}{list\_for\_automaton.append(global\_state[sorted\_automata\_names.index(}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\qquad$\hookrightarrow$ \textcolor{blue}{automaton\_name)])}\\
-			\textcolor{white}{3ch}\qquad\qquad\#Sinon\\
-			60.\qquad\qquad\textcolor{blue}{else:}\\
-				\textcolor{white}{3ch}\qquad\qquad\qquad\#Pour chaque transition locale jouable\\
-				61.\qquad\qquad\qquad\textcolor{blue}{for transition in playable[global\_state][automaton\_name]:}\\
-					\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\#On détermine le niveau après transition\\
-					62.\qquad\qquad\qquad\qquad\textcolor{blue}{level = playable[global\_state][automaton\_name][transition]}\\
-					\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\#Et on l'ajoute à la liste des niveaux atteignables pour l'automate\\
-					63.\qquad\qquad\qquad\qquad\textcolor{blue}{list\_for\_automaton.append(level)}\\
-			64.\qquad\qquad\textcolor{blue}{list\_for\_current\_state.append(list\_for\_automaton)}\\
-		65.\qquad\textcolor{blue}{list\_of\_list.append(list\_for\_current\_state)}\\ \\
-	\textcolor{white}{3ch}\# list\_of\_product est la liste des produits cartésiens de chaque coup possible pour un état global. Il s'agit donc d'une liste d'états globaux atteignables depuis nos états présents dans le cycle 
-	principal.\\
-	66. \textcolor{blue}{list\_of\_product = []}\\
-	67. \textcolor{blue}{for l in list\_of\_list:}\\
-		\textcolor{white}{3ch}\qquad\# product est une fonction réalisant un produit cartésien de listes\\
-		68.\qquad\textcolor{blue}{list\_of\_product += list(product(tuple(l)))}\\ \\
-	\textcolor{white}{3ch}\# Enfin, on s'assure que chaque élément de list\_of\_product est bien un élément du cycle principal. De cette façon, notre attracteur vérifiera bien la troisième condition, et sera valide.\\
-	69. \textcolor{blue}{neighbours\_are\_main\_states = True}\\
-	70. \textcolor{blue}{for global\_state in list\_of\_product:}\\
-		71.\qquad\textcolor{blue}{if global\_state not in cur\_set:}\\
-		72.\qquad\qquad\textcolor{blue}{neighbours\_are\_main\_states = False}\\ \\
-	\textcolor{blue}{Manipulation pour filtrer proprement les attracteurs et pas leur trace}\\
-	$\rightarrow$ On ne renvoie un attracteur que s'il n'a pas déjà été renvoyé (puisque jusqu'ici, si on parcourt notre cycle depuis un autre 
-	point de départ, on renvoie un second ensemble solution alors qu'en réalité il s'agit du même attracteur).\\ \\
-	\textcolor{blue}{Fin boucle for magique}\\
 }
+Ensuite, dès le début de la \emph{\textcolor{blue}{boucle for}} magique, on récupère toutes les informations nécessaires pour remplir ces ensembles, et on modifie la variable booléenne \emph{\textcolor{blue}
+{transitions\_already\_done}} à True afin de ne plus faire cela lors des autres itérations de la boucle.\\
+On en profite également pour créer un ensemble \emph{\textcolor{blue}{cur\_set}}  de la forme \emph{\textcolor{blue}{[step\_number][automata\_name] = active\_level}} qui viendra mémoriser les états globaux de chaque étape de 
+l'ensemble solution courant.\\ \\
+Ensuite, on crée un ensemble \emph{\textcolor{blue}{playable}} qu'on va venir remplir avec les transitions locales jouables depuis chacun des états globaux de l'attracteur courant et chaque automate de ce dernier. Il est de la forme 
+\emph{\textcolor{blue}{playable[global\_state][automata\_name][transition] = level}} où 'level' est le niveau de l'automate après la transition. Pour remplir ce dernier, il faut qu'on teste pour chaque transition locale si elle est 
+jouable pour l'état global courant ou pas en regardant pour chaque condition de la transitions si elle est vérifiée ou pas. Si elle est bien jouable, on l'ajoute au dictionnaire.\\ \\
+On se sert de l'ensemble \emph{\textcolor{blue}{playable}} pour créer une liste de listes de listes d'entiers \emph{\textcolor{blue}{list\_of\_list}}.Pour faire simple, chacune de ses sous-listes représente un état global de 
+l'attracteur courant. Chacune des sous-listes de ces états globaux représente un automate, et chacune des sous-listes de cet automate correspond à l'ensemble des niveaux dans lesquels il peut se retrouver après une transition locale 
+jouable depuis l'état global. Si aucune transition locale n'est jouable, la sous-liste de l'automate en question sera vide. Pour remplir cette liste, on procède de la façon suivante :\\
+\begin{itemize}
+	\item Pour chaque état global de l'attracteur courant on crée une liste \emph{\textcolor{blue}{list\_for\_current\_state}} (des automates)
+	\item Pour chaque automate de cet état global on crée une liste \emph{\textcolor{blue}{list\_for\_automaton}}(des niveaux atteignables)
+	\item Si aucune transition locale n'est jouable pour l'automate, on le laisse à son niveau
+	\item Sinon pour chaque transition locale jouable on détermine le niveau après transition de l'automate et on l'ajoute à la liste des niveaux atteignables de l'automate
+	\item on ajoute la liste des niveaux atteignables de l'automate à l'état global, puis la liste de l'état global à \emph{\textcolor{blue}{list\_of\_list}}\\
+\end{itemize}
+L'utilisation d'une liste de listes est très pratique puisqu'il nous suffit alors d'effectuer un produit cartésien de listes pour en déduire les listes de tout les états globaux atteignables depuis notre attracteur courant. C'est 
+exactement ce qu'on calcule dans \emph{\textcolor{blue}{list\_of\_product}} : la liste des produits cartésiens de chaque coup possible pour un état global.\\ \\
+Enfin, il nous suffit de vérifier que chaque élément de list\_of\_product est bien un élément du cycle principal. De cette façon, notre attracteur vérifiera bien la troisième condition, et sera valide.
+Si un au moins des éléments de \emph{\textcolor{blue}{list\_of\_product}} n'est pas dans l'attracteur, alors il ne s'agit en réalité pas d'un attracteur : on peut s'en échapper.\\ \\
+C'est ici que l'on termine la \emph{\textcolor{blue}{boucle for}} magique.\\ \\
+Les résultats de cette version sont plus qu'appréciables. En effet, j'ai utilisé la même batterie de tests que Maxime Folschette pour la version de laquelle je suis parti, et les durées de résolution se sont avérées toutes aussi 
+bonnes que celles de la sémantique asynchrone.
+
 \subsection{Légère modification pour sémantique généralisée}
 En reprenant le code présenté ci-dessus, j'ai également fait une version pour la sémantique généralisée (la version de laquelle je suis parti fonctionnant très bien pour la sémantique asynchrone, je n'ai rien à dire 
 dessus). En effet, la différence avec la sémantique synchrone est que l'on peut faire changer nos automates ou pas, mais qu'au moins un de tous les automates doit changer de niveau lorsque l'on recherche quelles sont les 
 transitions globales jouables.
 Concrètement, il faut modifier la sémantique dans le code pré-existant en ASP:\\ \\
 \emph{
-	\verb![...]!\\
+	\textcolor{blue}{\verb![...]!}\\
 	\% On sélectionne \underline{0 ou 1} transition à jouer pour chaque automate\\
 	18. \textcolor{blue}{\textcolor{red}{0} \{played(Transition, Step) :}\\
 	19.\qquad\qquad\textcolor{blue}{not unplayable(Transition, Step),}\\
 	20.\qquad\qquad\textcolor{blue}{local\_transition(Transition, Automaton)}\\
 	21. \textcolor{blue}{\} 1 :- has\_playable(Automaton, Step).}\\
-	\verb![...]!\\ \\
+	\textcolor{blue}{\verb![...]!}\\ \\
 }
 On doit ensuite modifier dans le code python le fait que \emph{\textcolor{blue}{list\_for\_automaton}} soit initialement vide : pour chaque automate, on peut soit rester dans cet automate, soit faire une des transitions trouvés. 
-Pour cela, on modifie la ligne 57 et les suivantes comme ceci :\\ \\
-\emph{
-	\verb![...]!\\
-		57.\qquad\qquad\textcolor{blue}{list\_for\_automaton = [global\_state[sorted\_automata\_names.index(automaton\_name)]]}\\
-		\textcolor{white}{3ch}\qquad\qquad\#Pour chaque transition locale jouable\\
-		58.\qquad\qquad\textcolor{blue}{for transition in playable[global\_state][automaton\_name]:}\\
-			\textcolor{white}{3ch}\qquad\qquad\qquad\#On détermine le niveau après transition\\
-			59.\qquad\qquad\qquad\textcolor{blue}{level = playable[global\_state][automaton\_name][transition]}\\
-			\textcolor{white}{3ch}\qquad\qquad\qquad\#Et on l'ajoute à la liste des niveaux atteignables pour l'automate\\
-			60.\qquad\qquad\qquad\textcolor{blue}{list\_for\_automaton.append(level)}\\
-		61.\qquad\qquad\textcolor{blue}{list\_for\_current\_state.append(list\_for\_automaton)}\\
-	62.\qquad\textcolor{blue}{list\_of\_list.append(list\_for\_current\_state)}\\ \\
-	\verb![...]!\\
-}
+On va donc initialiser cette liste de cette façon :\\
+\emph{\textcolor{blue}{list\_for\_automaton = [global\_state[sorted\_automata\_names.index(automaton\_name)]]}} (où \\
+\emph{\textcolor{blue}{sorted\_automata\_names}} est une liste des noms d'automates triée par ordre lexicographique). Ensuite, on rajoute à \emph{\textcolor{blue}{list\_for\_automaton}} tous les autres niveaux atteignables pour 
+l'état global courant (tout comme la sémantique synchrone).
 
-\subsection{Quelques mots sur la seconde manière de procéder}
+\subsection{\'Etude des états globaux}
 \hypertarget{partie4.4}{
-L'autre solution que je voyais pour résoudre le problème qu'on rencontrait mon maître de stage et ses collègues était de déclarer des prédicats \emph{\textcolor{blue}{global\_state(Gs)}} représentant les états globaux du réseau. 
+L'autre solution que je voyais pour résoudre le problème qu'ont rencontré mon maître de stage et ses collègues était de déclarer des prédicats \emph{\textcolor{blue}{global\_state(Gs)}} représentant les états globaux du réseau. 
 Cela permet de déclarer dans des fichiers pour les sémantiques quelles sont les transitions locales jouables en utilisant un prédicat \emph{\textcolor{blue}{playable(Gs1, Gs2)}} signifiant que l'on peut aller depuis 
 $Gs_1$ en $Gs_2$.}\\ \\
 Le principal défaut de cette manière de procéder est que cela crée de nombreux atomes et demande à ASP de les garder en mémoire pendant toute sa résolution. De plus, déterminer si pour toute paire d'états globaux il existe une 
 transition se fait en $O(k^2)$, avec $k=\displaystyle{\prod_{a\in\Sigma}C_a}$, alors que si l'on calcule les transitions jouables à chaque étape, on ne surcharge pas la mémoire du solveur. C'est à priori ce qui rend mon programme 
-obsolète en terme de complexité.
+obsolète en terme de complexité.\\ \\
+Les explications d'ASP que j'ai faites pour la \hyperlink{semantiques}{partie 3.2} sur les différentes sémantiques sont en réalité mes propres fichiers pour les trois sémantiques.\\ \\
+Dans cette section, je compte expliquer comment fonctionne mon fichier ASP principal, ainsi que comment je m'y suis pris pour déclarer des états globaux sans modifier la manière d'écrire un automate (en ASP on ne peut pas créer 
+de tuples ayant une arité variable en fonction d'un prédicat).\\ \\
+J'ai d'abord défini deux fonctions en Python permettant de créer une constante pour un état global représenté par une liste-ASP (un objet que j'introduis par la suite) : ce sera la fonction \emph{\textcolor{blue}{work(g)}}, et de 
+déterminer les niveaux des automates actifs de ces constantes : ce sera la fonction \emph{\textcolor{blue}{determine\_active\_level(a,g)}} . Je ne détaillerais pas le code de ces fonctions.\\
+\begin{itemize}
+	\item\emph{\textcolor{blue}{work(g)}} prend un état global encodé sous forme de liste-ASP et renvoie une constante unique en ASP représentant l'état global en entrée.\\
+	\item\emph{\textcolor{blue}{determine\_active\_level(a,g)}} prend un automate a sous la forme d'une chaîne de caractères, et un état global g sous la forme de sa constante en ASP, et renvoie un prédicat "level(a, 	
+	niveau\_de\_a)" en ASP.
+\end{itemize}
+La structure du code ASP reprend fortement celle de la \hyperlink{preexistante}{version pré-existante}, c'est pourquoi je ne vais pas la mettre intégralement.\\ \\
+Après avoir introduit quelques informations (noms d'autoamtes, transitions locales, étapes du chemin) comme c'est fait dans les 7 premières lignes de la version pré-existante, on introduit 2 prédicats supplémentaires utiles pour 
+définir un ordre parmi les automates. On utilise alors une fonction de clingo : \#count \{E\} permettant de compter le nombre d'éléments dans l'ensemble E.\\ \\
+\emph{
+	8. \textcolor{blue}{nb\_automaton(N) :- N = \#count \{ A : automaton(A) \}.}\\
+	9. \textcolor{blue}{nb\_level(A, N) :- automaton(A), N = \#count \{ L : automaton\_level(A, L) \}.}\\
+	10. \textcolor{blue}{enum(1..N) :- nb\_automaton(N).}\\ \\
+}
+\`A l'aide des prédicats \emph{\textcolor{blue}{enum(k)}} que l'on vient juste de créer, on peut désormais définir un ordre pour les automates :\\ \\
+\emph{
+	11. \textcolor{blue}{1 \{ moment(A, N) : enum(N) \} 1 :- automaton(A).}\\
+	12. \textcolor{blue}{1 \{ moment(A, N) : automaton(A) \} 1 :- enum(N).}\\
+	13. \textcolor{blue}{:- }\\
+	14.\qquad\textcolor{blue}{moment(A, N), moment(A2, N2),}\\
+	15.\qquad\textcolor{blue}{automaton(A), automaton(A2),}\\
+	16.\qquad\textcolor{blue}{enum(N), enum(N2),}\\
+	17.\qquad\textcolor{blue}{N \textless N2, A \textless A2.}\\ \\
+}
+Une fois cet ordre défini, on est capable de créer une liste-ASP pour encode chacun des états globaux. Le $(N-k)^{ieme}$ élément de cette liste sera un prédicat nb(automaton, level) avec automaton étant $k^{ieme}$ au niveau de 
+l'ordre défini précédemment (on empile dans la liste d'abord les premiers éléments, c'est pour ça qu'on a trié par ordre anti-lexicographique).\\ \\
+\emph{
+	18. \textcolor{blue}{build\_list(0, empty).}\\
+	19. \textcolor{blue}{build\_list(N+1, (nb(A, 0..K-1), L)) :-}\\ 
+	20.\qquad\textcolor{blue}{build\_list(N, L),}\\
+	21.\qquad\textcolor{blue}{enum(N+1),}\\
+	22.\qquad\textcolor{blue}{moment(A, N+1),}\\
+	23.\qquad\textcolor{blue}{nb\_level(A, K).}\\ \\
+}
+On utilise ensuite nos fonctions Python pour travailler avec des constantes plus agréables à lire que des grosses listes ASP.\\ \\
+\emph{
+	24. \textcolor{blue}{gs(L) :- build\_list(N, L), nb\_automaton(N).}\\
+	25. \textcolor{blue}{global\_state(@work(gs(L)), L) :- gs(L). }\\ 
+	26. \textcolor{blue}{global\_state(Gs) :- global\_state(Gs, \_).}\\
+	27. \textcolor{blue}{active\_in\_g(@determine\_active\_level(Automaton, L), Gs) :-}\\
+	28.\qquad\textcolor{blue}{automaton(Automaton),}\\
+	29.\qquad\textcolor{blue}{global\_state(Gs,L).}\\ \\
+}
+Avec tout ces éléments, il est alors très facile de poursuivre l'algorithme et de déclarer les 3 contraintes de l'attracteur comme on l'avait fait dans la version pré-existante : on choisit un état global à l'étape initiale 
+(step 0), pour chaque étape on choisit un coup jouable en connaissant l'état dans lequel on se trouve à cette étape. Puis on détermine quel est l'état global de l'étape suivante, et on teste ensuite les trois contraintes avec les 
+états globaux. La troisième contrainte est alors très simple à encoder maintenant que l'on a mémorisé les coups jouables dans la sémantique :\\ \\
+\emph{
+	30. \textcolor{blue}{also\_playable(Gs1, Gs2, Step) :-}\\
+	31.\qquad\textcolor{blue}{playable(Gs1, Gs2),}\\
+	32.\qquad\textcolor{blue}{not played(Gs1, Gs2, Step),}\\
+	33.\qquad\textcolor{blue}{active\_g(Gs1, Step),}\\
+	34.\qquad\textcolor{blue}{step(Step).}\\ \\
+	35. \textcolor{blue}{evolves\_in\_main\_cycle(Gs1, Gs2, Step1, Step2) :-}\\
+	36.\qquad\textcolor{blue}{playable(Gs1, Gs2),}\\
+	37.\qquad\textcolor{blue}{active\_g(Gs1, Step1),}\\
+	38.\qquad\textcolor{blue}{active\_g(Gs2, Step2).}\\ \\
+	39. \textcolor{blue}{:- also\_playable(Gs1, Gs2, Step), not evolves\_in\_main\_cycle(Gs1, Gs2, Step, \_).}\\ \\
+}
+Les résultats de cette version sont décevants. Avec les mêmes tests que précédemment, je n'ai réussi à obtenir que 2 (sur 7) solutions en moins de 100s, ce qui n'est vraiment pas bon. Maxime Folschette et moi-même pensons que cela 
+est dû à la trop grosse quantité de mémoire d'ASP gardé pour de trop nombreux prédicats.
 
 \newpage
 \section{Conclusion et pistes pour la suite}
 Durant mon stage j'ai élaboré deux versions pour résoudre le problème rencontré avec l'ajout de la troisième contrainte. J'ai présenté dans ce rapport la solution qui fait appel à un script Python, ainsi que la version modifiée 
 pour traiter la sémantique généralisée. J'ai très brièvement parlé de la solution nécessitant la création d'états globaux en ASP.\\ \\
-Mes performances sur la batterie de test qu'a utilisé Maxime Folschette pour la version de laquelle je suis parti se sont avérées toutes aussi bonnes que celles de la sémantique asynchrone. Les résultats de ces tests sont dans les 
-annexes. Les performances de ma seconde version y sont également. On voit notamment à quel point elle n'est pas efficace en temps.\\ \\
+Mes performances sur la batterie de test qu'a utilisé Maxime Folschette pour la version de laquelle je suis parti se sont avérées toutes aussi bonnes que celles de la sémantique asynchrone. Les résultats de ces tests sont 
+disponibles sur le github de mon stage, juste \href{https://github.com/Leopoulpinator/Attractors-in-AAN/tree/main/versions/final_versions}{ici}. Les performances de ma seconde version y sont également. On voit notamment à quel point 
+elle n'est pas efficace en temps.\\ \\
 Concernant cette seconde version, je pense que l'on peut grandement améliorer son efficacité en combinant mon code avec de l'incrémental. L'idée serait de ne considérer qu'un certains nombres d'états globaux : au début on les 
 considère tous, puis, lorsque l'on trouve un attracteur, on regroundre le programme en enlevant tout les états globaux de l'attracteur (en les mettant tous à faux).\\ \\
 Une autre idée que j'avais en tête était, lorsque l'on trouvait un cycle qui n'était pas un attracteur, de remplacer tout les états de ce cycle par un seul représentant, dont les transitions globales entrantes et sortantes 
@@ -756,7 +710,8 @@ seront celles de chacun des états globaux du cycle. On travaillerait ensuite av
 les autres éléments du cycle). Je pense que combiner cette idée avec de l'incrémental pourrait également être intéressant : à chaque cycle trouvé on effectue de nouveau un grounding en mettant à jour nos représentants.\\ \\
 Je ne suis pas sûr de ces pistes, mais c'est ce sur quoi j'essaierais personnellement de me pencher pour poursuivre le travail.\\ \\ \\
 Enfin, je souhaite remercier l'ENS de Lyon qui m'a proposé ce stage, Maxime Folschette pour son encadrement, les personnes au sein de l'équipe BioComputing, mes quelques collègues stagiaires de bureau (même si le stage a été en 
-semi-distanciel) ainsi que mes quelques relecteurs anonymes.
+semi-distanciel) ainsi que mes quelques relecteurs anonymes.\\ \\
+Mon code est disponible \href{https://github.com/Leopoulpinator/Attractors-in-AAN}{ici}.
 
 \newpage
 \bibliography{biblio}

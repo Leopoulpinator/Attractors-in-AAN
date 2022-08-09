@@ -19,6 +19,6 @@
 \contentsline {section}{\numberline {4}Cœur de la contribution personnelle}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Code pré-existant}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Résolution de la troisième contrainte en Python}{14}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Légère modification pour sémantique généralisée}{18}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Quelques mots sur la seconde manière de procéder}{18}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.3}Légère modification pour sémantique généralisée}{15}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}\'Etude des états globaux}{16}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Conclusion et pistes pour la suite}{19}{section.5}%
