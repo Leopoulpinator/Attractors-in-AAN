@@ -64,8 +64,8 @@
 
 \newpage
 \section{Introduction}
-Ce rapport fait écho au chapitre [\cite{chapitre}]. Mon stage a démarré par la lecture complète de ce chapitre, nécessaire pour traiter le sujet.
-Mon rapport démarrera donc par introduire les notions majeures de ce chapitre.\\ \\
+Ce rapport fait écho au chapitre de \cite{chapitre}. Mon stage a démarré par la lecture complète de ce chapitre, nécessaire pour traiter le sujet.
+Je vais donc commencer mon rapport en introduisant les notions majeures de ce chapitre.\\ \\
 La biologie s'intéresse à l'étude des systèmes vivants ou composant le vivant (gènes, cellules, écosystèmes...). La bioinformatique est l'utilisation de méthodes informatiques pour aider la biologie. Un des domaines de la 
 bioinformatique s'apelle la \emph{biologie des systèmes} et consiste à proposer des modèles et des méthodes informatiques et mathématiques pour représenter et étudier de tels systèmes.\\ \\
 Ainsi, des études biologiques permettent de déterminer comment certains gènes interagissent entre eux, ce qui peut être représenté mathématiquement sous la forme d'un graphe. De plus, ces interactions peuvent être vues comme des 
@@ -121,7 +121,7 @@ les modèles possibles pour $P$.
 
 \subsection{Variables}
 Si une variable apparaît dans un atome de la tête, elle doit également être dans le corps. Chaque instance d'une variable va être groundée par ASP afin de trouver tous les modèles à notre problème.
-Prenons un petit exemple, voici un problème encodé avec 2 règles :
+Prenons un exemple, voici un problème encodé avec 2 règles :
 \begin{center}
 \emph{
 	\textcolor{blue}{
@@ -131,7 +131,7 @@ Prenons un petit exemple, voici un problème encodé avec 2 règles :
 }
 \end{center}
 Ce programme contient 2 faits : Charles est un parent de Jenny, et Jenny est un parent de Mary. C'est ainsi que l'on souhaite comprendre les termes "parentOf(jenny, charles)" et "parentOf(mary, jenny)".
-Si on souhaite désormais spécifier que Charles est un grand parent de Mary, on peut le faire en ajoutant le terme : "grandparentOf(mary, charles)". Cependant, ASP est capable de faire de la déduction.
+Si on souhaite désormais spécifier que Charles est grand père de Mary, on peut le faire en ajoutant le terme : "grandparentOf(mary, charles)". Cependant, ASP est capable de faire de la déduction.
 En effet, on peut généraliser la notion de grand parent comme étant le parent d'un parent de la façon suivante :
 \begin{center}
 \emph{
@@ -140,7 +140,7 @@ En effet, on peut généraliser la notion de grand parent comme étant le parent
 	}
 }
 \end{center}
-Pour chaque valeurs possible de X, Y, et Z, le grounding d'ASP va nous créer des règles associées.
+Pour chaque valeur possible de X, Y, et Z, le grounding d'ASP va nous créer des règles associées.
 Ainsi, les 27 règles dont grandparentOf(mary, mary) :- parentOf(mary, mary), parentOf(mary, mary), ou encore grandparentOf(charles, mary) :- parentOf(charles, jenny), parentOf(jenny, mary) vont être créées 
 par cette façon de procéder. Ceci n'est pas du tout un problème : le solveur d'ASP va simplement regarder si les atomes des corps sont vraies ou pas. Si ce n'est pas le cas pour une règle donnée (i.e. l'ensemble des éléments 
 du corps de cette règle est faux), comme $(\bot\Rightarrow x)\Leftrightarrow Vrai$, les règles seront vraies. Si c'est le cas pour une règle donnée, la tête de cette dernière sera alors mise à $Vrai$ afin que l'interprétation 
@@ -163,9 +163,9 @@ structurent suivant l'exemple suivant :
   0 $\left\{ coloration(X, Y, Teinte):couleur(Teinte)\right\}$ 1 :- abscisse(X), ordonnee(Y).
 }
 \end{center}
-La \textbf{borne inférieure}, située à gauche des accolades (ici 0), et la \textbf{borne supérieure} (ici 1) définissent l'intervalle discret du nombre d'atomes que le solveur peut mettre à vrai. Si l'une de ces deux bornes est 
-omise, ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible (à savoir 0 pour la borne inf et cardinal de l'ensemble défini par les accolades pour la borne sup). Dans ce petit exemple, on choisira donc une ou 0 
-couleur parmi celles possibles (telles qu'il existe un atome couleur(Teinte) avec la Teinte souhaitée qui soit vrai) pour chaque abscisse et ordonnée définies.\\
+La \textbf{borne inférieure} située à gauche des accolades (ici 0), et la \textbf{borne supérieure} (ici 1) définissent l'intervalle discret du nombre d'atomes que le solveur peut mettre à vrai. Si l'une de ces deux bornes est 
+omise, ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible (à savoir 0 pour la borne inf et cardinal de l'ensemble défini par les accolades pour la borne sup). Dans cet exemple, on choisira donc une ou 0 
+couleur parmi celles possibles (telles qu'il existe un atome couleur(Teinte) qui soit Vrai) pour chaque abscisse et ordonnée définies.\\
 Les agrégats permettent de faire des disjonctions de cas.
 
 \subsection{Premier exemple : le sudoku}
@@ -188,8 +188,8 @@ On codera une grille de sudoku en ASP en utilisant s, une fonction d'arité 3 pr
 	\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\qquad$\hookrightarrow$ \textcolor{blue}{$val(V) ; border(X1) ; border(Y1)$.}\\
 }
 
-Une fois que l'on a fait cela, il ne nous reste plus qu'à instancier notre problème sur une grille. Pour cela, on renseigne \emph{\textcolor{blue}{s(X,Y,V)}} pour chaque case déjà pré-numérotée de la grille à notre code, et le solveur se chargera 
-de nous renvoyer l'intégralité de la grille complétée. Si une grille possède plusieurs solutions, le solveur retournera toutes les solutions. De plus, si la grille ne possède aucune solution, le solveur renverra 
+Une fois que l'on a fait cela, il ne nous reste plus qu'à instancier notre problème sur une grille. Pour cela, on renseigne \emph{\textcolor{blue}{s(X,Y,V)}} pour chaque case déjà pré-numérotée de la grille à notre code, et le 
+solveur se chargera de nous renvoyer l'intégralité de la grille complétée. Si une grille possède plusieurs solutions, le solveur retournera toutes les solutions. De plus, si la grille ne possède aucune solution, le solveur renverra 
 \emph{\textcolor{blue}{UNSATISFIABLE}}.
 
 \subsection{Scripting Python}
@@ -205,9 +205,9 @@ commande '\#end.'. Le scripting admet trois atouts majeurs :
 \subsection{Second exemple : le sokoban}
 Le sokoban a été le dernier jeu de logique que j'ai encodé en ASP, et le plus complexe à cause de la duplication très couteuse du nombre de coups nécessaires pour la résolution d'une grille.\\
 
-Le jeu est composé d'une grille possédant des cases qui sont du sol ou du mur. Sur une case représentant le sol, il ya le joueur. Sur plusieurs autres cases de sol il y a des caisses. Sur autant de cases de sol qu'il y a de caisses, 
-on trouve des cases d'arrivée (qui sont également du sol). Le but du jeu est de pousser toutes les caisses sur les cases d'arrivée sachant que le joueur ne peut se déplacer qu'en haut, à gauche, en bas ou à droite, et ne peut pas 
-traverser les murs ni pousser une caisse s'il y a un mur ou une autre caisse derrière celle-ci.\\ \\
+Le jeu est composé d'une grille possédant des cases qui sont du sol ou du mur. Sur une case représentant le sol, il y a le joueur. Sur plusieurs autres cases de sol il y a des caisses. Sur autant de cases de sol qu'il y a de 
+caisses, on trouve des cases d'arrivée (qui sont également du sol). Le but du jeu est de pousser toutes les caisses sur les cases d'arrivée sachant que le joueur ne peut se déplacer qu'en haut, à gauche, en bas ou à droite, et ne 
+peut pas traverser les murs ni pousser une caisse s'il y a un mur ou une autre caisse derrière celle-ci.\\ \\
 
 \begin{figure}[!h]
 	\centering  
@@ -255,13 +255,12 @@ On récupère alors la liste des coups de caisses à faire, et on peut résoudre
 
 \section{Formalismes d'automates et leur dynamique}
 Différents modèles existent pour représenter efficacement un système biologique et manipuler sa dynamique : les deux principaux sont les réseaux booléens synchrones de Stuart Kauffman, et les réseaux asynchrones de René Thomas.
-Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) [\cite{folschette2015sufficient}] et [\cite{pauleve2016pint}], qui forment une extension d'une précédente 
-structure appelé "Process Hitting" [\cite{pauleve14}].\\
+Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) \cite{folschette2015sufficient} et \cite{pauleve2016pint}, qui forment une extension d'une précédente structure appelée "Process Hitting" \cite{pauleve14}.\\
 
 \subsection{AAN et leur traduction en ASP}
 Un automate $A$, dans le contexte de mon stage, sera défini comme étant un ensemble d'états $q_0, q_1, ..., q_{|A|-1}$ avec des transitions dont les étiquettes seront un ou plusieurs états (qu'on appellera également \emph{niveaux}) 
 d'automates externes. Il n'y a donc ni état final, ni état initial. On ne lui donnera pas non plus de mot à lire en entrée puisqu'on va s'intéresser à la dynamique de nos ensembles d'automates. On parlera alors de 
-transition locale : $q_i\xrightarrow{l}q_j$ symbolisera le fait que l'on peut passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiés.\\
+transition locale : $q_i\xrightarrow{l}q_j$ symbolisera le fait que l'on peut passer de l'état $q_i$ à l'état $q_j$ si toutes les conditions de $l$ sont vérifiées.\\
 Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$ avec :
 \begin{itemize}
 	\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.
@@ -328,7 +327,7 @@ En ASP, on définira un AAN en deux temps :
 		automaton\_level("c", 0..2).\\
 		}
 	}
-	\item Enfin, les transitions seront encodés via des labels (t1, t2, ...), et on donnera chacune des conditions, ainsi que l'état d'arrivée, via un fait :\\
+	\item Enfin, les transitions seront encodées via des labels (t1, t2, ...), et on donnera chacune des conditions, ainsi que l'état d'arrivée, via un fait :\\
 	\emph{
 		\textcolor{blue}{
 		condition(t1, "a", 0). target(t1, "a", 1). condition(t1, "b", 0).\\
@@ -352,7 +351,7 @@ Nous avons ainsi défini l'automate de notre \hyperlink{exemple}{\textbf{exemple
 \subsection{Sémantiques}
 \hypertarget{semantiques}{Soit $R = (\Sigma,S,T)$ un AAN (défini ci-dessus). On définit la notion de transition jouable:}
 \begin{itemize}
-	\item On dit qu'une transition locale est \textbf{jouable} si toutes les conditions de celle-ci sont vérifiés.\\
+	\item On dit qu'une transition locale est \textbf{jouable} si toutes les conditions de celle-ci sont vérifiées.\\
 	On notera $P_{\zeta}$ l'ensemble des transitions locales jouables depuis un état global $\zeta$.\\
 	\emph{L'état global $(a_0,b_1,c_1)$ de l'\hyperlink{exemple}{\textbf{exemple}} admet une seule transition jouable : $a_0\xrightarrow{b_1,c_1} a_1$.}
 \end{itemize}
@@ -454,8 +453,9 @@ Un ensemble $A\subseteq S$ d'états globaux, avec $|A|\geq2$ est appellé \textb
 
 \section{Cœur de la contribution personnelle}
 \hypertarget{debutpartie4}{
-La version de laquelle j'ai commencé à travailler est assez proche du travail que j'ai effectué. Cette version était fonctionnelle et efficace pour la sémantique asynchrone, mais ne fonctionnait pour la sémantique synchrone que 
-lorsque les attracteurs étaient exactement des cycles simples (chaque état global du graphe produit doit avoir un degré sortant égal à $1$), et ne fonctionnait pas pour les autres AAN comme celui-ci :\\ \\ \\
+J'ai tout d'abord étudié la version existante du code afin de la comprendre et d'essayer de corriger l'erreur qu'elle contenait. Cette version était fonctionnelle et efficace pour la sémantique asynchrone, mais ne fonctionnait pour 
+la sémantique synchrone que lorsque les attracteurs étaient exactement des cycles simples (chaque état global du graphe produit doit avoir un degré sortant égal à $1$), et ne fonctionnait pas pour les autres AAN comme 
+celui-ci :\\ \\ \\
 }
 
 \begin{figure}[!h]
@@ -570,7 +570,7 @@ global ; ou bien utiliser Python pour résoudre ce problème lors du solving de 
 
 \subsection{Résolution de la troisième contrainte en Python}
 Je ne vais pas rentrer en détail dans la manière dont on peut réussir à récupérer des atomes lors du grounding et du solving d'ASP en Python : on admettra que cela est faisable. Nous avons donc en Python une 
-\textcolor{blue}{\emph{boucle for}} qui va, à chaque instance, avoir un ensemble d'atomes tous vrais tel que l'interprétation qu'ils forment satisfasse toutes les règles de notre programme ASP.\\ \\
+\textcolor{blue}{\emph{boucle for}} qui va, à chaque itération, avoir un ensemble d'atomes tous vrais tel que l'interprétation qu'ils forment satisfasse toutes les règles de notre programme ASP.\\ \\
 Lors de la première itération de cette boucle, il est nécessaire de mémoriser toutes les transitions, les conditions, ainsi que les cibles de ces transitions. On introduit donc quelques ensembles pour stocker cela en mémoire.\\ \\
 \emph{
 	1. \textcolor{blue}{condition\_transitions = \{\}} \# de la forme [transition][automata] = level\\
@@ -659,7 +659,7 @@ définir un ordre parmi les automates. On utilise alors une fonction de clingo :
 	16.\qquad\textcolor{blue}{enum(N), enum(N2),}\\
 	17.\qquad\textcolor{blue}{N \textless N2, A \textless A2.}\\ \\
 }
-Une fois cet ordre défini, on est capable de créer une liste-ASP pour encode chacun des états globaux. Le $(N-k)^{ieme}$ élément de cette liste sera un prédicat nb(automaton, level) avec automaton étant $k^{ieme}$ au niveau de 
+Une fois cet ordre défini, on est capable de créer une liste-ASP pour encoder chacun des états globaux. Le $(N-k)^{ieme}$ élément de cette liste sera un prédicat nb(automaton, level) avec automaton étant $k^{ieme}$ au niveau de 
 l'ordre défini précédemment (on empile dans la liste d'abord les premiers éléments, c'est pour ça qu'on a trié par ordre anti-lexicographique).\\ \\
 \emph{
 	18. \textcolor{blue}{build\_list(0, empty).}\\
@@ -709,9 +709,9 @@ Une autre idée que j'avais en tête était, lorsque l'on trouvait un cycle qui 
 seront celles de chacun des états globaux du cycle. On travaillerait ensuite avec des représentants et des états globaux comme s'il s'agissait du même objet (si on a un représentant dans un autre cycle, on l'agrandira en rajoutant 
 les autres éléments du cycle). Je pense que combiner cette idée avec de l'incrémental pourrait également être intéressant : à chaque cycle trouvé on effectue de nouveau un grounding en mettant à jour nos représentants.\\ \\
 Je ne suis pas sûr de ces pistes, mais c'est ce sur quoi j'essaierais personnellement de me pencher pour poursuivre le travail.\\ \\ \\
-Enfin, je souhaite remercier l'ENS de Lyon qui m'a proposé ce stage, Maxime Folschette pour son encadrement, les personnes au sein de l'équipe BioComputing, mes quelques collègues stagiaires de bureau (même si le stage a été en 
-semi-distanciel) ainsi que mes quelques relecteurs anonymes.\\ \\
-Mon code est disponible \href{https://github.com/Leopoulpinator/Attractors-in-AAN}{ici}.
+Enfin, je souhaite remercier l'ENS de Lyon qui m'a proposé ce stage, Maxime Folschette pour son encadrement, les personnes au sein de l'équipe BioComputing, mes quelques collègues stagiaires de bureau ainsi que mes quelques 
+relecteurs anonymes.\\ \\
+Mon code est disponible \href{https://github.com/Leopoulpinator/Attractors-in-AAN}{ici} : https://github.com/Leopoulpinator/Attractors-in-AAN.
 
 \newpage
 \bibliography{biblio}

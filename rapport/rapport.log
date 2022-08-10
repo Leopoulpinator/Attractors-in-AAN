@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  9 AUG 2022 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  10 AUG 2022 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1012,7 +1012,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--211
 
  []
 
-[5]
 Package epstopdf Info: Source file: <Diagram1.eps>
 (epstopdf)                    date: 2022-08-08 12:15:44
 (epstopdf)                    size: 17540 bytes
@@ -1023,12 +1022,13 @@ Package epstopdf Info: Source file: <Diagram1.eps>
 pdf Diagram1.eps>
 (epstopdf)             \includegraphics on input line 214.
 Package epstopdf Info: Output file is already uptodate.
-<Diagram1-eps-converted-to.pdf, id=193, 850.17625pt x 850.17625pt>
+<Diagram1-eps-converted-to.pdf, id=188, 850.17625pt x 850.17625pt>
 File: Diagram1-eps-converted-to.pdf Graphic file (type pdf)
 <use Diagram1-eps-converted-to.pdf>
 Package pdftex.def Info: Diagram1-eps-converted-to.pdf  used on input line 214.
 
 (pdftex.def)             Requested size: 170.03223pt x 170.03223pt.
+[5]
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 2
 24.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
@@ -1068,80 +1068,80 @@ oups sui-vante : s(1,(3,5),bas), s(2,(5,4),gauche),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--260
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
  []
 
 Missing character: There is no ; in font nullfont!
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 365--406
+Underfull \hbox (badness 10000) in paragraph at lines 364--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--406
+Underfull \hbox (badness 10000) in paragraph at lines 364--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--406
+Underfull \hbox (badness 10000) in paragraph at lines 364--405
 
  []
 
 
-Overfull \hbox (5.66292pt too wide) in paragraph at lines 365--406
+Overfull \hbox (5.66292pt too wide) in paragraph at lines 364--405
 \OT1/cmr/m/n/12 On d^^Seclare en-suite que deux ^^Setats glo-baux diff^^Serent 
 sur au moins un autre au-to-mate qu'$\OML/cmm/m/it/12 Automaton$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--406
+Underfull \hbox (badness 10000) in paragraph at lines 364--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--406
+Underfull \hbox (badness 10000) in paragraph at lines 364--405
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 412--417
+Underfull \hbox (badness 10000) in paragraph at lines 411--416
 
  []
 
 
-Overfull \hbox (36.30296pt too wide) in paragraph at lines 422--425
+Overfull \hbox (36.30296pt too wide) in paragraph at lines 421--424
 \OT1/cmr/m/n/12 Enfin, il nous suf-fit de tes-ter pour toutes les paires d'^^Se
 tats glo-baux dis-tincts si on a []\OT1/cmr/m/it/12 not[]playable(Gs1,Gs2)[]
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--437
+
+ []
+
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 432--438
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--438
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--438
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 450--454
+Underfull \hbox (badness 10000) in paragraph at lines 449--453
 
  []
 
@@ -1173,7 +1173,7 @@ Package epstopdf Info: Source file: <Diagram2.eps>
 pdf Diagram2.eps>
 (epstopdf)             \includegraphics on input line 497.
 Package epstopdf Info: Output file is already uptodate.
-<Diagram2-eps-converted-to.pdf, id=255, 520.94624pt x 417.56pt>
+<Diagram2-eps-converted-to.pdf, id=254, 520.94624pt x 417.56pt>
 File: Diagram2-eps-converted-to.pdf Graphic file (type pdf)
 <use Diagram2-eps-converted-to.pdf>
 Package pdftex.def Info: Diagram2-eps-converted-to.pdf  used on input line 497.
@@ -1497,7 +1497,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 719.
 Here is how much of TeX's memory you used:
  24192 strings out of 481239
  476525 string characters out of 5920377
- 784962 words of memory out of 5000000
+ 783962 words of memory out of 5000000
  38703 multiletter control sequences out of 15000+600000
  541392 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1524,10 +1524,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public
 /cm-super/sfrm1000.pfb>
-Output written on rapport.pdf (21 pages, 273468 bytes).
+Output written on rapport.pdf (21 pages, 273473 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
+ 391 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
  67 named destinations out of 1000 (max. 500000)
  295 words of extra memory for PDF output out of 10000 (max. 10000000)
 
