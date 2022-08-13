@@ -72,7 +72,7 @@ Ainsi, des études biologiques permettent de déterminer comment certains gènes
 transitions entre les sommets de notre graphe, ce qui se rapproche alors plus d'un automate. La représentation du modèle étudié lors de ce stage est expliqué dans la partie "Formalismes d'automates et leur dynamique".\\ \\
 L'étude de la dynamique de systèmes biologiques lève plusieurs problèmes tels que l'identification d'attracteurs, les bifurcations ou encore la connexité entre deux états globaux. Dans ce rapport je vais discuter de la recherche 
 d'attracteurs dans des réseaux d'automates asynchrones : il s'agit d'un ensemble d'états duquel on ne peut pas s'échapper et minimal au sens de l'inclusion.\\ \\
-Answer Set Programming (= ASP) est un paradigme de programmation logique particulièrement efficace pour résoudre des problèmes combinatoires. Mon stage s'est concentré sur l'étude d'ASP adin de chercher les attracteurs parmi le graphe des états globaux de notre réseau. J'ai également utilisé un peu se scripting Python, utile pour filtrer les ensembles solutions.\\ \\
+Answer Set Programming (= ASP) est un paradigme de programmation logique particulièrement efficace pour résoudre des problèmes combinatoires. Mon stage s'est concentré sur l'étude d'ASP afin de chercher les attracteurs parmi le graphe des états globaux de notre réseau. J'ai également utilisé un peu se scripting Python, utile pour filtrer les ensembles solutions.\\ \\
 Ce qui sera étudié dans ce rapport ne le sera que partiellement : on n'entrera pas en détail dans le code présenté, mais on se penchera simplement sur les grandes lignes et sur les points techniques qu'il arbore.
 
 \section{Answer Set Programming}
@@ -131,8 +131,8 @@ Prenons un exemple, voici un problème encodé avec 2 règles :
 }
 \end{center}
 Ce programme contient 2 faits : Charles est un parent de Jenny, et Jenny est un parent de Mary. C'est ainsi que l'on souhaite comprendre les termes "parentOf(jenny, charles)" et "parentOf(mary, jenny)".
-Si on souhaite désormais spécifier que Charles est grand père de Mary, on peut le faire en ajoutant le terme : "grandparentOf(mary, charles)". Cependant, ASP est capable de faire de la déduction.
-En effet, on peut généraliser la notion de grand parent comme étant le parent d'un parent de la façon suivante :
+Si on souhaite désormais spécifier que Charles est grand-père de Mary, on peut le faire en ajoutant le terme : "grandparentOf(mary, charles)". Cependant, ASP est capable de faire de la déduction.
+En effet, on peut généraliser la notion de grand-parent comme étant le parent d'un parent de la façon suivante :
 \begin{center}
 \emph{
 	\textcolor{blue}{
@@ -213,7 +213,7 @@ peut pas traverser les murs ni pousser une caisse s'il y a un mur ou une autre c
 	\centering  
 	\includegraphics[scale=0.2]{Diagram1.eps}  
 	\caption{
-			Exemple d'une grille type de sokoban. P symbolise le joueur, les ronds rouges sont les cases d'arrivée, et les carrés représentent les caisses.
+			Exemple d'une grille type de sokoban. P symbolise le joueur, les ronds rouges sont les cases d'arrivée, et les carrés rouges représentent les caisses.
 	}
 	\label{label-figure1}
 \end{figure}
@@ -237,7 +237,7 @@ définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)
 		que l'on ait accès à $c_1$ et qu'il n'y ait pas de caisse en $c_2$, alors le personnage peut se déplacer jusqu'en $c_1$, puis pousser la caisse située entre $c_1$ et $c_2$ en $c_2$. On obtient ainsi un coup jouable 
 		pour l'instant $k$. L'agrégat nous sélectionne alors un seul de ces coups, qui sera sous la forme d'un prédicat \emph{\textcolor{blue}{coup\_a\_instant(k, (R, C), (R2, C2)}}.\\
 		\textcolor{magenta}{Dans notre cas figure \ref{label-figure1}, seuls deux coups sont possibles : \emph{coup\_a\_instant(1,(3,3),(3,4))} et \emph{coup\_a\_instant(1,(3,5),(3,4)).}}\\
-		A partir du choix du coup, on est capable de déduire quel sera la prochaine case du personnage (celle de la caisse que l'on vient de déplacer), et on peut créer les prédicats 
+		A partir du choix du coup, on est capable de déduire quelle sera la prochaine case du personnage (celle de la caisse que l'on vient de déplacer), et on peut créer les prédicats 
 		\emph{\textcolor{blue}{perso(k,X,Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(k,X,Y)}} associés à l'instant $k$.\\
 		\textcolor{magenta}{Par exemple si l'on a choisi le premier des deux coups jouables, on en déduira les prédicats \emph{perso(1,3,4), caisse\_a\_instant(1,3,5)}, et \emph{caisse\_a\_instant(1,4,4).}}\\
 		Enfin, on est capable de savoir si on a résolu la grille ou pas à l'aide d'un prédicat \emph{\textcolor{blue}{caisse\_pas\_place(k)}} qui est vrai s'il reste une ou plusieurs caisses à placer à l'étape $k$.\\
@@ -247,7 +247,7 @@ définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)
 		$check(k)$ est le sous-programme qui se charge d'arrêter la recherche : si à une étape $k$ ce sous-programme est satisfiable, alors le programme s'arrêtera et renverra l'ensemble solution courant. Pour vérifier si 
 		l'on a trouvé une solution à notre grille, il suffit simplement d'ajouter une contrainte \emph{\textcolor{blue}{:- caisse\_pas\_place(k)}}. En effet, s'il existe une caisse non placée le $check(k)$ ne sera pas 
 		satisfiable.\\
-		\textcolor{magenta}{Dans notre petit exemple, le coup de caisse qu'on a choisi fait peut-être avancer la résolution, mais ne l'a pas achevé.}\\
+		\textcolor{magenta}{Dans notre exemple, le coup de caisse qu'on a choisi fait peut-être avancer la résolution, mais ne l'a pas achevé.}\\
 \end{itemize}
 On récupère alors la liste des coups de caisses à faire, et on peut résoudre notre grille en comblant les coups qui déplaçaient les caisses par ceux nécessaires pour atteindre la prochaine caisse à déplacer.\\
 \textcolor{magenta}{Pour l'exemple figure \ref{label-figure1}, ASP nous renvoie la liste de coups suivante : s(1,(3,5),bas), s(2,(5,4),gauche), s(3,(4,4),gauche), s(4,(2,5),bas), s(5,(3,2),haut), s(6,(2,4),droite), s(7,(2,2),haut). 
@@ -357,7 +357,7 @@ Nous avons ainsi défini l'automate de notre \hyperlink{exemple}{\textbf{exemple
 \end{itemize}
 La dynamique d'un AAN se définit à l'aide de sa \textbf{sémantique}. La sémantique forme l'ensemble des propriétés définissant les \textbf{transitions globales jouables} : dans un AAN on s'intéresse à l'évolution globale du réseau.
 \subsubsection{Asynchrone}
-Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{asynchrone} est donnée par :
+Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{asynchrone} est donné par :
 \begin{center}
 	$U^{asyn}(\zeta)=\left\{\left\{a_i\xrightarrow{l} a_j\right\}|a_i\xrightarrow{l} a_j\in P_{\zeta}\right\}$
 \end{center}
@@ -382,7 +382,7 @@ Ensuite, on fait comprendre à ASP qu'une transition locale n'est pas jouable si
 6.\qquad \textcolor{blue}{condition(Transition, Automaton, LevelJ),} \% alors qu'il devrait valoir $J\neq I$\\
 7.\qquad \textcolor{blue}{LevelI != LevelJ.} \% pour que la transition soit jouable\\ \\
 }
-On déclare ensuite que deux états globaux différent sur au moins un autre automate qu'$Automaton$ avec le terme $not\_equal\_except(Automaton, Gs1, Gs2)$ comme ceci :\\
+On déclare ensuite que deux états globaux diffèrent sur au moins un autre automate qu'$Automaton$ avec le terme $not\_equal\_except(Automaton, Gs1, Gs2)$ comme ceci :\\
 \emph{
 1. \textcolor{blue}{not\_equal\_except(Automaton, Gs1, Gs2) :-} \% Cet atome est vrai\\
 2.\qquad \textcolor{blue}{automaton(Automaton), automaton(Automaton2),} \% s'il existe deux automates\\
@@ -403,7 +403,7 @@ On peut enfin définir ce qu'est une transition globale jouable à l'aide de nos
 9.\qquad \textcolor{blue}{LevelI != LevelJ.} \% sont différents\\
 }
 \subsubsection{Synchrone}
-Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{synchrone} est donnée par :
+Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{synchrone} est donné par :
 \begin{center}
 	$U^{syn}(\zeta)=\left\{u\subseteq T|u \neq \emptyset \wedge \forall a\in\Sigma,(P_{\zeta}\bigcap T_a = \emptyset \Rightarrow u\bigcap 
 	T_a=\emptyset)\wedge(P_{\zeta}\bigcap T_a\neq\emptyset\Rightarrow |u\bigcap T_a |=1\right\}$
@@ -411,7 +411,7 @@ Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des 
 De manière informelle : tous les automates possédant au moins une transition locale jouable doivent changer de niveau.\\ \\
 Pour coder cela en ASP, on peut se servir des atomes \emph{\textcolor{blue}{different\_on}} et \emph{\textcolor{blue}{unplayable}}.\\
 On ajoute de plus une autre règle : \emph{\textcolor{blue}{has\_playable(Automaton, Gs, LevelI, LevelJ)}} spécifiant que l'on peut faire changer $Automaton$ dans $Gs$ du niveau $I$ vers le niveau $J$.\\
-Enfin, il ne nous reste plus qu'a déclarer (par la négation) quelles sont les transitions globales qui ne sont pas jouables. Pour cela, on essaie pour toutes les paires d'états globaux si on peut faire la transition de l'un à 
+Enfin, il ne nous reste plus qu'à déclarer (par la négation) quelles sont les transitions globales qui ne sont pas jouables. Pour cela, on essaie pour toutes les paires d'états globaux si on peut faire la transition de l'un à 
 l'autre en créant un terme \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}} si la transition ne peut pas avoir lieu. On énumère alors les différents cas de figure :
 \begin{enumerate}
 	\item si $Automaton$ n'admet aucune transition locale jouable dans $Gs_1$ et que $Gs_1\neq Gs_2$ sur $Automaton$
@@ -423,14 +423,14 @@ Enfin, il nous suffit de tester pour toutes les paires d'états globaux distinct
 \emph{\textcolor{blue}{playable(Gs1,Gs2)}}.
 
 \subsubsection{Généralisée}
-Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{généralisée} est donnée par :
+Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{généralisée} est donné par :
 \begin{center}
 	$U^{gen}(\zeta)=\left\{u\subseteq T|u \neq \emptyset \wedge \forall a\in\Sigma,(P_{\zeta}\bigcap T_a = \emptyset \Rightarrow u\bigcap 
 	T_a=\emptyset)\wedge(P_{\zeta}\bigcap T_a\neq\emptyset\Rightarrow |u\bigcap T_a |\leq 1\right\}$
 \end{center}
 De manière informelle : tous les automates possédant au moins une transition locale jouable \underline{peuvent} changer de niveau, et au moins l'un d'entre eux doit changer de niveau.\\ \\
 Pour coder cela en ASP, on prend exactement le code de la sémantique synchrone, en remplaçant le second cas de figure par ceci :\\ \\
-\textcolor{white}{4cha}2. si $Gs_1$ différe de $Gs_2$ sur $Automaton$ et qu'il n'existe pas de transition pour faire passer 
+\textcolor{white}{4cha}2. si $Gs_1$ diffère de $Gs_2$ sur $Automaton$ et qu'il n'existe pas de transition pour faire passer 
 \textcolor{white}{6chara}le niveau d'$Automaton$ sur $Gs_1$ à celui de $Gs_2$\\ \\
 Cela permet bien de ne pas prendre une transition par automate qui est jouable puisqu'on va tester des paires d'états globaux qui ont peut-être 3 automates jouables, et si l'on ne fait qu'une seule transition locale cela ne sera pas 
 filtré par notre atome \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}}.
@@ -617,7 +617,7 @@ Concrètement, il faut modifier la sémantique dans le code pré-existant en ASP
 	21. \textcolor{blue}{\} 1 :- has\_playable(Automaton, Step).}\\
 	\textcolor{blue}{\verb![...]!}\\ \\
 }
-On doit ensuite modifier dans le code python le fait que \emph{\textcolor{blue}{list\_for\_automaton}} soit initialement vide : pour chaque automate, on peut soit rester dans cet automate, soit faire une des transitions trouvés. 
+On doit ensuite modifier dans le code python le fait que \emph{\textcolor{blue}{list\_for\_automaton}} soit initialement vide : pour chaque automate, on peut soit rester dans cet automate, soit faire une des transitions trouvées. 
 On va donc initialiser cette liste de cette façon :\\
 \emph{\textcolor{blue}{list\_for\_automaton = [global\_state[sorted\_automata\_names.index(automaton\_name)]]}} (où \\
 \emph{\textcolor{blue}{sorted\_automata\_names}} est une liste des noms d'automates triée par ordre lexicographique). Ensuite, on rajoute à \emph{\textcolor{blue}{list\_for\_automaton}} tous les autres niveaux atteignables pour 
@@ -642,7 +642,7 @@ déterminer les niveaux des automates actifs de ces constantes : ce sera la fonc
 	niveau\_de\_a)" en ASP.
 \end{itemize}
 La structure du code ASP reprend fortement celle de la \hyperlink{preexistante}{version pré-existante}, c'est pourquoi je ne vais pas la mettre intégralement.\\ \\
-Après avoir introduit quelques informations (noms d'autoamtes, transitions locales, étapes du chemin) comme c'est fait dans les 7 premières lignes de la version pré-existante, on introduit 2 prédicats supplémentaires utiles pour 
+Après avoir introduit quelques informations (noms d'automates, transitions locales, étapes du chemin) comme c'est fait dans les 7 premières lignes de la version pré-existante, on introduit 2 prédicats supplémentaires utiles pour 
 définir un ordre parmi les automates. On utilise alors une fonction de clingo : \#count \{E\} permettant de compter le nombre d'éléments dans l'ensemble E.\\ \\
 \emph{
 	8. \textcolor{blue}{nb\_automaton(N) :- N = \#count \{ A : automaton(A) \}.}\\
@@ -678,7 +678,7 @@ On utilise ensuite nos fonctions Python pour travailler avec des constantes plus
 	28.\qquad\textcolor{blue}{automaton(Automaton),}\\
 	29.\qquad\textcolor{blue}{global\_state(Gs,L).}\\ \\
 }
-Avec tout ces éléments, il est alors très facile de poursuivre l'algorithme et de déclarer les 3 contraintes de l'attracteur comme on l'avait fait dans la version pré-existante : on choisit un état global à l'étape initiale 
+Avec tous ces éléments, il est alors très facile de poursuivre l'algorithme et de déclarer les 3 contraintes de l'attracteur comme on l'avait fait dans la version pré-existante : on choisit un état global à l'étape initiale 
 (step 0), pour chaque étape on choisit un coup jouable en connaissant l'état dans lequel on se trouve à cette étape. Puis on détermine quel est l'état global de l'étape suivante, et on teste ensuite les trois contraintes avec les 
 états globaux. La troisième contrainte est alors très simple à encoder maintenant que l'on a mémorisé les coups jouables dans la sémantique :\\ \\
 \emph{
@@ -694,7 +694,7 @@ Avec tout ces éléments, il est alors très facile de poursuivre l'algorithme e
 	39. \textcolor{blue}{:- also\_playable(Gs1, Gs2, Step), not evolves\_in\_main\_cycle(Gs1, Gs2, Step, \_).}\\ \\
 }
 Les résultats de cette version sont décevants. Avec les mêmes tests que précédemment, je n'ai réussi à obtenir que 2 (sur 7) solutions en moins de 100s, ce qui n'est vraiment pas bon. Maxime Folschette et moi-même pensons que cela 
-est dû à la trop grosse quantité de mémoire d'ASP gardé pour de trop nombreux prédicats.
+est dû à la trop grosse quantité de mémoire d'ASP gardée pour de trop nombreux prédicats.
 
 \newpage
 \section{Conclusion et pistes pour la suite}
@@ -703,9 +703,9 @@ pour traiter la sémantique généralisée. J'ai très brièvement parlé de la 
 Mes performances sur la batterie de test qu'a utilisé Maxime Folschette pour la version de laquelle je suis parti se sont avérées toutes aussi bonnes que celles de la sémantique asynchrone. Les résultats de ces tests sont 
 disponibles sur le github de mon stage, juste \href{https://github.com/Leopoulpinator/Attractors-in-AAN/tree/main/versions/final_versions}{ici}. Les performances de ma seconde version y sont également. On voit notamment à quel point 
 elle n'est pas efficace en temps.\\ \\
-Concernant cette seconde version, je pense que l'on peut grandement améliorer son efficacité en combinant mon code avec de l'incrémental. L'idée serait de ne considérer qu'un certains nombres d'états globaux : au début on les 
-considère tous, puis, lorsque l'on trouve un attracteur, on regroundre le programme en enlevant tout les états globaux de l'attracteur (en les mettant tous à faux).\\ \\
-Une autre idée que j'avais en tête était, lorsque l'on trouvait un cycle qui n'était pas un attracteur, de remplacer tout les états de ce cycle par un seul représentant, dont les transitions globales entrantes et sortantes 
+Concernant cette seconde version, je pense que l'on peut grandement améliorer son efficacité en combinant mon code avec de l'incrémental. L'idée serait de ne considérer qu'un certain nombre d'états globaux : au début on les 
+considère tous, puis, lorsque l'on trouve un attracteur, on regroundre le programme en enlevant tous les états globaux de l'attracteur (en les mettant tous à faux).\\ \\
+Une autre idée que j'avais en tête était, lorsque l'on trouvait un cycle qui n'était pas un attracteur, de remplacer tous les états de ce cycle par un seul représentant, dont les transitions globales entrantes et sortantes 
 seront celles de chacun des états globaux du cycle. On travaillerait ensuite avec des représentants et des états globaux comme s'il s'agissait du même objet (si on a un représentant dans un autre cycle, on l'agrandira en rajoutant 
 les autres éléments du cycle). Je pense que combiner cette idée avec de l'incrémental pourrait également être intéressant : à chaque cycle trouvé on effectue de nouveau un grounding en mettant à jour nos représentants.\\ \\
 Je ne suis pas sûr de ces pistes, mais c'est ce sur quoi j'essaierais personnellement de me pencher pour poursuivre le travail.\\ \\ \\
