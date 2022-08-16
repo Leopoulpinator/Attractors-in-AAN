@@ -5,20 +5,21 @@
 \contentsline {subsection}{\numberline {2.1}Termes}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Règles et modèles d'un programme}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Variables}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Agrégats}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Agrégats}{3}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Premier exemple : le sudoku}{4}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Scripting Python}{5}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Second exemple : le sokoban}{5}{subsection.2.7}%
-\contentsline {section}{\numberline {3}Formalismes d'automates et leur dynamique}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}AAN et leur traduction en ASP}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Sémantiques}{9}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Asynchrone}{9}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Synchrone}{10}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Généralisée}{10}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Dynamique}{11}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Cœur de la contribution personnelle}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Code pré-existant}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Résolution de la troisième contrainte en Python}{14}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Légère modification pour sémantique généralisée}{15}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}\'Etude des états globaux}{16}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusion et pistes pour la suite}{19}{section.5}%
+\contentsline {subsection}{\numberline {2.6}Scripting Python}{4}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Second exemple : le sokoban}{4}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Formalismes d'automates et leur dynamique}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}AAN et leur traduction en ASP}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sémantiques}{7}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Asynchrone}{7}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Synchrone}{8}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Généralisée}{9}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Dynamique}{9}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Cœur de la contribution personnelle}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Code pré-existant}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Résolution de la troisième contrainte en Python}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Légère modification pour sémantique généralisée}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}\'Etude des états globaux}{13}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusion et pistes pour la suite}{15}{section.5}%
+\contentsline {section}{\numberline {6}Annexes}{17}{section.6}%

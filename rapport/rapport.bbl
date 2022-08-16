@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,13 @@ Emna Ben~Abdallah, Maxime Folschette, and Magnin Morgan.
   Programming}.
 \newblock working paper or preprint, July 2022.
 \newblock URL \url{https://hal.archives-ouvertes.fr/hal-03735849}.
+
+\bibitem[Bourneuf()]{lucasbourneuf}
+Lucas Bourneuf.
+\newblock {Introduction \`a Answer Set Programming (ASP)}.
+\newblock
+  \url{https://lucas.bourneuf.net/blog/asp-tuto.html#fil-rouge-en-trois-actes}.
+\newblock Accessed: 2022-08-16.
 
 \bibitem[Folschette et~al.(2015)Folschette, Paulev{\'e}, Magnin, and
   Roux]{folschette2015sufficient}

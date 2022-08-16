@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage[a4paper,hmargin=19mm,vmargin=25mm]{geometry}
@@ -43,6 +43,12 @@
         \large
         \emph{Encadrant du stage} \\
         Maxime \textsc{Folschette}\footnote[3]{Équipe Bio-Computing, labortaoire CRIStAL, CNRS de Lille}\\
+
+   \vspace{1cm}
+   
+      \large
+      \emph{Laboratoire d'accueil}\\
+      Laboratoire CRIStAL, CNRS de Lille\\
 
     \vfill
 
@@ -170,7 +176,7 @@ Les agrégats permettent de faire des disjonctions de cas.
 
 \subsection{Premier exemple : le sudoku}
 Durant les premières semaines de mon stage, j'ai encodé différents jeux de logique en ASP afin de me familiariser avec le langage. Le jeu le plus simple et connu que j'ai encodé a été le sudoku. Dans cette section, je vais 
-briévement détailler le fonctionnement de ce code.\\
+briévement détailler le fonctionnement de ce code. La version que je vais présenter est une correction de la mienne, issue du site de Lucas \cite{lucasbourneuf}.\\
 On codera une grille de sudoku en ASP en utilisant s, une fonction d'arité 3 prenant X, Y et V comme arguments, où X est la colonne, Y la ligne et V la valeur de la case (X,Y) dans la grille.\\ \\
 \emph{
 	\textcolor{white}{2c}\% 1..9 est un raccourci pour dire itérer pour les entiers allant de 1 à 9. Ici, on déclare qu'il y a 9 valeurs dans une fonction d'arité 1 : 'val'\\
@@ -236,7 +242,8 @@ définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)
 		On choisit ensuite un coup pour chaque instant à l'aide d'un agrégat. Si à un instant $k$ on a deux cases de sol $c_1$ et $c_2$ sur une même ligne ou colonne et séparées d'exactement une case avec une caisse telles 
 		que l'on ait accès à $c_1$ et qu'il n'y ait pas de caisse en $c_2$, alors le personnage peut se déplacer jusqu'en $c_1$, puis pousser la caisse située entre $c_1$ et $c_2$ en $c_2$. On obtient ainsi un coup jouable 
 		pour l'instant $k$. L'agrégat nous sélectionne alors un seul de ces coups, qui sera sous la forme d'un prédicat \emph{\textcolor{blue}{coup\_a\_instant(k, (R, C), (R2, C2)}}.\\
-		\textcolor{magenta}{Dans notre cas figure \ref{label-figure1}, seuls deux coups sont possibles : \emph{coup\_a\_instant(1,(3,3),(3,4))} et \emph{coup\_a\_instant(1,(3,5),(3,4)).}}\\
+		\textcolor{magenta}{Dans notre cas figure \ref{label-figure1}, seuls deux coups sont possibles : \emph{coup\_a\_instant(1,(3,3),(3,4))} et \\
+		\emph{coup\_a\_instant(1,(3,5),(3,4)).}}\\
 		A partir du choix du coup, on est capable de déduire quelle sera la prochaine case du personnage (celle de la caisse que l'on vient de déplacer), et on peut créer les prédicats 
 		\emph{\textcolor{blue}{perso(k,X,Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(k,X,Y)}} associés à l'instant $k$.\\
 		\textcolor{magenta}{Par exemple si l'on a choisi le premier des deux coups jouables, on en déduira les prédicats \emph{perso(1,3,4), caisse\_a\_instant(1,3,5)}, et \emph{caisse\_a\_instant(1,4,4).}}\\
@@ -582,7 +589,7 @@ Ensuite, dès le début de la \emph{\textcolor{blue}{boucle for}} magique, on r�
 {transitions\_already\_done}} à True afin de ne plus faire cela lors des autres itérations de la boucle.\\
 On en profite également pour créer un ensemble \emph{\textcolor{blue}{cur\_set}}  de la forme \emph{\textcolor{blue}{[step\_number][automata\_name] = active\_level}} qui viendra mémoriser les états globaux de chaque étape de 
 l'ensemble solution courant.\\ \\
-Ensuite, on crée un ensemble \emph{\textcolor{blue}{playable}} qu'on va venir remplir avec les transitions locales jouables depuis chacun des états globaux de l'attracteur courant et chaque automate de ce dernier. Il est de la forme 
+Ensuite, on crée un ensemble \emph{\textcolor{blue}{playable}} qu'on va venir remplir avec les transitions locales jouables depuis chacun des états globaux de l'attracteur courant et chaque automate de ce dernier. Il est de la forme \\
 \emph{\textcolor{blue}{playable[global\_state][automata\_name][transition] = level}} où 'level' est le niveau de l'automate après la transition. Pour remplir ce dernier, il faut qu'on teste pour chaque transition locale si elle est 
 jouable pour l'état global courant ou pas en regardant pour chaque condition de la transitions si elle est vérifiée ou pas. Si elle est bien jouable, on l'ajoute au dictionnaire.\\ \\
 On se sert de l'ensemble \emph{\textcolor{blue}{playable}} pour créer une liste de listes de listes d'entiers \emph{\textcolor{blue}{list\_of\_list}}.Pour faire simple, chacune de ses sous-listes représente un état global de 
@@ -715,6 +722,28 @@ Mon code est disponible \href{https://github.com/Leopoulpinator/Attractors-in-AA
 
 \newpage
 \bibliography{biblio}
+
+\newpage
+\section{Annexes}
+Mon stage a eu lieu dans le laboratoire CRIStAL (Villeneuve-d'Ascq, 59655) situé dans la cité scientifique de Lille. Ce laboratoire est rattaché à l'université et au CNRS de Lille.\\ \\
+J'ai travaillé au sein de l'équipe BioComputing de ce laboratoire. Le maître de mon stage s'appelle Maxime Folschette et est membre de cette équipe. Cédric Lhoussaine (permanent au sein de l'équipe, et dirigeant de celle-ci) et 
+Danilo Dursoniah (en troisième année de thèse) ont été les personnes avec lesquelles j'ai le plus discuté au sein de cette équipe.\\ \\
+J'ai travaillé dans un bureau avec d'autres stagiaires, Danilo et un ingénieur (que je n'ai vu qu'une seule fois). J'ai eu plusieurs échanges avec 2 autres stagiaires qui étaient mes collègues de bureau. Nous avons pu discuter de 
+nos parcours respectifs ainsi que de nos sujets de stage, de nos manières de réfléchir sur les problèmes qui nous ont été posés. Cependant, peu de monde était présent en présentiel chaque jour donc les échanges que j'ai eu avec mes 
+collègues de bureau ont été assez faibles. Même s'ils n'ont pas été très nombreux, j'ai beaucoup apprécié ces moments.\\ \\
+Le métier de la recherche ne m'intéressait pas, mais j'ai découvert grâce à ce stage que cela me plaît en fait beaucoup. Quand j'essayais de résoudre des jeux comme le sokoban, le sudoku ou autres, j'avais l'impression d'être 
+retourné en CPGE et de chercher à résoudre un exercice difficile d'un DM, ce qui était sans doute mon occupation favorite à l'époque.\\ \\ \\
+Voici l'organisation de mon GitHub :\\
+\begin{itemize}
+	\item Le dossier first\_exercices\_in\_asp contient toutes mes versions du sokoban, ainsi que tous les autres jeux de logique que j'ai résolu en ASP (dans le dossier exemples\_perso/jeux\_logiques).
+	\item Le dossier models contient tous les AAN encodés en ASP que j'ai utilisé pour faire des tests.
+	\item Le dossier rapport contient toutes les données concernant le présent document.
+	\item Le dossier resources contient des ressources en tout genre. La plus utile est le code de filtrage en ASP des attracteurs.
+	\item Enfin, le dossier versions contient les versions finales dont j'ai parlé dans le présent document. Les deux dossiers solution\_only\_for\_... contiennent les codes sources des versions présentées partie 4.2 et 4.3 
+	alors que le dossier final\_version\_with\_... contient toutes les versions de sémantique que j'ai pu expérimenter et tester. J'explique dans la partie 4.4 comment fonctionne le code source du fichier attractors.lp. 
+	Chacun de ces dossiers possèdent un dossier de benchmarks regroupant tous les tests sur les modèles du dossier models. On a notamment des tableaux regroupant le temps d'exécution (\textless=100s) et d'autres présentant le 
+	nombre d'attracteurs trouvés pour chaque modèle.
+\end{itemize}
 
 \end{document}
 
