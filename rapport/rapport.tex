@@ -240,34 +240,35 @@ peut pas traverser les murs ni pousser une caisse s'il y a un mur ou une autre c
 	\label{label-figure1}
 \end{figure}
 
-En ASP, une grille de sokoban est encodée en spécifiant quelles cases sont des murs, et quelles cases sont des sols avec les prédicats \emph{\textcolor{blue}{mur(X,Y)}} et \emph{\textcolor{blue}{sol(X,Y)}}. On renseigne de plus un 
-prédicat \emph{\textcolor{blue}{init(X,Y)}}, ce qui nous donne la position initiale du joueur, et \emph{\textcolor{blue}{caisse\_init(Numero\_caisse,X,Y)}} nous renseignant sur les positions initiales des caisses (le premier 
-argument varie de 1 à $n$ lorsque l'on a $n$ de ces caisses). Enfin, le prédicat \emph{\textcolor{blue}{arrivee(X,Y)}} symbolisera une case d'arrivée en \emph{(X,Y)}.\\ \\
-J'ai fait différentes versions pour ce jeu. La plus aboutie utilise une méthode incrémentale. Pour l'importer, il nous suffit d'ajouter la commande \emph{\textcolor{blue}{\#include \textless incmode\textgreater .}}. On doit alors 
+En ASP, une grille de sokoban est encodée en spécifiant quelles cases sont des murs, et quelles cases sont des sols avec les prédicats \emph{\textcolor{blue}{mur(X, Y)}} et \emph{\textcolor{blue}{sol(X, Y)}}. On renseigne de plus un 
+prédicat \emph{\textcolor{blue}{init(X, Y)}}, ce qui nous donne la position initiale du joueur, et \emph{\textcolor{blue}{caisse\_init(Numero\_caisse, X, Y)}} nous renseignant sur les positions initiales des caisses (le premier 
+argument varie de 1 à $n$ lorsque l'on a $n$ de ces caisses). Enfin, le prédicat \emph{\textcolor{blue}{arrivee(X, Y)}} symbolisera une case d'arrivée en \emph{(X, Y)}.\\ \\
+J'ai fait différentes versions pour ce jeu. La plus aboutie utilise une méthode incrémentale. Pour l'importer, il nous suffit d'ajouter la commande \emph{\textcolor{blue}{\#include \textless incmode\textgreater.}}. On doit alors 
 définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)}. $k$ est une fausse constante : elle est remplacée à chaque itération par un entier. Par défaut $k$ vaut 0 au début de la résolution, et augmente de 1 
-à chaque itération.\\
+à chaque itération. Dans notre programme, $k$ vaudra 1 initialement.\\
 \begin{itemize}
 	\item \textbf{base :}\\
-		$base$ est le sous-programme qui énonce des règles qui seront toujours toujours à prendre en compte par ASP lors de la résolution (pour tout $k$).\\ \\
-		On déclare ici des prédicats \emph{\textcolor{blue}{perso(0,X,Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(0,X,Y)}} afin de mémoriser la position du joueur à l'étape initiale (0), ainsi que celles des caisses.\\
-		\textcolor{magenta}{Pour notre exemple figure \ref{label-figure1}, on aura \emph{perso(0,2,5), caisse\_a\_instant(0,3,4)}, et \\
-		\emph{caisse\_a\_instant(0,4,4).}}\\ \\
+		$base$ est le sous-programme qui énonce des règles qui seront toujours à prendre en compte par ASP lors de la résolution (pour tout $k$).\\ \\
+		On déclare ici des prédicats \emph{\textcolor{blue}{perso(0, X, Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(0, X, Y)}} afin de mémoriser la position du joueur à l'étape initiale (0), ainsi que celles des 
+		caisses.\\
+		\textcolor{magenta}{Pour notre exemple figure \ref{label-figure1}, on aura \emph{perso(0, 2, 5), caisse\_a\_instant(0, 3, 4)}, et \\
+		\emph{caisse\_a\_instant(0, 4, 4).}}\\ \\
 	\item \textbf{step(k) :}\\
 		$step(k)$ est le sous-programme qui va calculer à l'instant $k$ quelles sont les règles à prendre en compte. On en déduira un ensemble $E$ d'atomes tous vrais à l'étape $k$.\\ \\
-		On a ici besoin de prédicats \emph{\textcolor{blue}{acces\_a\_instant(k, R, C)}} pour mémoriser toutes les cases accessibles depuis la position \emph{(X,Y)} de notre joueur à une étape k donnée. Pour déterminer 
+		On a ici besoin de prédicats \emph{\textcolor{blue}{acces\_a\_instant(k, X, Y)}} pour mémoriser toutes les cases accessibles depuis la position \emph{(X, Y)} de notre joueur à une étape k donnée. Pour déterminer 
 		cela, on va mettre des règles pour chaque direction spécifiant que si une case est accessible à une étape $k$ et qu'une des 4 cases voisines à celle-ci est vide (un sol sans caisse) alors cette case voisine est 
 		également accessible. On doit également rajouter une règle pour dire que la case sur laquelle se trouve notre personnage à l'étape choisie est accessible (cas initial pour l'induction).\\
 		\textcolor{magenta}{Pour notre exemple figure \ref{label-figure1}, toutes les cases de sol ( = vertes) ne possédant pas de caisse sont accessibles. On va donc générer 12 prédicats de la sorte pour l'étape 0.}\\
-		On choisit ensuite un coup pour chaque instant à l'aide d'un agrégat. Si à un instant $k$ on a deux cases de sol $c_1$ et $c_2$ sur une même ligne ou colonne et séparées d'exactement une case avec une caisse telles 
-		que l'on ait accès à $c_1$ et qu'il n'y ait pas de caisse en $c_2$, alors le personnage peut se déplacer jusqu'en $c_1$, puis pousser la caisse située entre $c_1$ et $c_2$ en $c_2$. On obtient ainsi un coup jouable 
-		pour l'instant $k$. L'agrégat nous sélectionne alors un seul de ces coups, qui sera sous la forme d'un prédicat \emph{\textcolor{blue}{coup\_a\_instant(k, (R, C), (R2, C2)}}.\\
-		\textcolor{magenta}{Dans notre cas figure \ref{label-figure1}, seuls deux coups sont possibles : \emph{coup\_a\_instant(1,(3,3),(3,4))} et \\
-		\emph{coup\_a\_instant(1,(3,5),(3,4)).}}\\
+		On choisit ensuite un coup pour chaque instant à l'aide d'un agrégat. Si à un instant $k$ on a trois cases de sol $c_1$, $c_2$ et $c_3$ alignées horizontalement ou verticalement avec une caisse en $c_2$, l'accès à 
+		$c_1$ et pas de caisse en $c_3$, alors le personnage peut se déplacer jusqu'en $c_1$, puis pousser la caisse depuis $c_2$ en $c_3$. On obtient ainsi un coup jouable 
+		pour l'instant $k$. L'agrégat nous sélectionne alors un seul de ces coups, qui sera sous la forme d'un prédicat \emph{\textcolor{blue}{coup\_a\_instant(k, (X, Y), (X2, Y2))}}.\\
+		\textcolor{magenta}{Dans notre cas figure \ref{label-figure1}, seuls deux coups sont possibles : \emph{coup\_a\_instant(1, (3, 3), (3, 4))} et \\
+		\emph{coup\_a\_instant(1, (3, 5), (3, 4)).}}\\
 		A partir du choix du coup, on est capable de déduire quelle sera la prochaine case du personnage (celle de la caisse que l'on vient de déplacer), et on peut créer les prédicats 
-		\emph{\textcolor{blue}{perso(k,X,Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(k,X,Y)}} associés à l'instant $k$.\\
-		\textcolor{magenta}{Par exemple si l'on a choisi le premier des deux coups jouables, on en déduira les prédicats \emph{perso(1,3,4), caisse\_a\_instant(1,3,5)}, et \emph{caisse\_a\_instant(1,4,4).}}\\
+		\emph{\textcolor{blue}{perso(k, X, Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(k, X, Y)}} associés à l'instant $k$.\\
+		\textcolor{magenta}{Par exemple si l'on a choisi le premier des deux coups jouables, on en déduira les prédicats \emph{perso(1, 3, 4), caisse\_a\_instant(1, 3, 5)}, et \emph{caisse\_a\_instant(1, 4, 4).}}\\
 		Enfin, on est capable de savoir si on a résolu la grille ou pas à l'aide d'un prédicat \emph{\textcolor{blue}{caisse\_pas\_place(k)}} qui est vrai s'il reste une ou plusieurs caisses à placer à l'étape $k$.\\
-		\textcolor{magenta}{Ici, la caisse en \emph{(3,5)} n'est pas bien placée à l'étape 1, donc on crée le prédicat \\
+		\textcolor{magenta}{Ici, la caisse en \emph{(3, 5)} n'est pas bien placée à l'étape 1, donc on crée le prédicat \\
 		\emph{caisse\_pas\_place(1)}.}\\ \\
 	\item \textbf{check(k) :}\\
 		$check(k)$ est le sous-programme qui se charge d'arrêter la recherche : si à une étape $k$ ce sous-programme est satisfiable par les éléments de $E$, alors le programme s'arrêtera et renverra l'ensemble solution 
@@ -276,9 +277,9 @@ définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)
 		$check(k)$ ne sera pas satisfiable.\\
 		\textcolor{magenta}{Dans notre exemple, le coup de caisse qu'on a choisi fait peut-être avancer la résolution, mais ne l'a pas achevée.}\\
 \end{itemize}
-On récupère alors la liste des coups de caisses à faire, et on peut résoudre notre grille en comblant les coups qui déplaçaient les caisses par ceux nécessaires pour atteindre la prochaine caisse à déplacer.\\
-\textcolor{magenta}{Pour l'exemple figure \ref{label-figure1}, ASP nous renvoie la liste de coups suivante : s(1,(3,5),bas), s(2,(5,4),gauche), s(3,(4,4),gauche), s(4,(2,5),bas), s(5,(3,2),haut), s(6,(2,4),droite), s(7,(2,2),haut). 
-\emph{s(k, case, direction)} signifie que le personnage peut aller à l'instant $k$ à la case indiquée, et pousser une caisse dans la direction indiquée.}
+On récupère alors l'ensemble des coups de caisses à faire, et on peut résoudre notre grille en comblant les coups qui déplaçaient les caisses par ceux nécessaires pour atteindre la prochaine caisse à déplacer.\\
+\textcolor{magenta}{Pour l'exemple figure \ref{label-figure1}, ASP nous renvoie l'ensemble des coups suivant : s(1, (3, 5), bas), s(2, (5, 4), gauche), s(3, (4, 4), gauche), s(4, (2, 5), bas), s(5, (3, 2), haut), s(6, (2, 4), 
+droite), s(7, (2, 2), haut). \emph{s(k, case, direction)} signifie que le personnage peut aller à l'instant $k$ à la case indiquée, et pousser une caisse dans la direction indiquée.}
 
 \section{Formalismes d'automates et leur dynamique}
 \label{fad}
@@ -385,8 +386,8 @@ Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des 
 	$U^{asyn}(\zeta)=\left\{\left\{a_i\xrightarrow{l} a_j\right\}|a_i\xrightarrow{l} a_j\in P_{\zeta}\right\}$
 \end{center}
 De manière informelle : chaque transition locale jouable est une transition globale.\\ \\
-En ASP, on définit préalablement les états globaux à l'aide d'un prédicat de la forme \emph{\textcolor{blue}{global\_state(Gs)}} avec $Gs$ qui s'écrit en ASP à l'aide d'une constante unique (g1\_1\_0 symbolisera par exemple que "a" 
-est au niveau 1, "b" au niveau 1 et "c" au niveau 0, cf \hyperlink{partie4.4}{Partie 4.4}). On peut ensuite déclarer que deux états globaux sont différents sur un automate à l'aide de la règle suivante :\\
+En ASP, on définit préalablement les états globaux à l'aide d'un prédicat de la forme \emph{\textcolor{blue}{global\_state(Gs)}} avec $Gs$ qui s'écrit en ASP à l'aide d'une constante unique (g1\_1\_0 symbolisera par exemple que 
+l'on est dans l'état global (1,1,0), cf \hyperlink{partie4.4}{Partie 4.4}). On peut ensuite déclarer que deux états globaux sont différents sur un automate à l'aide de la règle suivante :\\
 \emph{
 1. \textcolor{blue}{different\_on(Gs1, Gs2, Automaton) :-} \% Automaton n'a pas le même état actif dans $Gs1$ et $Gs2$\\
 2.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2), Gs1 != Gs2,} \% si deux états globaux diffèrent\\
@@ -481,7 +482,7 @@ Un ensemble $A\subseteq S$ d'états globaux, avec $|A|\geq2$ est appellé \textb
 \hypertarget{debutpartie4}{
 J'ai tout d'abord étudié la version existante du code afin de la comprendre et d'essayer de corriger l'erreur qu'elle contenait. Cette version était fonctionnelle et efficace pour la sémantique asynchrone, mais ne fonctionnait pour 
 la sémantique synchrone que lorsque les attracteurs étaient exactement des cycles simples (chaque état global du graphe produit doit avoir un degré sortant égal à $1$), et ne fonctionnait pas pour les autres AAN comme 
-celui figure \ref{label-figure3}.\\ \\ \\
+celui figure \ref{label-figure3}, dont le graphe produit est représenté figure \ref{label-figure4}.\\ \\ \\
 }
 
 \begin{figure}[!h]
@@ -521,7 +522,7 @@ celui figure \ref{label-figure3}.\\ \\ \\
 \begin{figure}[!h]
 	\centering  
 	\includegraphics[scale=0.3]{Diagram2.eps}  
-	\caption{Graphe produit de l'AAN ci-dessus}
+	\caption{Graphe produit de l'AAN figure \ref{label-figure3} pour la sémantique synchrone}
 	\label{label-figure4}
 \end{figure}
 
@@ -608,10 +609,11 @@ Ensuite, dès le début de la \emph{\textcolor{blue}{boucle for}} magique, on r�
 {transitions\_already\_done}} à True afin de ne plus faire cela lors des autres itérations de la boucle.\\
 On en profite également pour créer un ensemble \emph{\textcolor{blue}{cur\_set}}  de la forme \emph{\textcolor{blue}{[step\_number][automata\_name] = active\_level}} qui viendra mémoriser les états globaux de chaque étape de 
 l'ensemble solution courant.\\ \\
-Ensuite, on crée un ensemble \emph{\textcolor{blue}{playable}} qu'on va venir remplir avec les transitions locales jouables depuis chacun des états globaux de l'attracteur courant et chaque automate de ce dernier. Il est de la forme \\
+Ensuite, on crée un dictionnaire \emph{\textcolor{blue}{playable}} qu'on va venir remplir avec les transitions locales jouables depuis chacun des états globaux de l'attracteur courant et chaque automate de ce dernier. Il est de la 
+forme \\
 \emph{\textcolor{blue}{playable[global\_state][automata\_name][transition] = level}} où 'level' est le niveau de l'automate après la transition. Pour remplir ce dernier, il faut qu'on teste pour chaque transition locale si elle est 
-jouable pour l'état global courant ou pas en regardant pour chaque condition de la transitions si elle est vérifiée ou pas. Si elle est bien jouable, on l'ajoute au dictionnaire.\\ \\
-On se sert de l'ensemble \emph{\textcolor{blue}{playable}} pour créer une liste de listes de listes d'entiers \emph{\textcolor{blue}{list\_of\_list}}.Pour faire simple, chacune de ses sous-listes représente un état global de 
+jouable pour l'état global courant ou pas en regardant pour chaque condition de la transition si elle est vérifiée ou pas. Si elle est bien jouable, on l'ajoute au dictionnaire.\\ \\
+On se sert du dictionnaire \emph{\textcolor{blue}{playable}} pour créer une liste de listes de listes d'entiers \emph{\textcolor{blue}{list\_of\_list}}. Pour faire simple, chacune de ses sous-listes représente un état global de 
 l'attracteur courant. Chacune des sous-listes de ces états globaux représente un automate, et chacune des sous-listes de cet automate correspond à l'ensemble des niveaux dans lesquels il peut se retrouver après une transition locale 
 jouable depuis l'état global. Si aucune transition locale n'est jouable, la sous-liste de l'automate en question sera vide. Pour remplir cette liste, on procède de la façon suivante :\\
 \begin{itemize}
@@ -649,9 +651,7 @@ On va donc initialiser cette liste de cette façon :\\
 \emph{\textcolor{blue}{sorted\_automata\_names}} est une liste des noms d'automates triée par ordre lexicographique). Ensuite, on rajoute à \emph{\textcolor{blue}{list\_for\_automaton}} tous les autres niveaux atteignables pour 
 l'état global courant (tout comme la sémantique synchrone).
 
-\subsection{\'Etude des états globaux}ue 16 pages, pourquoi ne pas inclure le contenu de l'annexe dans le corps du document, aux endroits appropriés (introduction et conclusion) ? Autrement, je te suggère au moins de mettre des sous-parties dans l'annexe, et remettre le lien du GitHub.
-
-
+\subsection{\'Etude des états globaux}
 \hypertarget{partie4.4}{
 L'autre solution que je voyais pour résoudre le problème qu'ont rencontré mon maître de stage et ses collègues était de déclarer des prédicats \emph{\textcolor{blue}{global\_state(Gs)}} représentant les états globaux du réseau. 
 Cela permet de déclarer dans des fichiers pour les sémantiques quelles sont les transitions locales jouables en utilisant un prédicat \emph{\textcolor{blue}{playable(Gs1, Gs2)}} signifiant que l'on peut aller depuis 
@@ -659,11 +659,11 @@ $Gs_1$ en $Gs_2$.}\\ \\
 Le principal défaut de cette manière de procéder est que cela crée de nombreux atomes et demande à ASP de les garder en mémoire pendant toute sa résolution. De plus, déterminer si pour toute paire d'états globaux il existe une 
 transition se fait en $O(k^2)$, avec $k=\displaystyle{\prod_{a\in\Sigma}C_a}$, alors que si l'on calcule les transitions jouables à chaque étape, on ne surcharge pas la mémoire du solveur. C'est à priori ce qui rend mon programme 
 obsolète en terme de complexité.\\ \\
-Les explications d'ASP que j'ai faites pour la \hyperlink{semantiques}{partie 3.2} sur les différentes sémantiques sont en réalité mes propres fichiers pour les trois sémantiques.\\ \\
+Les explications d'ASP que j'ai faites pour la \hyperlink{semantiques}{partie 3.2} sur les différentes sémantiques sont en réalité issues de mes propres fichiers pour ces trois sémantiques.\\ \\
 Dans cette section, je compte expliquer comment fonctionne mon fichier ASP principal, ainsi que comment je m'y suis pris pour déclarer des états globaux sans modifier la manière d'écrire un automate (en ASP on ne peut pas créer 
 de tuples ayant une arité variable en fonction d'un prédicat).\\ \\
 J'ai d'abord défini deux fonctions en Python permettant de créer une constante pour un état global représenté par une liste-ASP (un objet que j'introduis par la suite) : ce sera la fonction \emph{\textcolor{blue}{work(g)}}, et de 
-déterminer les niveaux des automates actifs de ces constantes : ce sera la fonction \emph{\textcolor{blue}{determine\_active\_level(a,g)}} . Je ne détaillerais pas le code de ces fonctions.\\
+déterminer les niveaux des automates actifs de ces constantes : ce sera la fonction \emph{\textcolor{blue}{determine\_active\_level(a,g)}} . Je ne détaillerai pas le code de ces fonctions.\\
 \begin{itemize}
 	\item\emph{\textcolor{blue}{work(g)}} prend un état global encodé sous forme de liste-ASP et renvoie une constante unique en ASP représentant l'état global en entrée.\\
 	\item\emph{\textcolor{blue}{determine\_active\_level(a,g)}} prend un automate a sous la forme d'une chaîne de caractères, et un état global g sous la forme de sa constante en ASP, et renvoie un prédicat "level(a, 	
@@ -677,7 +677,7 @@ définir un ordre parmi les automates. On utilise alors une fonction de clingo :
 	9. \textcolor{blue}{nb\_level(A, N) :- automaton(A), N = \#count \{ L : automaton\_level(A, L) \}.}\\
 	10. \textcolor{blue}{enum(1..N) :- nb\_automaton(N).}\\ \\
 }
-\`A l'aide des prédicats \emph{\textcolor{blue}{enum(k)}} que l'on vient juste de créer, on peut désormais définir un ordre pour les automates :\\ \\
+\`A l'aide des prédicats \emph{\textcolor{blue}{enum(k)}} que l'on vient juste de créer, on peut désormais définir un ordre pour les automates (il s'agit ici de l'ordre anti-lexicographique):\\ \\
 \emph{
 	11. \textcolor{blue}{1 \{ moment(A, N) : enum(N) \} 1 :- automaton(A).}\\
 	12. \textcolor{blue}{1 \{ moment(A, N) : automaton(A) \} 1 :- enum(N).}\\
@@ -685,10 +685,10 @@ définir un ordre parmi les automates. On utilise alors une fonction de clingo :
 	14.\qquad\textcolor{blue}{moment(A, N), moment(A2, N2),}\\
 	15.\qquad\textcolor{blue}{automaton(A), automaton(A2),}\\
 	16.\qquad\textcolor{blue}{enum(N), enum(N2),}\\
-	17.\qquad\textcolor{blue}{N \textless N2, A \textless A2.}\\ \\
+	17.\qquad\textcolor{blue}{N $<$ N2, A $<$ A2.}\\ \\
 }
-Une fois cet ordre défini, on est capable de créer une liste-ASP pour encoder chacun des états globaux. Le $(N-k)^{ieme}$ élément de cette liste sera un prédicat nb(automaton, level) avec automaton étant $k^{ieme}$ au niveau de 
-l'ordre défini précédemment (on empile dans la liste d'abord les premiers éléments, c'est pour ça qu'on a trié par ordre anti-lexicographique).\\ \\
+Une fois cet ordre défini, on est capable de créer une liste-ASP pour encoder chacun des états globaux. Pour N le nombre d'automates, et $1\leq k\leq N$, le $(N-k+1)^{ieme}$ élément de cette liste sera un prédicat \textcolor{blue}{\emph{nb(automaton, level)}} avec automaton étant 
+$k^{ieme}$ au niveau de l'ordre défini précédemment (on empile dans la liste d'abord les premiers éléments, c'est pour ça qu'on a trié par ordre anti-lexicographique).\\ \\
 \emph{
 	18. \textcolor{blue}{build\_list(0, empty).}\\
 	19. \textcolor{blue}{build\_list(N+1, (nb(A, 0..K-1), L)) :-}\\ 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  19 AUG 2022 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  19 AUG 2022 12:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1091,136 +1091,123 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--249
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
+Underfull \hbox (badness 10000) in paragraph at lines 250--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
+Underfull \hbox (badness 10000) in paragraph at lines 250--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--255
+Underfull \hbox (badness 10000) in paragraph at lines 250--256
 
  []
 
 [5 <./Diagram1-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 255--272
+Underfull \hbox (badness 10000) in paragraph at lines 256--273
 
  []
 
 
-Overfull \hbox (0.16968pt too wide) in paragraph at lines 255--272
-\OT1/cmr/m/n/10 la caisse que l'on vient de d^^Seplacer), et on peut cr^^Seer l
-es pr^^Sedicats []\OT1/cmr/m/it/10 perso(k,X,Y)[] \OT1/cmr/m/n/10 et []\OT1/cmr
-/m/it/10 caisse[]a[]instant(k,X,Y)[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--272
+Underfull \hbox (badness 10000) in paragraph at lines 256--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--272
+Underfull \hbox (badness 10000) in paragraph at lines 256--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--278
+Underfull \hbox (badness 10000) in paragraph at lines 273--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--278
+Underfull \hbox (badness 10000) in paragraph at lines 273--279
 
  []
 
 
-Overfull \hbox (29.47241pt too wide) in paragraph at lines 279--282
-[]\OT1/cmr/m/n/10 Pour l'exemple fi-gure []1[], ASP nous ren-voie la liste de c
-oups sui-vante : s(1,(3,5),bas), s(2,(5,4),gauche), s(3,(4,4),gauche),
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--289
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 299--301
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--301
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
 
  []
 
 Missing character: There is no ; in font nullfont!
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 387--428
+Underfull \hbox (badness 10000) in paragraph at lines 388--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--428
+Underfull \hbox (badness 10000) in paragraph at lines 388--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--428
+Underfull \hbox (badness 10000) in paragraph at lines 388--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--428
+Underfull \hbox (badness 10000) in paragraph at lines 388--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--428
+Underfull \hbox (badness 10000) in paragraph at lines 388--429
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 434--439
+Underfull \hbox (badness 10000) in paragraph at lines 435--440
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--462
+Underfull \hbox (badness 10000) in paragraph at lines 456--463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--462
+Underfull \hbox (badness 10000) in paragraph at lines 456--463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--462
+Underfull \hbox (badness 10000) in paragraph at lines 456--463
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 474--478
+Underfull \hbox (badness 10000) in paragraph at lines 475--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
@@ -1232,172 +1219,172 @@ Package epstopdf Info: Source file: <Diagram2.eps>
 (epstopdf)                    size: 12473 bytes
 (epstopdf)             Command: <repstopdf --outfile=Diagram2-eps-converted-to.
 pdf Diagram2.eps>
-(epstopdf)             \includegraphics on input line 523.
+(epstopdf)             \includegraphics on input line 524.
 Package epstopdf Info: Output file is already uptodate.
-<Diagram2-eps-converted-to.pdf, id=297, 520.94624pt x 417.56pt>
+<Diagram2-eps-converted-to.pdf, id=298, 520.94624pt x 417.56pt>
 File: Diagram2-eps-converted-to.pdf Graphic file (type pdf)
 <use Diagram2-eps-converted-to.pdf>
-Package pdftex.def Info: Diagram2-eps-converted-to.pdf  used on input line 523.
+Package pdftex.def Info: Diagram2-eps-converted-to.pdf  used on input line 524.
 
 (pdftex.def)             Requested size: 156.28508pt x 125.26895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--532
+Underfull \hbox (badness 10000) in paragraph at lines 529--533
 
  []
 
 [10 <./Diagram2-eps-converted-to.pdf>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 5
-79.
+80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 579.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 580.
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--581
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--582
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--596
+Underfull \hbox (badness 10000) in paragraph at lines 587--597
 
  []
 
 
-Overfull \hbox (22.57898pt too wide) in paragraph at lines 586--596
+Overfull \hbox (22.57898pt too wide) in paragraph at lines 587--597
 []\OT1/cmr/m/it/10 same[]state(Step1, Step2)[]\OT1/cmr/m/n/10 , et il ne nous r
 este qu'^^Ra ajou-ter la contrainte [] \OT1/cmr/m/it/10 :- not same[]state(0, N
 ), main[]cycle[]length(N).[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--596
+Underfull \hbox (badness 10000) in paragraph at lines 587--597
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--596
+Underfull \hbox (badness 10000) in paragraph at lines 587--597
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--617
+Underfull \hbox (badness 10000) in paragraph at lines 599--619
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--617
+Underfull \hbox (badness 10000) in paragraph at lines 599--619
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--617
+Underfull \hbox (badness 10000) in paragraph at lines 599--619
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--617
+Underfull \hbox (badness 10000) in paragraph at lines 599--619
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--617
+Underfull \hbox (badness 10000) in paragraph at lines 599--619
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--617
+Underfull \hbox (badness 10000) in paragraph at lines 599--619
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 622--623
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--631
+Underfull \hbox (badness 10000) in paragraph at lines 626--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--631
+Underfull \hbox (badness 10000) in paragraph at lines 626--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--631
+Underfull \hbox (badness 10000) in paragraph at lines 626--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--651
+Underfull \hbox (badness 10000) in paragraph at lines 635--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--651
+Underfull \hbox (badness 10000) in paragraph at lines 635--653
 
  []
 
@@ -1589,10 +1576,10 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 772.
  ) 
 Here is how much of TeX's memory you used:
- 24737 strings out of 481239
- 482501 string characters out of 5920377
+ 24735 strings out of 481239
+ 482478 string characters out of 5920377
  786437 words of memory out of 5000000
- 39216 multiletter control sequences out of 15000+600000
+ 39214 multiletter control sequences out of 15000+600000
  542962 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,14n,85p,419b,1028s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1622,10 +1609,10 @@ ublic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pf
 b>
-Output written on rapport.pdf (19 pages, 337788 bytes).
+Output written on rapport.pdf (19 pages, 338179 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 384 compressed objects within 4 object streams
+ 449 PDF objects out of 1000 (max. 8388607)
+ 386 compressed objects within 4 object streams
  75 named destinations out of 1000 (max. 500000)
  335 words of extra memory for PDF output out of 10000 (max. 10000000)
 
