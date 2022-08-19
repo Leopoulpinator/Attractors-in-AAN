@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage[a4paper,hmargin=19mm,vmargin=25mm]{geometry}
+\usepackage[a4paper,hmargin=21mm,vmargin=25mm]{geometry}
 \usepackage{nameref}
 \usepackage[symbol]{footmisc}
 \usepackage{minitoc}
@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage[francais]{babel}
 \usepackage{natbib}
+\usepackage{amssymb}
 \setcounter{tocdepth}{3}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -42,13 +43,13 @@
 
         \large
         \emph{Encadrant du stage} \\
-        Maxime \textsc{Folschette}\footnote[3]{Équipe Bio-Computing, labortaoire CRIStAL, CNRS de Lille}\\
+        Maxime \textsc{Folschette}\footnote[3]{Équipe BioComputing - Univ. Lille, CNRS, Centrale Lille, UMR 9189 CRIStAL, F-59000 Lille, France}\\
 
    \vspace{1cm}
    
       \large
       \emph{Laboratoire d'accueil}\\
-      Laboratoire CRIStAL, CNRS de Lille\\
+      CRIStAL\\
 
     \vfill
 
@@ -70,37 +71,47 @@
 
 \newpage
 \section{Introduction}
-Ce rapport fait écho au chapitre de \cite{chapitre}. Mon stage a démarré par la lecture complète de ce chapitre, nécessaire pour traiter le sujet.
-Je vais donc commencer mon rapport en introduisant les notions majeures de ce chapitre.\\ \\
-La biologie s'intéresse à l'étude des systèmes vivants ou composant le vivant (gènes, cellules, écosystèmes...). La bioinformatique est l'utilisation de méthodes informatiques pour aider la biologie. Un des domaines de la 
+
+\subsection{Contexte}
+La biologie s'intéresse à l'étude des systèmes vivants ou composants le vivant (gènes, cellules, écosystèmes...). La bioinformatique est l'utilisation de méthodes informatiques pour aider la biologie. Un des domaines de la 
 bioinformatique s'apelle la \emph{biologie des systèmes} et consiste à proposer des modèles et des méthodes informatiques et mathématiques pour représenter et étudier de tels systèmes.\\ \\
-Ainsi, des études biologiques permettent de déterminer comment certains gènes interagissent entre eux, ce qui peut être représenté mathématiquement sous la forme d'un graphe. De plus, ces interactions peuvent être vues comme des 
-transitions entre les sommets de notre graphe, ce qui se rapproche alors plus d'un automate. La représentation du modèle étudié lors de ce stage est expliqué dans la partie "Formalismes d'automates et leur dynamique".\\ \\
-L'étude de la dynamique de systèmes biologiques lève plusieurs problèmes tels que l'identification d'attracteurs, les bifurcations ou encore la connexité entre deux états globaux. Dans ce rapport je vais discuter de la recherche 
+L'étude de la dynamique des systèmes biologiques lève plusieurs problèmes tels que l'identification d'attracteurs, les bifurcations ou encore la connexité entre deux états globaux. Dans ce rapport je vais discuter de la recherche 
 d'attracteurs dans des réseaux d'automates asynchrones : il s'agit d'un ensemble d'états duquel on ne peut pas s'échapper et minimal au sens de l'inclusion.\\ \\
-Answer Set Programming (= ASP) est un paradigme de programmation logique particulièrement efficace pour résoudre des problèmes combinatoires. Mon stage s'est concentré sur l'étude d'ASP afin de chercher les attracteurs parmi le graphe des états globaux de notre réseau. J'ai également utilisé un peu se scripting Python, utile pour filtrer les ensembles solutions.\\ \\
+Ce rapport fait écho au chapitre de \cite{chapitre}. Mon stage a démarré par la lecture complète de ce chapitre, nécessaire pour traiter le sujet.
+Je vais donc commencer mon rapport en introduisant les notions majeures de ce chapitre.
+
+\subsection{Plan}
+Answer Set Programming (= ASP) est un langage de programmation logique particulièrement efficace pour résoudre des problèmes combinatoires. Mon stage s'est concentré sur l'étude d'ASP afin de chercher les attracteurs parmi le 
+graphe des états globaux de notre réseau. J'ai également utilisé un peu de scripting Python, utile pour filtrer les ensembles solutions. J'explique brièvement le fonctionnement d'ASP dans la section \hyperref[asp]{Answer Set 
+Programming}.\\ \\
+Des études biologiques permettent de déterminer comment certains gènes interagissent entre eux, ce qui peut être représenté mathématiquement sous la forme d'un graphe. De plus, ces interactions peuvent être vues comme des 
+transitions entre les sommets de notre graphe, ce qui se rapproche alors plus d'un automate. La représentation du modèle étudié lors de ce stage est expliqué dans la section \hyperref[fad]{Formalismes d'automates et leur 
+dynamique}.\\ \\
+Le travail pré-existant sur la recherche des attracteurs dans un réseau d'automates asynchrone ne fonctionnait pas sur toutes les sémantiques. Ma contribution personnelle a été de créer deux versions à partir de ce travail : 
+une qui se charge de résoudre le problème pour la sémantique synchrone uniquement, et une autre  universelle pour les sémantiques. Je présente ces deux versions dans la section \hyperref[ccp]{Cœur de la contribution 
+personnelle}.\\ \\
 Ce qui sera étudié dans ce rapport ne le sera que partiellement : on n'entrera pas en détail dans le code présenté, mais on se penchera simplement sur les grandes lignes et sur les points techniques qu'il arbore.
 
 \section{Answer Set Programming}
-L'Answer Set Programming (ASP) est un paradigme de programmation logique comparable à Prolog. Ces dernières décennies, ASP s'est trouvé être puissant pour traiter des modèles biologiques, permettant de parcourir un 
-grand nombre de configurations rapidement. ASP peut énumérer facilement les ensembles solutions à un problème qu'on lui encode : c'est un paradigme très efficace pour la combinatoire. Nous allons ici présenter brièvement 
-son fonctionnement, et plus précisément, les outils qui ont été utiles pour mon stage.
+\label{asp}
+L'Answer Set Programming (ASP) est un langage de programmation logique comparable à Prolog [\cite{Baral03}]. Ces dernières décennies, ASP s'est trouvé être puissant pour traiter des modèles biologiques, permettant de parcourir 
+un grand nombre de configurations rapidement. ASP peut énumérer facilement les ensembles solutions à un problème qu'on lui encode : c'est un langage très efficace pour la combinatoire. Je vais présenter brièvement 
+son fonctionnement, et plus précisément, les outils qui ont été utiles pour mon stage. Pour comprendre le fonctionnement d'ASP, je me suis servi du guide de ce dernier : \cite{potassco}.
 \subsection{Termes}
 ASP fonctionne à l'aide de déclarations de faits, de règles, de prédicats contenant un ou plusieurs arguments tels que : \emph{\textcolor{blue}{parentOf(jenny, charles)}}, ce qui nécessite tout d'abord que j'introduise la notion 
 de \textbf{terme} (ou \textbf{atome}). On définit un terme de la manière suivante : 
 \begin{enumerate}
-	\item terme simple :
+	\item un terme simple qui peut être :
 		\begin{itemize}
 		\item un entier relatif (0, -35, 42)
 		\item une constante qui démarre par une lettre minuscule(v0us, lis35, quatre, ex3mpl35)
 		\item une chaîne de caractères encadrée de guillemets ("ma\_chaine\_de\_caracteres", "42")
-		\item une variable identique grammaticalement aux constantes, mais dont la première lettre est majuscule (N0u5, S0mm35, D35, V4r14bl35)
+		\item une variable grammaticalement identique aux constantes, mais dont la première lettre est majuscule (N0u5, S0mm35, D35, V4r14bl35)
 		\item un (ou plusieurs) underscore symbolisant une variable sans nom (\_, \_\_)
 		\end{itemize}
-	\item une fonction (qu'on appellera également prédicat) est de la forme : constante($t_1$, $t_2$, ..., $t_k$) avec un nombre de termes (qui sont les arguments) fini qui peut être nul (f(23), je\_suis\_une\_fonction(42, 
-	true), et\_moi\_aussi(oui)).\\
+	\item une fonction, qu'on appellera également prédicat, est de la forme : constante($t_1$, $t_2$, ..., $t_k$) avec un nombre $k\in\mathbb{N}$ de termes qui sont ses arguments (f(23), im\_function(42, true), me\_too(OUI)).
 	Ces fonctions n'ont pas vocation à calculer, mais uniquement à déclarer des objets avec les arguments souhaités comme étant vrais.
-	\item un tuple de la forme : ($t_1$, $t_2$, ..., $t_k$) avec un nombre de termes fini qui ne peut être nul ((37, oui), (), (1, h(-4), 0, 1)).
+	\item un tuple de la forme : ($t_1$, $t_2$, ..., $t_k$) avec un nombre $k\in\mathbb{N}$ de termes ((37, oui), (), (1, f(-4), Var)).
 \end{enumerate}
 
 \subsection{Règles et modèles d'un programme}
@@ -109,21 +120,20 @@ Un \emph{programme d'ensemble solutions ( = answer set program)} est un nombre f
 \begin{center}
 $a_0$ :- $a_1,...,a_m,not \: a_{m+1},...,not \: a_n.$
 \end{center}
-avec $n\geq m\geq 0$. $a_0$ est un atome ou $\bot$ (Bottom/le Faux) et représente ici la \textbf{tête} de la règle. Les $a_1,...,a_n$ sont des atomes et représentent quant à eux le \textbf{corps} de la règle, et le symbole $"not"$ 
+avec $n\geq m\geq 0$. $a_0$ est un atome ou $\bot$ (Bottom/le Faux) et représente ici la \textbf{tête} de la règle. $a_1,...,a_n$ sont des atomes et représentent quant à eux le \textbf{corps} de la règle, et le symbole $"not"$ 
 représente la négation par l'échec. Cela signifie que si l'on ne peut pas montrer que $x$ est vrai, alors $not$ $x$ est faux. Cette règle se lit intuitivement : si les atomes $a_1,..,a_m$ sont tous vrais et qu'aucun des atomes 
 $a_{m+1},...,a_n$ n'est vrai, alors $a_0$ est vrai.\\ \\
 Si $n=m=0$, cela signifie que $a_0$ est vrai. Dans ce cas, on parle d'un fait, et on ne doit pas renseigner ":-". D'une autre part, si $a_0=\bot$, on parle de contrainte : comme $\bot$ ne peut jamais être vrai, si le corps de la 
-règle est vrai, cela 
-invalide la solution actuelle. On ne renseigne pas $\bot$ pour la tête, on laisse une tête vide au niveau du code.\\ \\
+règle est vrai, cela invalide la solution actuelle. On ne renseigne pas $\bot$ pour la tête, on laisse une tête vide au niveau du code.\\ \\
 Cette notion de "solution actuelle" se formalise de la façon suivante : on parle d'une \textbf{interprétation} $I$ en tant qu'ensemble fini d'atomes propositionnels. Une règle $r$ définie comme ci-dessus est \emph{vraie dans I} si 
 et seulement si :
 
 \begin{center}
-$(\left\{a_1,...,a_m\right\}\subseteq I \wedge \left\{a_{m+1},...,a_n\right\} \cap I) = \emptyset \Rightarrow a_0 \in I$
+$(\left\{a_1,...,a_m\right\}\subseteq I \wedge \left\{a_{m+1},...,a_n\right\} \cap I = \emptyset) \Rightarrow a_0 \in I$\\
 \end{center}
-
-Si toutes les règles d'un programme $P$ sont vraies dans une même interprétation $I$ et que $I$ est maximale, alors on dit que $I$ est un \textbf{modèle} de $P$. Lorsque l'on déclare un problème $P$ en ASP, le solveur nous renverra en sortie tout 
-les modèles possibles pour $P$.
+Si toutes les règles d'un programme $P$ sont vraies dans une même interprétation $I$ et que $I$ est minimale, alors on dit que $I$ est un \textbf{modèle} de $P$. Lorsque l'on déclare un problème $P$ en ASP, le solveur nous renverra 
+en sortie tout les modèles possibles pour $P$.\\ \\
+Je tiens à préciser que les sauts de ligne n'interrompent pas une règle, seul le point la termine.
 
 \subsection{Variables}
 Si une variable apparaît dans un atome de la tête, elle doit également être dans le corps. Chaque instance d'une variable va être groundée par ASP afin de trouver tous les modèles à notre problème.
@@ -136,8 +146,9 @@ Prenons un exemple, voici un problème encodé avec 2 règles :
 	}
 }
 \end{center}
-Ce programme contient 2 faits : Charles est un parent de Jenny, et Jenny est un parent de Mary. C'est ainsi que l'on souhaite comprendre les termes "parentOf(jenny, charles)" et "parentOf(mary, jenny)".
-Si on souhaite désormais spécifier que Charles est grand-père de Mary, on peut le faire en ajoutant le terme : "grandparentOf(mary, charles)". Cependant, ASP est capable de faire de la déduction.
+Ce programme contient 2 faits : Charles est un parent de Jenny, et Jenny est un parent de Mary. C'est ainsi que l'on souhaite comprendre les termes \textcolor{blue}{\emph{parentOf(jenny, charles)}} et 
+\textcolor{blue}{\emph{parentOf(mary, jenny)}}.
+Si on souhaite désormais spécifier que Charles est grand-père de Mary, on peut le faire en ajoutant le terme : \textcolor{blue}{\emph{grandparentOf(mary, charles)}}. Cependant, ASP est capable de faire de la déduction.
 En effet, on peut généraliser la notion de grand-parent comme étant le parent d'un parent de la façon suivante :
 \begin{center}
 \emph{
@@ -146,11 +157,16 @@ En effet, on peut généraliser la notion de grand-parent comme étant le parent
 	}
 }
 \end{center}
-Pour chaque valeur possible de X, Y, et Z, le grounding d'ASP va nous créer des règles associées.
-Ainsi, les 27 règles dont grandparentOf(mary, mary) :- parentOf(mary, mary), parentOf(mary, mary), ou encore grandparentOf(charles, mary) :- parentOf(charles, jenny), parentOf(jenny, mary) vont être créées 
-par cette façon de procéder. Ceci n'est pas du tout un problème : le solveur d'ASP va simplement regarder si les atomes des corps sont vraies ou pas. Si ce n'est pas le cas pour une règle donnée (i.e. l'ensemble des éléments 
-du corps de cette règle est faux), comme $(\bot\Rightarrow x)\Leftrightarrow Vrai$, les règles seront vraies. Si c'est le cas pour une règle donnée, la tête de cette dernière sera alors mise à $Vrai$ afin que l'interprétation 
-vérifie bien le plus de règles possible. Sachant qu'une seule de ces 27 possibilités mène à la véracité d'un nouvel atome, on obtiendra la sortie suivante en ASP :
+Pour chaque valeur possible des variables X, Y, et Z, le grounding d'ASP va nous créer des règles associées.
+Ainsi, les 27 règles dont \textcolor{blue}{\emph{grandparentOf(mary, mary) :- parentOf(mary, mary), parentOf(mary, mary)}}, ou encore \textcolor{blue}{\emph{grandparentOf(charles, mary) :- parentOf(charles, jenny), parentOf(jenny, 
+mary)}} vont être créées par cette façon de procéder. Ceci n'est pas du tout un problème : le solveur d'ASP va simplement regarder si les atomes des corps sont vraies ou pas.\\
+\begin{itemize}
+	\item Si c'est le cas pour une règle donnée, la tête de cette dernière sera alors mise à $Vrai$ afin que l'interprétation vérifie bien le plus de règles possible
+	\item Si ce n'est pas le cas pour une règle donnée (i.e. l'ensemble des éléments du corps de cette règle est faux), comme $(\bot\Rightarrow x)\Leftrightarrow Vrai$, cette règle sera vraie, que la tête soit mise à $Vrai$ 
+	ou pas. Comme l'interprétation doit être de taille minimale, la tête ne sera pas mise à $Vrai$ lors du solving\\
+\end{itemize}
+Sachant que la seule de ces 27 possibilités possédant un corps vrai est :\\
+\textcolor{blue}{\emph{grandparentOf(mary, charles) :- parentOf(mary, jenny), parentOf(jenny, charles)}}, on obtiendra la sortie suivante en ASP :
 \begin{center}
 \textcolor{blue}{
   SATISFIABLE\\
@@ -170,8 +186,8 @@ structurent suivant l'exemple suivant :
 }
 \end{center}
 La \textbf{borne inférieure} située à gauche des accolades (ici 0), et la \textbf{borne supérieure} (ici 1) définissent l'intervalle discret du nombre d'atomes que le solveur peut mettre à vrai. Si l'une de ces deux bornes est 
-omise, ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible (à savoir 0 pour la borne inf et cardinal de l'ensemble défini par les accolades pour la borne sup). Dans cet exemple, on choisira donc une ou 0 
-couleur parmi celles possibles (telles qu'il existe un atome couleur(Teinte) qui soit Vrai) pour chaque abscisse et ordonnée définies.\\
+omise, ASP comprend qu'il s'agit de la borne maximale (ou minimale) possible (à savoir 0 pour la borne inf et cardinal de l'ensemble défini par les accolades pour la borne sup). Dans cet exemple, on choisira donc zéro ou une
+couleur parmi celles possibles (telles qu'il existe un atome couleur(Teinte) qui soit $Vrai$) pour chaque abscisse et ordonnée définies.\\
 Les agrégats permettent de faire des disjonctions de cas.
 
 \subsection{Premier exemple : le sudoku}
@@ -184,14 +200,14 @@ On codera une grille de sudoku en ASP en utilisant s, une fonction d'arité 3 pr
 	\textcolor{white}{2c}\% On déclare également 3 autres faits pour mémoriser où sont situés les bordures de notre grille car le point virgule permet de déclarer plusieurs atomes en un\\
 	2. \textcolor{blue}{$border(1;4;7)$.}\\
 	\textcolor{white}{2c}\% On ne prend qu'une seule valeur par carré\\
-	3. \textcolor{blue}{$1\left\{ s(X,Y,V): val(V) \right\}1$ :- $val(X) ; val(Y)$.}\\
+	3. \textcolor{blue}{$1\left\{ s(X,Y,V): val(V) \right\}1$ :- $val(X), val(Y)$.}\\
 	\textcolor{white}{2c}\% Une valeur ne peut pas apparaître plusieurs fois dans la même colonne\\
-	4. \textcolor{blue}{$1\left\{ s(X,Y,V): val(Y) \right\}1$ :- $val(X) ; val(V)$.}\\
+	4. \textcolor{blue}{$1\left\{ s(X,Y,V): val(Y) \right\}1$ :- $val(X), val(V)$.}\\
 	\textcolor{white}{2c}\% Ni dans la même ligne\\
-	5. \textcolor{blue}{$1\left\{ s(X,Y,V): val(X) \right\}1$ :- $val(Y) ; val(V)$.}\\
+	5. \textcolor{blue}{$1\left\{ s(X,Y,V): val(X) \right\}1$ :- $val(Y), val(V)$.}\\
 	\textcolor{white}{2c}\% Une valeur ne peut pas apparaître plusieurs fois dans une sous-grille.\\
 	6. \textcolor{blue}{$1\left\{ s(X,Y,V): val(X), val(Y), X1<=X, X<=(X1+2), Y1<=Y, Y<=(Y1+2)\right\}1$ :-}\\
-	\textcolor{white}{3ch}\qquad\qquad\qquad\qquad\qquad$\hookrightarrow$ \textcolor{blue}{$val(V) ; border(X1) ; border(Y1)$.}\\
+	7.\qquad\qquad\textcolor{blue}{$val(V), border(X1), border(Y1)$.}\\
 }
 
 Une fois que l'on a fait cela, il ne nous reste plus qu'à instancier notre problème sur une grille. Pour cela, on renseigne \emph{\textcolor{blue}{s(X,Y,V)}} pour chaque case déjà pré-numérotée de la grille à notre code, et le 
@@ -205,7 +221,7 @@ commande '\#end.'. Le scripting admet trois atouts majeurs :
 	\item L'appel aux fonctions en ASP via la commande '@ma\_fonction(et, ses, arguments)', permettant d'effectuer des calculs sous Python et de mettre des variables à vrai en fonction de ce qui a été trouvé dans ces 
 	calculs.
 	\item Un contrôle de la résolution permettant le filtrage des ensembles solutions, l'ajout de faits/règles, la demande de grounding et de solving. C'est ce dont je me suis le plus servi durant mon stage.
-	\item Une méthode incrémentale efficace lorsque l'on a besoin d'avoir une notion de temporalité. Ceci permet d'ajouter une notion d'ordre en ASP (les lignes de code peuvent être écrites dans n'importe quel ordre).
+	\item Une méthode incrémentale efficace lorsque l'on a besoin d'avoir une notion de temporalité. Ceci permet d'ajouter un ordre dans le grounding et la résolution des règles.
 \end{itemize}
 
 \subsection{Second exemple : le sokoban}
@@ -228,13 +244,16 @@ En ASP, une grille de sokoban est encodée en spécifiant quelles cases sont des
 prédicat \emph{\textcolor{blue}{init(X,Y)}}, ce qui nous donne la position initiale du joueur, et \emph{\textcolor{blue}{caisse\_init(Numero\_caisse,X,Y)}} nous renseignant sur les positions initiales des caisses (le premier 
 argument varie de 1 à $n$ lorsque l'on a $n$ de ces caisses). Enfin, le prédicat \emph{\textcolor{blue}{arrivee(X,Y)}} symbolisera une case d'arrivée en \emph{(X,Y)}.\\ \\
 J'ai fait différentes versions pour ce jeu. La plus aboutie utilise une méthode incrémentale. Pour l'importer, il nous suffit d'ajouter la commande \emph{\textcolor{blue}{\#include \textless incmode\textgreater .}}. On doit alors 
-définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)}.\\
+définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)}. $k$ est une fausse constante : elle est remplacée à chaque itération par un entier. Par défaut $k$ vaut 0 au début de la résolution, et augmente de 1 
+à chaque itération.\\
 \begin{itemize}
 	\item \textbf{base :}\\
+		$base$ est le sous-programme qui énonce des règles qui seront toujours toujours à prendre en compte par ASP lors de la résolution (pour tout $k$).\\ \\
 		On déclare ici des prédicats \emph{\textcolor{blue}{perso(0,X,Y)}} et \emph{\textcolor{blue}{caisse\_a\_instant(0,X,Y)}} afin de mémoriser la position du joueur à l'étape initiale (0), ainsi que celles des caisses.\\
 		\textcolor{magenta}{Pour notre exemple figure \ref{label-figure1}, on aura \emph{perso(0,2,5), caisse\_a\_instant(0,3,4)}, et \\
-		\emph{caisse\_a\_instant(0,4,4).}}\\
+		\emph{caisse\_a\_instant(0,4,4).}}\\ \\
 	\item \textbf{step(k) :}\\
+		$step(k)$ est le sous-programme qui va calculer à l'instant $k$ quelles sont les règles à prendre en compte. On en déduira un ensemble $E$ d'atomes tous vrais à l'étape $k$.\\ \\
 		On a ici besoin de prédicats \emph{\textcolor{blue}{acces\_a\_instant(k, R, C)}} pour mémoriser toutes les cases accessibles depuis la position \emph{(X,Y)} de notre joueur à une étape k donnée. Pour déterminer 
 		cela, on va mettre des règles pour chaque direction spécifiant que si une case est accessible à une étape $k$ et qu'une des 4 cases voisines à celle-ci est vide (un sol sans caisse) alors cette case voisine est 
 		également accessible. On doit également rajouter une règle pour dire que la case sur laquelle se trouve notre personnage à l'étape choisie est accessible (cas initial pour l'induction).\\
@@ -249,20 +268,24 @@ définir les sous-programmes \textbf{base}, \textbf{step(k)} et \textbf{check(k)
 		\textcolor{magenta}{Par exemple si l'on a choisi le premier des deux coups jouables, on en déduira les prédicats \emph{perso(1,3,4), caisse\_a\_instant(1,3,5)}, et \emph{caisse\_a\_instant(1,4,4).}}\\
 		Enfin, on est capable de savoir si on a résolu la grille ou pas à l'aide d'un prédicat \emph{\textcolor{blue}{caisse\_pas\_place(k)}} qui est vrai s'il reste une ou plusieurs caisses à placer à l'étape $k$.\\
 		\textcolor{magenta}{Ici, la caisse en \emph{(3,5)} n'est pas bien placée à l'étape 1, donc on crée le prédicat \\
-		\emph{caisse\_pas\_place(1)}.}\\
+		\emph{caisse\_pas\_place(1)}.}\\ \\
 	\item \textbf{check(k) :}\\
-		$check(k)$ est le sous-programme qui se charge d'arrêter la recherche : si à une étape $k$ ce sous-programme est satisfiable, alors le programme s'arrêtera et renverra l'ensemble solution courant. Pour vérifier si 
-		l'on a trouvé une solution à notre grille, il suffit simplement d'ajouter une contrainte \emph{\textcolor{blue}{:- caisse\_pas\_place(k)}}. En effet, s'il existe une caisse non placée le $check(k)$ ne sera pas 
-		satisfiable.\\
-		\textcolor{magenta}{Dans notre exemple, le coup de caisse qu'on a choisi fait peut-être avancer la résolution, mais ne l'a pas achevé.}\\
+		$check(k)$ est le sous-programme qui se charge d'arrêter la recherche : si à une étape $k$ ce sous-programme est satisfiable par les éléments de $E$, alors le programme s'arrêtera et renverra l'ensemble solution 
+		courant.\\ \\
+		Pour vérifier si l'on a trouvé une solution à notre grille, il suffit simplement d'ajouter une contrainte \emph{\textcolor{blue}{:- caisse\_pas\_place(k)}}. En effet, s'il existe une caisse non placée le 
+		$check(k)$ ne sera pas satisfiable.\\
+		\textcolor{magenta}{Dans notre exemple, le coup de caisse qu'on a choisi fait peut-être avancer la résolution, mais ne l'a pas achevée.}\\
 \end{itemize}
 On récupère alors la liste des coups de caisses à faire, et on peut résoudre notre grille en comblant les coups qui déplaçaient les caisses par ceux nécessaires pour atteindre la prochaine caisse à déplacer.\\
 \textcolor{magenta}{Pour l'exemple figure \ref{label-figure1}, ASP nous renvoie la liste de coups suivante : s(1,(3,5),bas), s(2,(5,4),gauche), s(3,(4,4),gauche), s(4,(2,5),bas), s(5,(3,2),haut), s(6,(2,4),droite), s(7,(2,2),haut). 
 \emph{s(k, case, direction)} signifie que le personnage peut aller à l'instant $k$ à la case indiquée, et pousser une caisse dans la direction indiquée.}
 
 \section{Formalismes d'automates et leur dynamique}
-Différents modèles existent pour représenter efficacement un système biologique et manipuler sa dynamique : les deux principaux sont les réseaux booléens synchrones de Stuart Kauffman, et les réseaux asynchrones de René Thomas.
-Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) \cite{folschette2015sufficient} et \cite{pauleve2016pint}, qui forment une extension d'une précédente structure appelée "Process Hitting" \cite{pauleve14}.\\
+\label{fad}
+Différents modèles existent pour représenter efficacement un système biologique et manipuler sa dynamique : les deux principaux sont les réseaux booléens synchrones de Stuart \cite{kauffman1969metabolic}, et les réseaux 
+asynchrones de René \cite{thomas1973boolean}.
+Dans le cadre de mon stage je ne parlerai que des réseaux asynchrones, et plus particulièrement des réseaux d'automates asynchrone (AAN) \cite{folschette2015sufficient} et \cite{pauleve2016pint}, qui forment une extension d'une 
+précédente structure appelée "Process Hitting" \cite{pauleve14}.\\
 
 \subsection{AAN et leur traduction en ASP}
 Un automate $A$, dans le contexte de mon stage, sera défini comme étant un ensemble d'états $q_0, q_1, ..., q_{|A|-1}$ avec des transitions dont les étiquettes seront un ou plusieurs états (qu'on appellera également \emph{niveaux}) 
@@ -342,13 +365,6 @@ En ASP, on définira un AAN en deux temps :
 		condition(t3, "a", 2). target(t3, "a", 1). condition(t3, "b", 1).\\
 		condition(t4, "a", 1). target(t4, "a", 0). condition(t4, "b", 1).\\
 		\verb![...]!\\
-		%condition(t5, "b", 0). target(t5, "b", 1). condition(t5, "c", 0).\\
-		%condition(t6, "b", 1). target(t6, "b", 0). condition(t6, "a", 2).\\
-		%condition(t7, "c", 0). target(t7, "c", 1). condition(t7, "b", 1).\\
-		%condition(t8, "c", 1). target(t8, "c", 0). condition(t8, "b", 0).\\
-		%condition(t9, "c", 1). target(t9, "c", 2). condition(t9, "a", 1).\\
-		%condition(t10, "c", 0). target(t10, "c", 2). condition(t10, "a", 2).\\
-		%condition(t11, "c", 2). target(t11, "c", 0). condition(t11, "b", 1).\\
 		condition(t12, "a", 0). target(t12, "a", 1). condition(t12, "b", 1). condition(t12, "c", 1).\\
 		}
 	}
@@ -372,7 +388,7 @@ De manière informelle : chaque transition locale jouable est une transition glo
 En ASP, on définit préalablement les états globaux à l'aide d'un prédicat de la forme \emph{\textcolor{blue}{global\_state(Gs)}} avec $Gs$ qui s'écrit en ASP à l'aide d'une constante unique (g1\_1\_0 symbolisera par exemple que "a" 
 est au niveau 1, "b" au niveau 1 et "c" au niveau 0, cf \hyperlink{partie4.4}{Partie 4.4}). On peut ensuite déclarer que deux états globaux sont différents sur un automate à l'aide de la règle suivante :\\
 \emph{
-1. \textcolor{blue}{different\_on(Gs1, Gs2, Automaton) :-} \% Cet atome est vrai\\
+1. \textcolor{blue}{different\_on(Gs1, Gs2, Automaton) :-} \% Automaton n'a pas le même état actif dans $Gs1$ et $Gs2$\\
 2.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2), Gs1 != Gs2,} \% si deux états globaux diffèrent\\
 3.\qquad \textcolor{blue}{automaton(Automaton),} \% qu'il existe un automate\\
 4.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelI), Gs1),} \% sur lequel $Gs1$ vaut $I$\\
@@ -381,25 +397,25 @@ est au niveau 1, "b" au niveau 1 et "c" au niveau 0, cf \hyperlink{partie4.4}{Pa
 }
 Ensuite, on fait comprendre à ASP qu'une transition locale n'est pas jouable si l'une (au moins) de ses conditions n'est pas vérifiée de la façon suivante :\\
 \emph{
-1. \textcolor{blue}{unplayable(Transition, Gs) :-} \% Cet atome est vrai\\
-2.\qquad \textcolor{blue}{local\_transition(Transition),} \% s'il existe une transition locale\\
-3.\qquad \textcolor{blue}{global\_state(Gs),} \% un état global\\
+1. \textcolor{blue}{unplayable(Transition, Gs) :-} \% une transition n'est pas jouable depuis Gs1\\
+2.\qquad \textcolor{blue}{local\_transition(Transition),} \% si elle est locale,\\
+3.\qquad \textcolor{blue}{global\_state(Gs),} \% s'il existe un état global\\
 4.\qquad \textcolor{blue}{automaton(Automaton),} \% et un automate\\
 5.\qquad \textcolor{blue}{active\_in\_g(level(Automaton, LevelI), Gs),} \% sur lequel $Gs$ vaut $I$\\
 6.\qquad \textcolor{blue}{condition(Transition, Automaton, LevelJ),} \% alors qu'il devrait valoir $J\neq I$\\
-7.\qquad \textcolor{blue}{LevelI != LevelJ.} \% pour que la transition soit jouable\\ \\
+7.\qquad \textcolor{blue}{LevelI != LevelJ.} \% pour que Transition soit jouable\\ \\
 }
 On déclare ensuite que deux états globaux diffèrent sur au moins un autre automate qu'$Automaton$ avec le terme $not\_equal\_except(Automaton, Gs1, Gs2)$ comme ceci :\\
 \emph{
-1. \textcolor{blue}{not\_equal\_except(Automaton, Gs1, Gs2) :-} \% Cet atome est vrai\\
+1. \textcolor{blue}{not\_equal\_except(Automaton, Gs1, Gs2) :-} \% $Gs1$ et $Gs2$ diffèrent d'au moins 1 autre automate qu'Automaton \\
 2.\qquad \textcolor{blue}{automaton(Automaton), automaton(Automaton2),} \% s'il existe deux automates\\
-3.\qquad \textcolor{blue}{Automaton != Automaton2,} \% qui différent\\
+3.\qquad \textcolor{blue}{Automaton != Automaton2,} \% qui différent,\\
 4.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2),} \% deux états globaux\\
 5.\qquad \textcolor{blue}{different\_on(Gs1, Gs2, Automaton2).} \% tels que $Gs1 \neq Gs2$ sur Automaton2\\ \\
 }
 On peut enfin définir ce qu'est une transition globale jouable à l'aide de nos trois précédentes règles :\\
 \emph{
-1. \textcolor{blue}{playable(Gs1, Gs2) :-} \% Cet atome est vrai\\
+1. \textcolor{blue}{playable(Gs1, Gs2) :-} \% On peut aller depuis $Gs1$ en $Gs2$\\
 2.\qquad \textcolor{blue}{global\_state(Gs1), global\_state(Gs2),} \% s'il existe deux états globaux $Gs1$ et $Gs2$\\
 3.\qquad \textcolor{blue}{automaton(Automaton), local\_transition(Transition),} \% un automate et une transition\\
 4.\qquad \textcolor{blue}{target(Transition, Automaton, LevelJ),} \% qui fait changer le niveau de l'automate\\
@@ -427,7 +443,8 @@ l'autre en créant un terme \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}} si l
 \end{enumerate}
 alors la transition $Gs_1\rightarrow Gs_2$ n'est pas jouable.\\
 Enfin, il nous suffit de tester pour toutes les paires d'états globaux distincts si on a \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}} ou pas. Dans le cas contraire, alors on crée l'atome 
-\emph{\textcolor{blue}{playable(Gs1,Gs2)}}.
+\emph{\textcolor{blue}{playable(Gs1,Gs2)}}.\\
+Je n'ai pas mis le code de cette sémantique puisqu'il est trop long.
 
 \subsubsection{Généralisée}
 Soit $R = (\Sigma,S,T)$ un AAN, et $\zeta\in S$ un état global. L'ensemble des transitions globales jouables depuis $\zeta$ pour la sémantique \emph{généralisée} est donné par :
@@ -440,7 +457,8 @@ Pour coder cela en ASP, on prend exactement le code de la sémantique synchrone,
 \textcolor{white}{4cha}2. si $Gs_1$ diffère de $Gs_2$ sur $Automaton$ et qu'il n'existe pas de transition pour faire passer 
 \textcolor{white}{6chara}le niveau d'$Automaton$ sur $Gs_1$ à celui de $Gs_2$\\ \\
 Cela permet bien de ne pas prendre une transition par automate qui est jouable puisqu'on va tester des paires d'états globaux qui ont peut-être 3 automates jouables, et si l'on ne fait qu'une seule transition locale cela ne sera pas 
-filtré par notre atome \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}}.
+filtré par notre atome \emph{\textcolor{blue}{not\_playable(Gs1,Gs2)}}.\\
+Je n'ai pas mis le code de cette sémantique puisqu'il est trop long.
 
 \subsection{Dynamique}
 Soit $U$ une sémantique. On introduit les dernières notions nécessaires pour la définition d'un attracteur :
@@ -459,10 +477,11 @@ Un ensemble $A\subseteq S$ d'états globaux, avec $|A|\geq2$ est appellé \textb
 \textbf{Lemme :} Les attracteurs d'un AAN sont exactement les domaines de piège cycliques.
 
 \section{Cœur de la contribution personnelle}
+\label{ccp}
 \hypertarget{debutpartie4}{
 J'ai tout d'abord étudié la version existante du code afin de la comprendre et d'essayer de corriger l'erreur qu'elle contenait. Cette version était fonctionnelle et efficace pour la sémantique asynchrone, mais ne fonctionnait pour 
 la sémantique synchrone que lorsque les attracteurs étaient exactement des cycles simples (chaque état global du graphe produit doit avoir un degré sortant égal à $1$), et ne fonctionnait pas pour les autres AAN comme 
-celui-ci :\\ \\ \\
+celui figure \ref{label-figure3}.\\ \\ \\
 }
 
 \begin{figure}[!h]
@@ -630,7 +649,9 @@ On va donc initialiser cette liste de cette façon :\\
 \emph{\textcolor{blue}{sorted\_automata\_names}} est une liste des noms d'automates triée par ordre lexicographique). Ensuite, on rajoute à \emph{\textcolor{blue}{list\_for\_automaton}} tous les autres niveaux atteignables pour 
 l'état global courant (tout comme la sémantique synchrone).
 
-\subsection{\'Etude des états globaux}
+\subsection{\'Etude des états globaux}ue 16 pages, pourquoi ne pas inclure le contenu de l'annexe dans le corps du document, aux endroits appropriés (introduction et conclusion) ? Autrement, je te suggère au moins de mettre des sous-parties dans l'annexe, et remettre le lien du GitHub.
+
+
 \hypertarget{partie4.4}{
 L'autre solution que je voyais pour résoudre le problème qu'ont rencontré mon maître de stage et ses collègues était de déclarer des prédicats \emph{\textcolor{blue}{global\_state(Gs)}} représentant les états globaux du réseau. 
 Cela permet de déclarer dans des fichiers pour les sémantiques quelles sont les transitions locales jouables en utilisant un prédicat \emph{\textcolor{blue}{playable(Gs1, Gs2)}} signifiant que l'on peut aller depuis 
@@ -708,7 +729,7 @@ est dû à la trop grosse quantité de mémoire d'ASP gardée pour de trop nombr
 Durant mon stage j'ai élaboré deux versions pour résoudre le problème rencontré avec l'ajout de la troisième contrainte. J'ai présenté dans ce rapport la solution qui fait appel à un script Python, ainsi que la version modifiée 
 pour traiter la sémantique généralisée. J'ai très brièvement parlé de la solution nécessitant la création d'états globaux en ASP.\\ \\
 Mes performances sur la batterie de test qu'a utilisé Maxime Folschette pour la version de laquelle je suis parti se sont avérées toutes aussi bonnes que celles de la sémantique asynchrone. Les résultats de ces tests sont 
-disponibles sur le github de mon stage, juste \href{https://github.com/Leopoulpinator/Attractors-in-AAN/tree/main/versions/final_versions}{ici}. Les performances de ma seconde version y sont également. On voit notamment à quel point 
+disponibles sur le github de mon stage. Les performances de ma seconde version y sont également. On voit notamment à quel point 
 elle n'est pas efficace en temps.\\ \\
 Concernant cette seconde version, je pense que l'on peut grandement améliorer son efficacité en combinant mon code avec de l'incrémental. L'idée serait de ne considérer qu'un certain nombre d'états globaux : au début on les 
 considère tous, puis, lorsque l'on trouve un attracteur, on regroundre le programme en enlevant tous les états globaux de l'attracteur (en les mettant tous à faux).\\ \\
@@ -718,14 +739,15 @@ les autres éléments du cycle). Je pense que combiner cette idée avec de l'inc
 Je ne suis pas sûr de ces pistes, mais c'est ce sur quoi j'essaierais personnellement de me pencher pour poursuivre le travail.\\ \\ \\
 Enfin, je souhaite remercier l'ENS de Lyon qui m'a proposé ce stage, Maxime Folschette pour son encadrement, les personnes au sein de l'équipe BioComputing, mes quelques collègues stagiaires de bureau ainsi que mes quelques 
 relecteurs anonymes.\\ \\
-Mon code est disponible \href{https://github.com/Leopoulpinator/Attractors-in-AAN}{ici} : https://github.com/Leopoulpinator/Attractors-in-AAN.
+Mon code est disponible ici : \href{https://github.com/Leopoulpinator/Attractors-in-AAN}{https://github.com/Leopoulpinator/Attractors-in-AAN}.
 
 \newpage
 \bibliography{biblio}
 
 \newpage
 \section{Annexes}
-Mon stage a eu lieu dans le laboratoire CRIStAL (Villeneuve-d'Ascq, 59655) situé dans la cité scientifique de Lille. Ce laboratoire est rattaché à l'université et au CNRS de Lille.\\ \\
+\subsection{Contexte institutionnel et social du stage}
+Mon stage a eu lieu dans le laboratoire CRIStAL (Villeneuve-d'Ascq, 59655) situé dans la cité scientifique de Lille. Ce laboratoire est rattaché à l’Université de Lille, à Centrale Lille et au CNRS.\\ \\
 J'ai travaillé au sein de l'équipe BioComputing de ce laboratoire. Le maître de mon stage s'appelle Maxime Folschette et est membre de cette équipe. Cédric Lhoussaine (permanent au sein de l'équipe, et dirigeant de celle-ci) et 
 Danilo Dursoniah (en troisième année de thèse) ont été les personnes avec lesquelles j'ai le plus discuté au sein de cette équipe.\\ \\
 J'ai travaillé dans un bureau avec d'autres stagiaires, Danilo et un ingénieur (que je n'ai vu qu'une seule fois). J'ai eu plusieurs échanges avec 2 autres stagiaires qui étaient mes collègues de bureau. Nous avons pu discuter de 
@@ -733,7 +755,9 @@ nos parcours respectifs ainsi que de nos sujets de stage, de nos manières de r�
 collègues de bureau ont été assez faibles. Même s'ils n'ont pas été très nombreux, j'ai beaucoup apprécié ces moments.\\ \\
 Le métier de la recherche ne m'intéressait pas, mais j'ai découvert grâce à ce stage que cela me plaît en fait beaucoup. Quand j'essayais de résoudre des jeux comme le sokoban, le sudoku ou autres, j'avais l'impression d'être 
 retourné en CPGE et de chercher à résoudre un exercice difficile d'un DM, ce qui était sans doute mon occupation favorite à l'époque.\\ \\ \\
-Voici l'organisation de mon GitHub :\\
+
+\subsection{Organisation du GitHub}
+Voici l'organisation de mon GitHub (\href{https://github.com/Leopoulpinator/Attractors-in-AAN}{https://github.com/Leopoulpinator/Attractors-in-AAN}) :\\
 \begin{itemize}
 	\item Le dossier first\_exercices\_in\_asp contient toutes mes versions du sokoban, ainsi que tous les autres jeux de logique que j'ai résolu en ASP (dans le dossier exemples\_perso/jeux\_logiques).
 	\item Le dossier models contient tous les AAN encodés en ASP que j'ai utilisé pour faire des tests.

@@ -1,9 +1,16 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Baral(2003)]{Baral03}
+Chitta Baral.
+\newblock \emph{Knowledge Representation, Reasoning and Declarative Problem
+  Solving}.
+\newblock Cambridge University Press, 2003.
+\newblock ISBN 0521818028.
 
 \bibitem[Ben~Abdallah et~al.(2022)Ben~Abdallah, Folschette, and
   Morgan]{chapitre}
@@ -27,6 +34,20 @@ Maxime Folschette, Lo{\"\i}c Paulev{\'e}, Morgan Magnin, and Olivier Roux.
   priorities.
 \newblock \emph{Theoretical Computer Science}, 608:\penalty0 66--83, 2015.
 
+\bibitem[Kauffman(1969)]{kauffman1969metabolic}
+Stuart~A Kauffman.
+\newblock Metabolic stability and epigenesis in randomly constructed genetic
+  nets.
+\newblock \emph{Journal of theoretical biology}, 22\penalty0 (3):\penalty0
+  437--467, 1969.
+
+\bibitem[Martin~Gebser()]{potassco}
+Benjamin Kaufmann Marius Lindauer Max Ostrowski Javier Romero Torsten Schaub
+  Sven Thiele Philipp~Wanko Martin~Gebser, Roland~Kaminski.
+\newblock {Potassco, the Potsdam Answer Set Solving Collection}.
+\newblock \url{https://github.com/potassco/guide/releases/tag/v2.2.0}.
+\newblock Accessed: 2022-08-19.
+
 \bibitem[Paulev{\'e}(2016)]{pauleve2016pint}
 Lo{\"\i}c Paulev{\'e}.
 \newblock Pint, a static analyzer for dynamics of automata networks.
@@ -40,5 +61,11 @@ Lo{\"i}c Paulev{\'e}, Courtney Chancellor, Maxime Folschette, Morgan Magnin,
 \newblock Analyzing large network dynamics with process hitting.
 \newblock \emph{Logical Modeling of Biological Systems}, pages 125 -- 166,
   2014.
+
+\bibitem[Thomas(1973)]{thomas1973boolean}
+Ren{\'e} Thomas.
+\newblock Boolean formalization of genetic control circuits.
+\newblock \emph{Journal of theoretical biology}, 42\penalty0 (3):\penalty0
+  563--585, 1973.
 
 \end{thebibliography}

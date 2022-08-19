@@ -1,23 +1,27 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Answer Set Programming}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Termes}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{R\350gles et mod\350les d'un programme}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Variables}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Agr\351gats}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Premier exemple : le sudoku}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.6}{Scripting Python}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.7}{Second exemple : le sokoban}{section.2}% 9
-\BOOKMARK [1][-]{section.3}{Formalismes d'automates et leur dynamique}{}% 10
-\BOOKMARK [2][-]{subsection.3.1}{AAN et leur traduction en ASP}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.2}{S\351mantiques}{section.3}% 12
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Asynchrone}{subsection.3.2}% 13
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Synchrone}{subsection.3.2}% 14
-\BOOKMARK [3][-]{subsubsection.3.2.3}{G\351n\351ralis\351e}{subsection.3.2}% 15
-\BOOKMARK [2][-]{subsection.3.3}{Dynamique}{section.3}% 16
-\BOOKMARK [1][-]{section.4}{C\234ur de la contribution personnelle}{}% 17
-\BOOKMARK [2][-]{subsection.4.1}{Code pr\351-existant}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.2}{R\351solution de la troisi\350me contrainte en Python}{section.4}% 19
-\BOOKMARK [2][-]{subsection.4.3}{L\351g\350re modification pour s\351mantique g\351n\351ralis\351e}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.4}{\311tude des \351tats globaux}{section.4}% 21
-\BOOKMARK [1][-]{section.5}{Conclusion et pistes pour la suite}{}% 22
-\BOOKMARK [1][-]{section.6}{Annexes}{}% 23
+\BOOKMARK [2][-]{subsection.1.1}{Contexte}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Plan}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Answer Set Programming}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Termes}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{R\350gles et mod\350les d'un programme}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Variables}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.4}{Agr\351gats}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.5}{Premier exemple : le sudoku}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.6}{Scripting Python}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.7}{Second exemple : le sokoban}{section.2}% 11
+\BOOKMARK [1][-]{section.3}{Formalismes d'automates et leur dynamique}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{AAN et leur traduction en ASP}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{S\351mantiques}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Asynchrone}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Synchrone}{subsection.3.2}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.3}{G\351n\351ralis\351e}{subsection.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Dynamique}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{C\234ur de la contribution personnelle}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Code pr\351-existant}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{R\351solution de la troisi\350me contrainte en Python}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.3}{L\351g\350re modification pour s\351mantique g\351n\351ralis\351e}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.4}{\311tude des \351tats globaux}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Conclusion et pistes pour la suite}{}% 24
+\BOOKMARK [1][-]{section.6}{Annexes}{}% 25
+\BOOKMARK [2][-]{subsection.6.1}{Contexte institutionnel et social du stage}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.2}{Organisation du GitHub}{section.6}% 27
