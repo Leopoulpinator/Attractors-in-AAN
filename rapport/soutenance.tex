@@ -1,0 +1,85 @@
+\documentclass{beamer}
+
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{nameref}
+\usepackage[symbol]{footmisc}
+\usepackage{minitoc}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage[francais]{babel}
+\usepackage{natbib}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[footheight=1em]{beamerthemeboxes}
+\setcounter{tocdepth}{3}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\contentsname}{Table des matières}
+
+\setbeamertemplate{footline}{
+\leavevmode
+\hbox{\hspace*{-0.06cm}
+\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+	\usebeamerfont{author in head/foot}\insertshortauthor  %~~(\insertshortinstitute)
+\end{beamercolorbox}
+\begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}
+	\usebeamerfont{section in head/foot}\insertshorttitle
+\end{beamercolorbox}
+\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}
+	\usebeamerfont{section in head/foot}\hspace*{2em}
+	\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+\end{beamercolorbox}}
+\vskip0pt
+}
+
+
+
+\title{Analyse de la dynamique des modèles biologiques par programmation logique}
+\author{Léo-Paul Delsaux}
+\institute{Stage effectué au laboratoire CRIStAL de Villeneuve-d'Ascq}
+\date{juin-août 2022}
+
+% ceci est un commentaire
+% pour compiler : tapez pdflatex ex-presentation
+% regardez ensuite le fichier ex-presentation.pdf
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Introduction}
+
+  \begin{itemize}
+  \item nous avons codé en Haskell
+
+  \item nous avons utilisé une imprimante 3D
+
+    \pause
+
+
+  \item notre programme ne marche pas sur des entrées de taille $>10$
+
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Conclusions}
+
+  \begin{itemize}
+  \item ce qu'il reste à améliorer
+
+  \item ce qui pourrait être ajouté
+
+  \item ce qui devrait être totalement repris
+
+  \item ce qui a été le plus difficile
+  \end{itemize}
+  
+\end{frame}
+
+\end{document}
+
+
+
