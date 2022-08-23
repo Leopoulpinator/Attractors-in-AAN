@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  22 AUG 2022 15:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.21)  23 AUG 2022 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -822,30 +822,258 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \beamer@footboxes=\count330
 \beamer@footboxsizes=\dimen290
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen291
+\ar@mcellbox=\box75
+\extrarowheight=\dimen292
+\NC@list=\toks48
+\extratabsurround=\skip78
+\backup@length=\skip79
+\ar@cellbox=\box76
+) (./macros/macros.tex) (./macros/macros-ph.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@la=\count331
+)
+(./macros/tikzstyles2.tex
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box77
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen293
+\pgf@nodesepend=\dimen294
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen295
+\pgffor@skip=\dimen296
+\pgffor@stack=\toks49
+\pgffor@toks=\toks50
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count332
+\pgfplotmarksize=\dimen297
+)
+\tikz@lastx=\dimen298
+\tikz@lasty=\dimen299
+\tikz@lastxsaved=\dimen300
+\tikz@lastysaved=\dimen301
+\tikz@lastmovetox=\dimen302
+\tikz@lastmovetoy=\dimen303
+\tikzleveldistance=\dimen304
+\tikzsiblingdistance=\dimen305
+\tikz@figbox=\box78
+\tikz@figbox@bg=\box79
+\tikz@tempbox=\box80
+\tikz@tempbox@bg=\box81
+\tikztreelevel=\count333
+\tikznumberofchildren=\count334
+\tikznumberofcurrentchild=\count335
+\tikz@fig@count=\count336
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count337
+\pgfmatrixcurrentcolumn=\count338
+\pgf@matrix@numberofcolumns=\count339
+)
+\tikz@expandcount=\count340
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+\pgfex=\dimen306
+\pgfem=\dimen307
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen308
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodepartlowerbox=\box82
+\pgfnodeparttwobox=\box83
+\pgfnodepartthreebox=\box84
+\pgfnodepartfourbox=\box85
+\pgfnodeparttwentybox=\box86
+\pgfnodepartnineteenbox=\box87
+\pgfnodeparteighteenbox=\box88
+\pgfnodepartseventeenbox=\box89
+\pgfnodepartsixteenbox=\box90
+\pgfnodepartfifteenbox=\box91
+\pgfnodepartfourteenbox=\box92
+\pgfnodepartthirteenbox=\box93
+\pgfnodeparttwelvebox=\box94
+\pgfnodepartelevenbox=\box95
+\pgfnodeparttenbox=\box96
+\pgfnodepartninebox=\box97
+\pgfnodeparteightbox=\box98
+\pgfnodepartsevenbox=\box99
+\pgfnodepartsixbox=\box100
+\pgfnodepartfivebox=\box101
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex
+File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryscopes.code.tex
+File: tikzlibraryscopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.text.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen309
+\pgfdecoratedremainingdistance=\dimen310
+\pgfdecoratedinputsegmentcompleteddistance=\dimen311
+\pgfdecoratedinputsegmentremainingdistance=\dimen312
+\pgf@decorate@distancetomove=\dimen313
+\pgf@decorate@repeatstate=\count341
+\pgfdecorationsegmentamplitude=\dimen314
+\pgfdecorationsegmentlength=\dimen315
+)
+\tikz@lib@dec@box=\box102
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.text.code.tex
+\pgf@lib@dec@text@box=\box103
+)
+\tikz@lib@dec@te@box=\box104
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count331
-\l__pdf_internal_box=\box75
+\l__kernel_color_stack_int=\count342
+\l__pdf_internal_box=\box105
 )
-(./soutenance.aux)
+(./soutenance.aux
+
+LaTeX Warning: Label `label-figure5' multiply defined.
+
+
+LaTeX Warning: Label `label-figure5' multiply defined.
+
+
+LaTeX Warning: Label `label-figure5' multiply defined.
+
+)
 \openout1 = `soutenance.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -883,96 +1111,88 @@ LaTeX Font Info:    ... okay on input line 48.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen291
-\scratchbox=\box76
-\nofMPsegments=\count333
-\nofMParguments=\count334
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen292
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count343
+\scratchdimen=\dimen316
+\scratchbox=\box106
+\nofMPsegments=\count344
+\nofMParguments=\count345
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count346
+\MPscratchDim=\dimen317
+\MPnumerator=\count347
+\makeMPintoPDFobject=\count348
+\everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring OFF on input line 48.
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+\AtBeginShipoutBox=\box107
+Package hyperref Info: Link coloring OFF on input line 53.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
  (./soutenance.out) (./soutenance.out)
 \@outlinefile=\write6
 \openout6 = `soutenance.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 48.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 53.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 48.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 48.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 48.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 48.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 48.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 48.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 48.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 48.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 48.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 48.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 48.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 48.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 48.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 53.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 48.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 53.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 48.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 48.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 48.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 48.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 48.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 48.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 48.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 53.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 53.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 4
-8.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 5
+3.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 4
-8.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 5
+3.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 48.
+ut line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1001,21 +1221,21 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
-LaTeX Info: Redefining \degres on input line 48.
-LaTeX Info: Redefining \dots on input line 48.
+LaTeX Info: Redefining \degres on input line 53.
+LaTeX Info: Redefining \dots on input line 53.
 
 
 Package french.ldf Warning: Please load the "natbib" package
-(french.ldf)                BEFORE babel/french; reported on input line 48.
+(french.ldf)                BEFORE babel/french; reported on input line 53.
 
-LaTeX Info: Redefining \up on input line 48.
+LaTeX Info: Redefining \up on input line 53.
 
 Package french.ldf Warning: OT1 encoding should not be used for French.
 (french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french.ldf)                of your document; reported on input line 48.
+(french.ldf)                of your document; reported on input line 53.
 
 (./soutenance.nav)
-Overfull \hbox (4.66797pt too wide) in paragraph at lines 48--48
+Overfull \hbox (4.66797pt too wide) in paragraph at lines 53--53
 [][]  
  []
 
@@ -1027,20 +1247,20 @@ Overfull \hbox (4.66797pt too wide) has occurred while \output is active
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 66.
+ut line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1067,6 +1287,572 @@ Overfull \hbox (4.66797pt too wide) has occurred while \output is active
 [4
 
 ]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[5
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[6
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[7
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[8
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[9
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[10
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[11
+
+]
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
+112.
+LaTeX Font Info:    No file OMScmss.fd. on input line 112.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 112.
+
+
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[12
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[13
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[14
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[15
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[16
+
+]
+<hitori.png, id=469, 201.75375pt x 201.75375pt>
+File: hitori.png Graphic file (type png)
+<use hitori.png>
+Package pdftex.def Info: hitori.png  used on input line 120.
+(pdftex.def)             Requested size: 170.71652pt x 170.71878pt.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 120.
+
+
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[17
+
+ <./hitori.png>]
+<Hitori_2.png, id=500, 201.75375pt x 201.75375pt>
+File: Hitori_2.png Graphic file (type png)
+<use Hitori_2.png>
+Package pdftex.def Info: Hitori_2.png  used on input line 128.
+(pdftex.def)             Requested size: 170.71652pt x 170.71878pt.
+
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[18
+
+ <./Hitori_2.png (PNG copy)>]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[19
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[20
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[21
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[22
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[23
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[24
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[25
+
+]
+Package epstopdf Info: Source file: <Diagram1.eps>
+(epstopdf)                    date: 2022-08-08 12:15:44
+(epstopdf)                    size: 17540 bytes
+(epstopdf)             Output file: <Diagram1-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-08-08 12:17:06
+(epstopdf)                    size: 3990 bytes
+(epstopdf)             Command: <repstopdf --outfile=Diagram1-eps-converted-to.
+pdf Diagram1.eps>
+(epstopdf)             \includegraphics on input line 171.
+Package epstopdf Info: Output file is already uptodate.
+<Diagram1-eps-converted-to.pdf, id=715, 850.17625pt x 850.17625pt>
+File: Diagram1-eps-converted-to.pdf Graphic file (type pdf)
+<use Diagram1-eps-converted-to.pdf>
+Package pdftex.def Info: Diagram1-eps-converted-to.pdf  used on input line 171.
+
+(pdftex.def)             Requested size: 170.71652pt x 170.70682pt.
+
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[26
+
+ <./Diagram1-eps-converted-to.pdf>]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[27
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[28
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[29
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[30
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[31
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[32
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[33
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[34
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[35
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[36
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[37
+
+]
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[38
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[39
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[40
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[41
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[42
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[43
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[44
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[45
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[46
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[47
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[48
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[49
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[50
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[51
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[52
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[53
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[54
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[55
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[56
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[57
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[58
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[59
+
+pdfTeX warning (ext4): destination with the same identifier (name{label-figure5
+}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.347 \end{frame}
+                 ]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[60
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[61
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[62
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[63
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[64
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[65
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[66
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[67
+
+]pdfTeX warning (ext4): destination with the same identifier (name{label-figure
+5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.379 \end{frame}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{label-figure5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.379 \end{frame}
+                 
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[68
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[69
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[70
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[71
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[72
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[73
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[74
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[75
+
+]
+Overfull \hbox (4.66797pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[76
+
+]
 \tf@nav=\write7
 \openout7 = `soutenance.nav'.
 
@@ -1084,31 +1870,47 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the soutenance.log file..
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 82.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 82.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
  (./soutenance.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 82.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 82.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
 Package rerunfilecheck Info: File `soutenance.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 21490 strings out of 481239
- 391490 string characters out of 5920377
- 676920 words of memory out of 5000000
- 36070 multiletter control sequences out of 15000+600000
- 539088 words of font info for 48 fonts, out of 8000000 for 9000
+ 28585 strings out of 481239
+ 575523 string characters out of 5920377
+ 900695 words of memory out of 5000000
+ 42856 multiletter control sequences out of 15000+600000
+ 543951 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,16n,67p,777b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on soutenance.pdf (4 pages, 55194 bytes).
+ 58i,16n,86p,777b,1040s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on soutenance.pdf (76 pages, 310062 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 9 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2160 PDF objects out of 2487 (max. 8388607)
+ 2019 compressed objects within 21 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -232,7 +232,7 @@ caisses, on trouve des cases d'arrivée (qui sont également du sol). Le but du 
 peut pas traverser les murs ni pousser une caisse s'il y a un mur ou une autre caisse derrière celle-ci.\\ \\
 
 \begin{figure}[!h]
-	\centering  
+	\centering
 	\includegraphics[scale=0.2]{Diagram1.eps}  
 	\caption{
 			Exemple d'une grille type de sokoban. P symbolise le joueur, les ronds rouges sont les cases d'arrivée, et les carrés rouges représentent les caisses.
@@ -729,8 +729,7 @@ est dû à la trop grosse quantité de mémoire d'ASP gardée pour de trop nombr
 Durant mon stage j'ai élaboré deux versions pour résoudre le problème rencontré avec l'ajout de la troisième contrainte. J'ai présenté dans ce rapport la solution qui fait appel à un script Python, ainsi que la version modifiée 
 pour traiter la sémantique généralisée. J'ai très brièvement parlé de la solution nécessitant la création d'états globaux en ASP.\\ \\
 Mes performances sur la batterie de test qu'a utilisé Maxime Folschette pour la version de laquelle je suis parti se sont avérées toutes aussi bonnes que celles de la sémantique asynchrone. Les résultats de ces tests sont 
-disponibles sur le github de mon stage. Les performances de ma seconde version y sont également. On voit notamment à quel point 
-elle n'est pas efficace en temps.\\ \\
+disponibles sur le github de mon stage. Les performances de ma seconde version y sont également. On voit notamment à quel point elle n'est pas efficace en temps.\\ \\
 Concernant cette seconde version, je pense que l'on peut grandement améliorer son efficacité en combinant mon code avec de l'incrémental. L'idée serait de ne considérer qu'un certain nombre d'états globaux : au début on les 
 considère tous, puis, lorsque l'on trouve un attracteur, on regroundre le programme en enlevant tous les états globaux de l'attracteur (en les mettant tous à faux).\\ \\
 Une autre idée que j'avais en tête était, lorsque l'on trouvait un cycle qui n'était pas un attracteur, de remplacer tous les états de ce cycle par un seul représentant, dont les transitions globales entrantes et sortantes 
