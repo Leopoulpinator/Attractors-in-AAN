@@ -64,87 +64,60 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Hitori}
-	\begin{figure}[!h]
-		\includegraphics[width=6cm]{hitori.png}
-		\caption{Grille de Hitori (\href{https://fr.wikipedia.org/wiki/Hitori}{https://fr.wikipedia.org/wiki/Hitori})}
-		\label{label-figure1}
-	\end{figure}
+\begin{frame}{ASP}
+	\pause
+	parent(moi, papa).\\
+	\pause
+	parent(papa, papi).\\
+	\textcolor{white}{cheatcode}\\
+	\pause
+	$\Rightarrow$ grandparent(moi, papi).
 \end{frame}
 
-\begin{frame}{Hitori - Instance}
+\begin{frame}{ASP - Règles}
+	parent(moi, papa).\\
+	parent(papa, papi).\\
+	\textcolor{white}{cheatcode}\\
 	\pause
-	c(1,1,2). c(2,1,2). c(3,1,1). c(4,1,5). c(5,1,3).\\
-	c(1,2,2). c(2,2,3). c(3,2,1). c(4,2,4). c(5,2,5).\\
-	c(1,3,1). c(2,3,1). c(3,3,1). c(4,3,3). c(5,3,5).\\
-	c(1,4,1). c(2,4,3). c(3,4,5). c(4,4,4). c(5,4,2).\\
-	c(1,5,5). c(2,5,4). c(3,5,3). c(4,5,2). c(5,5,1).\\
+	\textcolor{blue}{grandparent(moi, papi) :- parent(moi, papa), parent(papa, papi).}\\	
 \end{frame}
 
-\begin{frame}{Hitori - Règles}
-	\textcolor{blue}{
+\begin{frame}{ASP - Variables}
+	parent(moi, papa).\\
+	parent(papa, papi).\\
+	\textcolor{white}{cheatcode}\\
 	\pause
-	taille(5).\\
+	\textcolor{blue}{grandparent(X, Z) :- parent(X, Y), parent(Y, Z).}\\
+	\textcolor{white}{cheatcode}\\
+	\pause
+	$\Rightarrow$ \textcolor{red}{SATISFIABLE - Answer Set 1\\}
+		      \textcolor{blue}{grandparent(moi, moi) :- parent(moi, moi), parent(moi, moi).}\\
+		      \textcolor{blue}{grandparent(moi, moi) :- parent(moi, papa), parent(papa, moi).}\\
+		      \textcolor{white}{cheatcode}\\
+		      \verb![...]! (24 lignes supplémentaires)\\
+		      \textcolor{white}{cheatcode}\\
+		      \textcolor{blue}{grandparent(papi, papi) :- parent(papi, papi), parent(papi, papi).}
+\end{frame}
+
+\begin{frame}{ASP - Agrégats et contraintes}
+	cadeau(appareil\_photo). cadeau(pelle). cadeau(tshirt\_bateau).\\
 	\pause
 	\textcolor{white}{cheatcode}\\
-	\textcolor{red}{\emph{Faits utiles}}\\
-	colonne(1..S) :- taille(S).\\
-	ligne(1..S) :- taille(S).\\
+	\textcolor{blue}{1 \{ offre\_cadeau\_fete\_peres(C) : cadeau(C) \} 1.\\}
 	\pause
 	\textcolor{white}{cheatcode}\\
-	\textcolor{red}{\emph{Déclaration des colorations}}\\
-	couleur(blanc). couleur(jaune).\\
-	\pause
-	\textcolor{white}{cheatcode}\\
-	\textcolor{red}{\emph{Génération des différents ensembles solutions}}\\
-	1 \{ sol(L, C, V) : couleur(V) \} 1 :- colonne(C), ligne(L).}\\
+	$\Rightarrow$ \textcolor{red}{SATISFIABLE - Answer Set 1\\}
+		      \textcolor{blue}{offre\_cadeau\_fete\_peres(appareil\_photo).}\\
+		      \textcolor{white}{cheatcode}\\
+		      \pause
+		      \textcolor{red}{SATISFIABLE - Answer Set 2\\}
+		      \textcolor{blue}{offre\_cadeau\_fete\_peres(pelle).}\\
+		      \textcolor{white}{cheatcode}\\
+		      \pause
+		      \textcolor{red}{SATISFIABLE - Answer Set 3\\}
+		      \textcolor{blue}{offre\_cadeau\_fete\_peres(tshirt\_bateau).}
 \end{frame}
 
-\begin{frame}{Hitori - Règles (suite)}
-	\pause
-	\textcolor{red}{\emph{Il ne peut pas y avoir deux cases jaunes juxtaposées}}\\
-	\textcolor{blue}{:- sol(L, C, jaune), sol(L+1, C, jaune).\\
-	\pause
-	:- sol(L, C, jaune), sol(L-1, C, jaune).\\
-	:- sol(L, C, jaune), sol(L, C+1, jaune).\\
-	:- sol(L, C, jaune), sol(L, C-1, jaune).\\
-	\pause
-	\textcolor{white}{cheatcode}\\
-	\textcolor{red}{\emph{Les cases blanches sur une même ligne/colonne ont toutes une valeur différente}}\\
-	:- sol(L, C, blanc), sol(L, C2, blanc), C != C2, c(L, C, V), c(L, C2, V).\\
-	\pause
-	:- sol(L, C, blanc), sol(L2, C, blanc), L != L2, c(L, C, V), c(L2, C, V).}\\
-\end{frame}
-
-\begin{frame}{Hitori - Règles (suite)}
-	\pause
-	\textcolor{red}{\emph{L'ensemble des cases blanches est connexe (par déplacement haut/bas/gauche/droite)}}\\
-	\textcolor{blue}{chemin((L, C),(L+1, C)) :- sol(L, C, blanc), sol(L+1, C, blanc).\\
-	\pause
-	chemin((L, C),(L-1, C)) :- sol(L, C, blanc), sol(L-1, C, blanc).\\
-	chemin((L, C),(L, C+1)) :- sol(L, C, blanc), sol(L, C+1, blanc).\\
-	chemin((L, C),(L, C-1)) :- sol(L, C, blanc), sol(L, C-1, blanc).\\
-	\pause
-	chemin((L1, C1), (L2, C2)) :- chemin((L1, C1), (X, Y)), chemin((X, Y), (L2, C2)).\\
-	\pause
-	:- sol(L, C, blanc), sol(L2, C2, blanc), not chemin((L, C), (L2, C2)).}\\
-\end{frame}
-
-\begin{frame}{Hitori résolu}
-	\begin{figure}[!h]
-		\includegraphics[width=6cm]{Hitori_2.png}
-		\caption{Grille de Hitori résolu (\href{https://fr.wikipedia.org/wiki/Hitori}{https://fr.wikipedia.org/wiki/Hitori})}
-		\label{label-figure2}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Sokoban}
-	\begin{figure}[!h]
-		\includegraphics[width=6cm]{Diagram1.eps}
-		\caption{Grille de Sokoban. P symbolise le joueur, les ronds rouges sont les cases d'arrivée, et les carrés rouges représentent les caisses.}
-		\label{label-figure3}
-	\end{figure}
-\end{frame}
 
 \begin{frame}{Sokoban - Stratégies de calcul}
 	\pause
@@ -152,7 +125,9 @@
 	\begin{figure}[!h]
 		\pause
 		\includegraphics[width=3.25cm]{Coup1_strat1.eps}
+		\pause
 		\includegraphics[width=3.25cm]{Coup2_strat1.eps}
+		\pause
 		\includegraphics[width=3.25cm]{Coup3_strat1.eps}
 	\end{figure}
 \end{frame}
@@ -163,7 +138,9 @@
 	\begin{figure}[!h]
 		\pause
 		\includegraphics[width=3.25cm]{Coup1_strat2.eps}
+		\pause
 		\includegraphics[width=3.25cm]{Coup2_strat2.eps}
+		\pause
 		\includegraphics[width=3.25cm]{Coup3_strat2.eps}
 	\end{figure}
 \end{frame}
@@ -208,35 +185,6 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{AAN - Formalismes}
-	Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$, avec :
-	\begin{itemize}
-		\pause
-		\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.\\
-		\pause
-		\textcolor{green}{$\Sigma =\left\{a,b,c\right\}$}\\
-		\textcolor{white}{cheatcode}\\
-		\pause
-		\item Si $C_a$ est le nombre d'états d'un automate $a$, alors $S_a=\left\{a_0,a_1,...,a_{C_a-1}\right\}$ est l'ensemble des \textbf{états locaux} de $a$. $S=\displaystyle{\prod_{a\in\Sigma}}S_a$ est 
-		l'ensemble fini des \textbf{états globaux}, et $LS=\displaystyle{\bigcup_{a\in\Sigma}}S_a$ représente l'ensemble de tous les états locaux.\\
-		\pause
-		\textcolor{green}{$S_a=\left\{a_0,a_1,a_2\right\}$, $S_b=\left\{b_0,b_1\right\}$ et $S_c=\left\{c_0,c_1,c_2\right\}$}\\
-		\textcolor{white}{cheatcode}\\
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{AAN - Formalismes}
-	\begin{itemize}
-		\pause
-		\item Pour chaque $a\in\Sigma$, $T_a\subseteq\left\{a_i\xrightarrow{l}a_j\in S_a\times\mathbb{P}(LS/S_a)\times S_a|a_i\neq a_j\right\}$ est l'ensemble des \textbf{transitions locales} d'un automate $a$. 
-		$T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.
-		\pause
-		\textcolor{green}{$T_a = \left\{a_0\xrightarrow{b_0}a_1,a_0\xrightarrow{b_1,c_1}a_1,a_1\xrightarrow{b_1}a_0,a_1\xrightarrow{b_0}a_2,a_2\xrightarrow{b_1}a_1\right\}$\\
-				  $T_b=\left\{b_0\xrightarrow{c_0}b_1,b_1\xrightarrow{a_2}b_0\right\}$\\
-				  $T_c=\left\{c_0\xrightarrow{b_1}c_1,c_0\xrightarrow{a_2}c_2,c_1\xrightarrow{b_0}c_0,c_1\xrightarrow{a_1}c_2,c_2\xrightarrow{b_1}c_0\right\}$}\\
-	\end{itemize}
-\end{frame}
-
 \begin{frame}{AAN - Traduction de l'exemple en ASP}
 	En ASP, on définit l'exemple de référence en deux temps.\\
 	\begin{itemize}
@@ -270,24 +218,16 @@
 
 \begin{frame}{Attracteurs}
 	\pause
-	Un \textbf{domaine de piège} est un ensemble d'états globaux duquel toutes les transitions globales pour la sémantique choisie mènent à un élément de ce domaine.\\
-	\begin{figure}[!h]
-		\pause
-		\includegraphics[width=7cm]{presonal_example_synch.eps}
-		\caption{Sous-graphe du graphe produit de l'exemple de référence avec la sémantique synchrone. 3 des 6 domaines de piège y sont encadrés.}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Attracteurs (suite)}
+	Un \textbf{domaine de piège} est un ensemble d'états globaux duquel toutes les transitions globales pour la sémantique choisie mènent à un élément de ce domaine.
 	\pause
 	Un \textbf{attracteur} est un domaine de piège minimal en terme d'inclusion ensembliste.\\
 	\begin{figure}[!h]
 		\pause
-		\includegraphics[width=7cm]{presonal_example_synch2.eps}
-		\caption{Sous-graphe du graphe produit de l'exemple de référence avec la sémantique synchrone. Le seul attracteur y est encadré.}
+		\includegraphics[width=5cm]{presonal_example_synch.eps}
+		\includegraphics[width=5cm]{presonal_example_synch2.eps}
+		\caption{Sous-graphe du graphe produit de l'exemple de référence avec la sémantique synchrone. \`A gauche, 3 des 6 domaines de piège y sont encadrés. \`A droite, le seul attracteur y est encadré.}
 	\end{figure}
 	\pause
-	\textcolor{white}{cheatcode}\\
 	\textbf{Lemme :} Les attracteurs d'un AAN sont exactement les domaines de piège cycliques.
 \end{frame}
 
@@ -326,15 +266,8 @@
 			(b_2) edge node[auto] {$a_2$} (b_0)
 			;
 		\end{tikzpicture}
-		\caption{Exemple d'AAN sur lequel le code pré-existant ne trouvait pas l'attracteur}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Problématique}
-	\begin{figure}[h!]
-		\label{label-figure3}
 		\includegraphics[width=5cm]{Diagram2.eps}
-		\caption{Graphe produit de l'AAN précédent pour la sémantique synchrone}
+		\caption{Exemple d'AAN sur lequel le code pré-existant ne trouvait pas l'attracteur et graphe produit de celui-ci (pour la sémantique synchrone)}
 	\end{figure}
 \end{frame}
 
