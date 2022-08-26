@@ -44,7 +44,7 @@
 \title{Analyse de la dynamique des modèles biologiques par programmation logique}
 \author{Léo-Paul Delsaux}
 \institute{Stage effectué au laboratoire CRIStAL de Villeneuve-d'Ascq}
-\date{juin-août 2022}
+\date{29 août 2022}
 
 % ceci est un commentaire
 % pour compiler : tapez pdflatex ex-presentation
@@ -64,53 +64,6 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{ASP}
-	\pause
-	parent(moi, papa).\\
-	\pause
-	parent(papa, papi).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	$\Rightarrow$ grandparent(moi, papi).
-\end{frame}
-
-\begin{frame}{ASP - Règles}
-	parent(moi, papa).\\
-	parent(papa, papi).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	\textcolor{blue}{grandparent(moi, papi) :- parent(moi, papa), parent(papa, papi).}\\	
-\end{frame}
-
-\begin{frame}{ASP - Variables}
-	parent(moi, papa).\\
-	parent(papa, papi).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	\textcolor{blue}{grandparent(X, Z) :- parent(X, Y), parent(Y, Z).}\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	$\Rightarrow$ \textcolor{blue}{grandparent(moi, moi) :- parent(moi, moi), parent(moi, moi).}\\
-		      \textcolor{blue}{grandparent(moi, moi) :- parent(moi, papa), parent(papa, moi).}\\
-		      \verb![...]! (24 lignes supplémentaires)\\
-		      \textcolor{blue}{grandparent(papi, papi) :- parent(papi, papi), parent(papi, papi).}
-\end{frame}
-
-\begin{frame}{ASP - Agrégats et contraintes}
-	parent(moi, papa).\\
-	parent(papa, papi).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	\textcolor{blue}{famille(moi). famille(papa). famille(papi).}\\
-	\pause	
-	\textcolor{blue}{1 \{ grandparent(X, Y) :- famille(X), famille(Y) \} 1.}\\
-	\pause
-	\textcolor{white}{cheatcode}\\
-	\textcolor{blue}{:- famille(X), famille(Y), famille(Z),\\
-	\pause
-	\textcolor{white}{cheatcode} not grandparent(X, Z), parent(X, Y), parent(Y, Z).}
-\end{frame}
-
 \begin{frame}{Hitori}
 	\begin{figure}[!h]
 		\includegraphics[width=6cm]{hitori.png}
@@ -119,47 +72,70 @@
 	\end{figure}
 \end{frame}
 
+\begin{frame}{Hitori - Instance}
+	\pause
+	c(1,1,2). c(2,1,2). c(3,1,1). c(4,1,5). c(5,1,3).\\
+	c(1,2,2). c(2,2,3). c(3,2,1). c(4,2,4). c(5,2,5).\\
+	c(1,3,1). c(2,3,1). c(3,3,1). c(4,3,3). c(5,3,5).\\
+	c(1,4,1). c(2,4,3). c(3,4,5). c(4,4,4). c(5,4,2).\\
+	c(1,5,5). c(2,5,4). c(3,5,3). c(4,5,2). c(5,5,1).\\
+\end{frame}
+
+\begin{frame}{Hitori - Règles}
+	\textcolor{blue}{
+	\pause
+	taille(5).\\
+	\pause
+	\textcolor{white}{cheatcode}\\
+	\textcolor{red}{\emph{Faits utiles}}\\
+	colonne(1..S) :- taille(S).\\
+	ligne(1..S) :- taille(S).\\
+	\pause
+	\textcolor{white}{cheatcode}\\
+	\textcolor{red}{\emph{Déclaration des colorations}}\\
+	couleur(blanc). couleur(jaune).\\
+	\pause
+	\textcolor{white}{cheatcode}\\
+	\textcolor{red}{\emph{Génération des différents ensembles solutions}}\\
+	1 \{ sol(L, C, V) : couleur(V) \} 1 :- colonne(C), ligne(L).}\\
+\end{frame}
+
+\begin{frame}{Hitori - Règles (suite)}
+	\pause
+	\textcolor{red}{\emph{Il ne peut pas y avoir deux cases jaunes juxtaposées}}\\
+	\textcolor{blue}{:- sol(L, C, jaune), sol(L+1, C, jaune).\\
+	\pause
+	:- sol(L, C, jaune), sol(L-1, C, jaune).\\
+	:- sol(L, C, jaune), sol(L, C+1, jaune).\\
+	:- sol(L, C, jaune), sol(L, C-1, jaune).\\
+	\pause
+	\textcolor{white}{cheatcode}\\
+	\textcolor{red}{\emph{Les cases blanches sur une même ligne/colonne ont toutes une valeur différente}}\\
+	:- sol(L, C, blanc), sol(L, C2, blanc), C != C2, c(L, C, V), c(L, C2, V).\\
+	\pause
+	:- sol(L, C, blanc), sol(L2, C, blanc), L != L2, c(L, C, V), c(L2, C, V).}\\
+\end{frame}
+
+\begin{frame}{Hitori - Règles (suite)}
+	\pause
+	\textcolor{red}{\emph{L'ensemble des cases blanches est connexe (par déplacement haut/bas/gauche/droite)}}\\
+	\textcolor{blue}{chemin((L, C),(L+1, C)) :- sol(L, C, blanc), sol(L+1, C, blanc).\\
+	\pause
+	chemin((L, C),(L-1, C)) :- sol(L, C, blanc), sol(L-1, C, blanc).\\
+	chemin((L, C),(L, C+1)) :- sol(L, C, blanc), sol(L, C+1, blanc).\\
+	chemin((L, C),(L, C-1)) :- sol(L, C, blanc), sol(L, C-1, blanc).\\
+	\pause
+	chemin((L1, C1), (L2, C2)) :- chemin((L1, C1), (X, Y)), chemin((X, Y), (L2, C2)).\\
+	\pause
+	:- sol(L, C, blanc), sol(L2, C2, blanc), not chemin((L, C), (L2, C2)).}\\
+\end{frame}
+
 \begin{frame}{Hitori résolu}
 	\begin{figure}[!h]
 		\includegraphics[width=6cm]{Hitori_2.png}
 		\caption{Grille de Hitori résolu (\href{https://fr.wikipedia.org/wiki/Hitori}{https://fr.wikipedia.org/wiki/Hitori})}
 		\label{label-figure2}
 	\end{figure}
-\end{frame}
-
-\begin{frame}{Hitori - Règles}
-	\textcolor{blue}{
-	\pause
-	size(5).\\
-	\textcolor{white}{cheatcode}\\
-	val(1..S) :- size(S).\\
-	column(1..S) :- size(S).\\
-	row(1..S) :- size(S).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	color(0;1).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	1 \{ s(R, C, V) : color(V) \} 1 :- column(C), row(R).}\\
-\end{frame}
-
-\begin{frame}{Hitori - Règles (suite)}
-	\textcolor{blue}{:- s(R, C, 1), s(R+1, C, 1).\\
-	:- s(R, C, 1), s(R-1, C, 1).\\
-	:- s(R, C, 1), s(R, C+1, 1).\\
-	:- s(R, C, 1), s(R, C-1, 1).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	:- s(R, C, 0), s(R, C2, 0), C != C2, c(R, C, V), c(R, C2, V).\\
-	:- s(R, C, 0), s(R2, C, 0), R != R2, c(R, C, V), c(R2, C, V).\\
-	\textcolor{white}{cheatcode}\\
-	\pause
-	chemin((R1, C1), (R2, C2)) :- chemin((R1, C1), (X, Y)), chemin((X, Y), (R2, C2)).\\
-	chemin((R, C),(R+1, C)) :- s(R, C, 0), s(R+1, C, 0).\\
-	chemin((R, C),(R-1, C)) :- s(R, C, 0), s(R-1, C, 0).\\
-	chemin((R, C),(R, C+1)) :- s(R, C, 0), s(R, C+1, 0).\\
-	chemin((R, C),(R, C-1)) :- s(R, C, 0), s(R, C-1, 0).\\
-	:- s(R, C, 0), s(R2, C2, 0), not chemin((R, C), (R2, C2)).}\\
 \end{frame}
 
 \begin{frame}{Sokoban}
@@ -171,50 +147,30 @@
 \end{frame}
 
 \begin{frame}{Sokoban - Stratégies de calcul}
-	\begin{itemize}
-		\item Naïf : on considère un coup en tant que déplacement possible du personnage
-		\pause
-		\item Plus rapide : on ne considère que les coups de déplacement de caisse. On considère alors un ensemble connexe de cases atteignables depuis celles du personnage
-		\pause
-		\item Autres améliorations mineures :
-		\begin{itemize}
-			\item Si une caisse est bloquée dans un coin sans arrivée, on arrête la recherche courante
-			\item Si deux caisses sont dans un couloir (cernées par des murs), on arrête la recherche courante
-			\item etc...
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{AAN - Formalismes}
-	Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$, avec :
-	\begin{itemize}
-		\pause
-		\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.
-		\pause
-		\item Si $C_a$ est le nombre d'états d'un automate $a$, alors $S_a=\left\{a_0,a_1,...,a_{C_a-1}\right\}$ est l'ensemble des \textbf{états locaux} de $a$. $S=\displaystyle{\prod_{a\in\Sigma}}S_a$ est 
-		l'ensemble fini des \textbf{états globaux}, et $LS=\displaystyle{\bigcup_{a\in\Sigma}}S_a$ représente l'ensemble de tous les états locaux.
-		\pause
-		\item Pour chaque $a\in\Sigma$, $T_a\subseteq\left\{a_i\xrightarrow{l}a_j\in S_a\times\rho(LS/S_a)\times S_a|a_i\neq a_j\right\}$ est l'ensemble des \textbf{transitions locales} d'un automate $a$, avec 
-		$\rho$ qui désigne la puissance ensembliste. $T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{AAN - Exemple}
-	On prend l'AAN suivant comme exemple de référence pour ce qui suit : 
-	\begin{itemize}
-		\pause
-		\item $\Sigma =\left\{a,b,c\right\}$
-		\pause
-		\item $S_a=\left\{a_0,a_1,a_2\right\}$, $S_b=\left\{b_0,b_1\right\}$ et $S_c=\left\{c_0,c_1,c_2\right\}$
-		\pause
-		\item $T_a = \left\{a_0\xrightarrow{b_0}a_1,a_0\xrightarrow{b_1,c_1}a_1,a_1\xrightarrow{b_1}a_0,a_1\xrightarrow{b_0}a_2,a_2\xrightarrow{b_1}a_1\right\}$\\
-		$T_b=\left\{b_0\xrightarrow{c_0}b_1,b_1\xrightarrow{a_2}b_0\right\}$\\
-		$T_c=\left\{c_0\xrightarrow{b_1}c_1,c_0\xrightarrow{a_2}c_2,c_1\xrightarrow{b_0}c_0,c_1\xrightarrow{a_1}c_2,c_2\xrightarrow{b_1}c_0\right\}$
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{AAN - Schéma de l'exemple}
+	\pause
+	Naïf : on considère un coup en tant que déplacement possible du personnage
 	\begin{figure}[!h]
+		\pause
+		\includegraphics[width=3.25cm]{Coup1_strat1.eps}
+		\includegraphics[width=3.25cm]{Coup2_strat1.eps}
+		\includegraphics[width=3.25cm]{Coup3_strat1.eps}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Sokoban - Stratégies de calcul}
+	\pause
+	Plus rapide : on ne considère que les coups de déplacement de caisse. On considère alors l'ensemble connexe des cases atteignables depuis celles du personnage
+	\begin{figure}[!h]
+		\pause
+		\includegraphics[width=3.25cm]{Coup1_strat2.eps}
+		\includegraphics[width=3.25cm]{Coup2_strat2.eps}
+		\includegraphics[width=3.25cm]{Coup3_strat2.eps}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{AAN - Schéma}
+	\begin{figure}[!h]
+		\pause
 		\centering  
 		\begin{tikzpicture}[apdotsimple/.style={apdot}]
 		  \TSort{(0,2)}{a}{3}{r}
@@ -247,9 +203,38 @@
 		  \TState{a_0, b_1, c_1}
 		\end{tikzpicture}
 		
-		\caption{Schéma de notre exemple de référence}
+		\caption{Schéma qui fera office d'exemple de référence}
 		\label{label-figure4}
 	\end{figure}
+\end{frame}
+
+\begin{frame}{AAN - Formalismes}
+	Un réseau d'automates asynchrone est un triplet $(\Sigma,S,T)$, avec :
+	\begin{itemize}
+		\pause
+		\item $\Sigma=\left\{a,b,...\right\}$ est un ensemble fini d'automates non vides.\\
+		\pause
+		\textcolor{green}{$\Sigma =\left\{a,b,c\right\}$}\\
+		\textcolor{white}{cheatcode}\\
+		\pause
+		\item Si $C_a$ est le nombre d'états d'un automate $a$, alors $S_a=\left\{a_0,a_1,...,a_{C_a-1}\right\}$ est l'ensemble des \textbf{états locaux} de $a$. $S=\displaystyle{\prod_{a\in\Sigma}}S_a$ est 
+		l'ensemble fini des \textbf{états globaux}, et $LS=\displaystyle{\bigcup_{a\in\Sigma}}S_a$ représente l'ensemble de tous les états locaux.\\
+		\pause
+		\textcolor{green}{$S_a=\left\{a_0,a_1,a_2\right\}$, $S_b=\left\{b_0,b_1\right\}$ et $S_c=\left\{c_0,c_1,c_2\right\}$}\\
+		\textcolor{white}{cheatcode}\\
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{AAN - Formalismes}
+	\begin{itemize}
+		\pause
+		\item Pour chaque $a\in\Sigma$, $T_a\subseteq\left\{a_i\xrightarrow{l}a_j\in S_a\times\mathbb{P}(LS/S_a)\times S_a|a_i\neq a_j\right\}$ est l'ensemble des \textbf{transitions locales} d'un automate $a$. 
+		$T=\displaystyle{\bigcup_{a\in\Sigma}}T_a$ est l'ensemble des transitions locales du modèle.
+		\pause
+		\textcolor{green}{$T_a = \left\{a_0\xrightarrow{b_0}a_1,a_0\xrightarrow{b_1,c_1}a_1,a_1\xrightarrow{b_1}a_0,a_1\xrightarrow{b_0}a_2,a_2\xrightarrow{b_1}a_1\right\}$\\
+				  $T_b=\left\{b_0\xrightarrow{c_0}b_1,b_1\xrightarrow{a_2}b_0\right\}$\\
+				  $T_c=\left\{c_0\xrightarrow{b_1}c_1,c_0\xrightarrow{a_2}c_2,c_1\xrightarrow{b_0}c_0,c_1\xrightarrow{a_1}c_2,c_2\xrightarrow{b_1}c_0\right\}$}\\
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{AAN - Traduction de l'exemple en ASP}
@@ -263,7 +248,7 @@
 			automaton\_level("c", 0..2).\\
 			}
 		\pause
-		\item Et les transitions à l'aide de label : \\
+		\item Et les transitions à l'aide de labels : \\
 			\textcolor{blue}{
 			condition(t1, "a", 0). target(t1, "a", 1). condition(t1, "b", 0).\\
 			condition(t2, "a", 1). target(t2, "a", 2). condition(t2, "b", 0).}\\
@@ -274,29 +259,86 @@
 \end{frame}
 
 \begin{frame}{Sémantiques}
-	On s'intéressera à 3 sémantiques principalement : 
-	\begin{itemize}
+	\pause
+	On s'intéressera à 3 sémantiques : 
+	\begin{figure}[!h]
 		\pause
-		\item asynchrone : les transitions globales sont exactement les transitions locales jouables
-		\pause
-		\item synchrone : les transitions globales sont les ensembles de transitions locales jouables de cardinal maximal (on doit jouer une transition locale pour chaque automate quand c'est psosible)
-		\pause
-		\item générale : les transitions globales sont générés par les parties de l'ensemble des transitions globales de la sémantique synchrone (on peut jouer une transition locale pour un automate, mais il faut qu'on en 
-		joue au moins une)
-	\end{itemize}
+		\includegraphics[width=10cm]{Screenshot.png}
+		\caption{Schéma repris du pdf Folschette\_Bioss18.pdf de Maxime Folschette}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Attracteurs}
 	\pause
-	Un \textbf{domaine de piège} est un ensemble d'états globaux duquel toutes les transitions globales pour la sémantique choisie mène à un élément de ce domaine.\\
+	Un \textbf{domaine de piège} est un ensemble d'états globaux duquel toutes les transitions globales pour la sémantique choisie mènent à un élément de ce domaine.\\
+	\begin{figure}[!h]
+		\pause
+		\includegraphics[width=7cm]{presonal_example_synch.eps}
+		\caption{Sous-graphe du graphe produit de l'exemple de référence avec la sémantique synchrone. 3 des 6 domaines de piège y sont encadrés.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Attracteurs (suite)}
 	\pause
 	Un \textbf{attracteur} est un domaine de piège minimal en terme d'inclusion ensembliste.\\
+	\begin{figure}[!h]
+		\pause
+		\includegraphics[width=7cm]{presonal_example_synch2.eps}
+		\caption{Sous-graphe du graphe produit de l'exemple de référence avec la sémantique synchrone. Le seul attracteur y est encadré.}
+	\end{figure}
 	\pause
 	\textcolor{white}{cheatcode}\\
 	\textbf{Lemme :} Les attracteurs d'un AAN sont exactement les domaines de piège cycliques.
 \end{frame}
 
-\begin{frame}{Cœur de la contribution personnelle}
+\begin{frame}{Problématique}
+	Pour la version synchrone, le code préexistant ne fonctionnait que partiellement : seuls les attracteurs simples (dont les états globaux ont exactement une transition sortante) étaient trouvés.\\
+	\begin{figure}[!h]
+		\pause
+		\begin{tikzpicture}[apdotsimple/.style={apdot}]
+
+			\TSort{(0,2)}{a}{3}{r}
+			\TSort{(3,2)}{b}{3}{r}
+
+			\path[local transitions]
+			(a_0) edge node[auto] {$b_0$} (a_1)
+			(a_1) edge node[auto] {$b_1$} (a_2)
+			(a_2) edge node[auto] {$b_1$} (a_1)
+			
+			(b_0) edge node[auto] {$a_0$} (b_1)
+			(b_1) edge node[auto] {$a_1$} (b_2)
+			(b_2) edge node[auto] {$a_1$} (b_1)
+			;
+			
+			\path[local transitions, bend left = 90]
+			(a_0) edge node[auto] {$b_0$} (a_2)
+			;
+			
+			\path[local transitions, bend left = 90]
+			(a_2) edge node[auto] {$b_2$} (a_0)
+			;
+			
+			\path[local transitions, bend left = 90]
+			(b_0) edge node[auto] {$a_0$} (b_2)
+			;
+			
+			\path[local transitions, bend left = 90]
+			(b_2) edge node[auto] {$a_2$} (b_0)
+			;
+		\end{tikzpicture}
+		\caption{Exemple d'AAN sur lequel le code pré-existant ne trouvait pas l'attracteur}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Problématique}
+	\begin{figure}[h!]
+		\label{label-figure3}
+		\includegraphics[width=5cm]{Diagram2.eps}
+		\caption{Graphe produit de l'AAN précédent pour la sémantique synchrone}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Pistes étudiées}
 	\pause
 	Solutions étudiées : 
 	\begin{itemize}
@@ -324,10 +366,11 @@
 	\begin{figure}[!h]
 		\begin{tabular}{l|c<{\onslide<2->}c<{\onslide<3->}c<{\onslide<4->}c<{\onslide<5->}c<{\onslide<6->}c<{\onslide<7->}c<{\onslide}c}
 			n & exam. & lamb. & trp. & fis. & mamm. & tcr. & t-helper \\ \hline
-			2     & 2 & 2 & 0 & 1 & 0 & 0 & 8878\\
-			5     & 2 & 2 & 1 & 1 & 0 & 0 & 5477\\
-			10    & 2 & 2 & 1 & 1 & 1 & 1 & 4072\\
-			15    & 2 & 2 & 1 & 1 & 1 & 1 & 2850
+			$|\Sigma|$ & 4 & 4 & 4 & 9 & 10 & 40 & 101\\ \hline
+			2     & 2 & 2 & 0 & 1 & 0 & 0 & 8878+\\
+			5     & 2 & 2 & 1 & 1 & 0 & 0 & 5477+\\
+			10    & 2 & 2 & 1 & 1 & 1 & 1 & 4072+\\
+			15    & 2 & 2 & 1 & 1 & 1 & 1 & 2850+
 		\end{tabular}
 		\caption{Nombre d'attracteurs trouvés pour la sémantique synchrone (version avec python)}
 		\label{label-figure5}
@@ -341,12 +384,12 @@
 			10    & .054 & .076 & .050 & .084 & .082 & .201 & T.O\\
 			15    & .093 & .096 & .051 & .108 & .123 & .362 & T.O
 		\end{tabular}
-		\caption{Temps (en s) de résolution pour la sémantique synchrone (version avec python)}
-		\label{label-figure5}
+		\caption{Temps (en s) de résolution pour la sémantique synchrone (version avec python) - timeout(T.O) = 100s}
+		\label{label-figure6}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Seconde solution : travail sur les états globaux - Résultats}
+\begin{frame}{Utilisation des états globaux en ASP}
 	\pause
 	Une autre manière de gérer la troisième contrainte consiste à créer des prédicats pour les états globaux, et de mémoriser dans la sémantique quels sont les coups jouables depuis un état global, et non une étape temporelle 	
 	donnée.\\
@@ -355,39 +398,41 @@
 
 \begin{frame}{Seconde solution : travail sur les états globaux - Résultats}
 	\begin{figure}[!h]
-		\begin{tabular}{l|c<{\onslide<2->}c<{\onslide<3->}c<{\onslide}c}
-			n & exam. & lamb. & trp.\\ \hline
-			2     & 2 & 2 & 0\\
-			5     & 2 & 2 & 1\\
-			10    & 2 &  & 1\\
+		\begin{tabular}{l|c<{\onslide<2->}c<{\onslide<3->}c<{\onslide<4->}c<{\onslide<5->}c<{\onslide<6->}c<{\onslide<7->}c<{\onslide}c}
+			n & exam. & lamb. & trp. & fis. & mamm. & tcr. & t-helper \\ \hline
+			$|\Sigma|$ & 4 & 4 & 4 & 9 & 10 & 40 & 101\\ \hline
+			2     & 2 & 2 & 0 &  &  &  & \\
+			5     & 2 & 2 & 0 &  &  &  & \\
+			10    & 2 &  & 0 &  &  &  & \\
+			15    & 2 &  & 1 &  &  &  & 
 		\end{tabular}
 		\caption{Nombre d'attracteurs trouvés pour la sémantique synchrone (version avec états globaux)}
-		\label{label-figure5}
+		\label{label-figure7}
 	\end{figure}
 	
 	\begin{figure}[!h]
-		\begin{tabular}{l|c<{\onslide<2->}c<{\onslide<3->}c<{\onslide}c}
-			n & exam. & lamb. & trp.\\ \hline
-			2     & 3.943 & 40.267 & 4.004\\
-			5     & 5.435 & 58.742 & 5.461\\
-			10    & 9.790 & T.O & 9.965\\
+		\begin{tabular}{l|c<{\onslide<2->}c<{\onslide<3->}c<{\onslide<4->}c<{\onslide<5->}c<{\onslide<6->}c<{\onslide<7->}c<{\onslide}c}
+			n & exam. & lamb. & trp. & fis. & mamm. & tcr. & t-helper \\ \hline
+			2     & 3.724 & 43.623 & 4.155 & T.O & T.O & T.O & T.O\\
+			5     & 6.457 & 71.786 & 6.288 & T.O & T.O & T.O & T.O\\
+			10    & 11.349 & T.O & 11.561 & T.O & T.O & T.O & T.O\\
+			15    & 18.767 & T.O & 19.636 & T.O & T.O & T.O & T.O
 		\end{tabular}
-		\caption{Temps (en s) de résolution pour la sémantique synchrone (version avec états globaux)}
-		\label{label-figure5}
+		\caption{Temps (en s) de résolution pour la sémantique synchrone (version avec états globaux) - timeout(T.O) = 100s}
+		\label{label-figure8}
 	\end{figure}
-	REFAIRE LES BONS TESTS !!!
 \end{frame}
 
-\begin{frame}{Conclusions et pistes}
+\begin{frame}{Conclusions (et pistes)}
 	\begin{itemize}
 		\pause
-		\item 2 versions fonctionnelles dont une peu efficace
+		\item 2 versions fonctionnelles :
+		\begin{itemize}
+			\item une efficace avec du filtrage sous Python
+			\item l'autre moins efficace avec utilisation d'états globaux (avec quelques fonctions de calcul en Python)
+		\end{itemize}
 		\pause
-		\item La seconde version pourrait être améliorée avec de l'incrémental
-		\pause
-		\item Considérer des classes d'équivalence des attracteurs, et manipuler des sortes de "bassins d'attraction"
-		\pause
-		\item Combiner les deux idées précédentes (?)
+		\item Pistes : la seconde version pourrait être améliorée avec de l'incrémental ; considérer des classes d'équivalence des attracteurs, et manipuler des sortes de "bassins d'attraction"
 	\end{itemize}
 \end{frame}
 

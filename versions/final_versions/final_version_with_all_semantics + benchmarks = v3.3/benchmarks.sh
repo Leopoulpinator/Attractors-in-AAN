@@ -6,13 +6,13 @@
 
 ### Benchmark parameters
 # Size of paths
-PathSizes="2 5 10"
+PathSizes="2 5 10 15"
 # Model files
-ModelFiles="embetant.lp simplified_annoying_one_for_asynch.lp the_annoying_one.lp personal_example.lp example.lp lambda-phage.lp trp-reg.lp"
+ModelFiles="example.lp lambda-phage.lp trp-reg.lp fisson-yeast.lp mammalian.lp tcrsig.lp t-helper.lp"
 # Filter modes
 FilterModes="no pre post"
 # Semantics
-Semantics="asynch synch gen asynch_python synch_python gen_python"
+Semantics="synch"
 # Clingo time limit in seconds (0 = no time limit)
 TimeLimit="100"
 
