@@ -118,6 +118,13 @@
 		      \textcolor{blue}{offre\_cadeau\_fete\_peres(tshirt\_bateau).}
 \end{frame}
 
+\begin{frame}{Sokoban}
+	\begin{figure}[!h]
+		\includegraphics[width=6cm]{Diagram1.eps}
+		\caption{Grille de Sokoban. P symbolise le joueur, les ronds rouges sont les cases d'arrivée, et les carrés rouges représentent les caisses.}
+		\label{label-figure3}
+	\end{figure}
+\end{frame}
 
 \begin{frame}{Sokoban - Stratégies de calcul}
 	\pause
@@ -289,7 +296,7 @@
 		\pause
 		\item avoir un cycle
 		\pause
-		\item tout les états globaux du chemin visités après l'étape de fin du visite du cycle doivent être des éléments de ce dernier
+		\item tous les états globaux du chemin visités après l'étape de fin du visite du cycle doivent être des éléments de ce dernier
 		\pause
 		\item toutes les transitions globales jouables depuis chacun des éléments du cycle doivent arriver dans un autre élément de ce cycle ( = domaine piège)\\
 	\end{itemize}
@@ -361,7 +368,7 @@
 		\pause
 		\item 2 versions fonctionnelles :
 		\begin{itemize}
-			\item une efficace avec du filtrage sous Python
+			\item une efficace (en terme de complexité temporelle) avec du filtrage sous Python
 			\item l'autre moins efficace avec utilisation d'états globaux (avec quelques fonctions de calcul en Python)
 		\end{itemize}
 		\pause
@@ -375,7 +382,7 @@
 		\item l'ENS de Lyon qui m'a proposé ce stage
 		\item Maxime Folschette pour son encadrement
 		\item les personnes au sein de l'équipe BioComputing
-		\item mes quelques collègues stagiaires de bureau
+		\item mes collègues stagiaires de bureau
 		\item les auditeurs présents dans cette salle pour leur écoute
 	\end{itemize}
 \end{frame}
